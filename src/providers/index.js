@@ -6,6 +6,7 @@ import ButtonProvider from './ButtonProvider/index';
 import ImageProvider from './ImageProvider/index';
 import ContainerColumnProvider from './ContainerColumnProvider/index';
 import PageProvider from './PageProvider/index';
+import SectionProvider from './SectionProvider';
 
 
 export const providerByComponentTitle = (title) => {
@@ -19,14 +20,16 @@ export const providerByComponentTitle = (title) => {
       return DescriptionProvider;
     case 'image':
       return ImageProvider;
-    case 'tag':
-      return TagProvider;
     case 'label':
       return LabelProvider;
     case 'page':
       return PageProvider;
     case 'patternInfo':
       return PatternInfoProvider;
+    case 'section':
+      return SectionProvider;
+    case 'tag':
+      return TagProvider;
     default:
       return null
   }

@@ -1,9 +1,10 @@
-import React from 'react'
-import Page from './../../components/Page/PageView';
+import React from 'react';
+import { Page } from './../../components/index';
+
 
 export default function PageProvider(props) {
   return (
-    <Page>
+    <Page {...props}>
       {props.children}
     </Page>
   )

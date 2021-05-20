@@ -1,132 +1,33 @@
 {
   "childrenList": [
-
     {
-      "background": "https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/belWebakcia.png",
       "childrenList": [
         {
-          "childrenList": [
-            {
-              "background": null,
-              "childrenList": [],
-              "componentsDescription": {
-                "source": "https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/belWebakcia.png"
-              },
-              "id": 6846,
-              "name": "belvebimg",
-              "order": null,
-              "style": null,
-              "styles": {
-                "borderRadius": "24px",
-                "marginTop": null,
-                "marginBottom": null
-              },
-              "typeName": "image"
-            }
-          ],
-          "id": 5555,
-          "order": null,
-          "typeName": "containerColumn"
-        },
-        { 
-          "childrenList": [   
-            {
-              "background": null,
-              "childrenList": [],
-              "componentsDescription": {
-                "value": "Обменивайте баллы на билеты в кино!"
-              },
-              "id": 6842,
-              "name": "belvebLabel1",
-              "order": null,
-              "style": 2,
-              "styles": {
-                "fontSize": null,
-                "lineHeight": null,
-                "color": null,
-                "marginTop": null,
-                "marginBottom": null
-              },
-              "typeName": "label"
-            },
-            {
-              "background": null,
-              "childrenList": [],
-              "componentsDescription": {
-                "value": "Не представляете свою жизнь без кино? Воспользуйтесь бонусами программы лояльности UP4U от Банка БелВЭБ и получайте билеты в кинотеатры Silver Screen в обмен на накопленные баллы"
-              },
-              "id": 6843,
-              "name": "belvebDescription",
-              "order": null,
-              "style": 8,
-              "styles": {
-                "marginTop": null,
-                "marginBottom": null,
-                "fontSize": null,
-                "lineHeight": null,
-                "color": null
-              },
-              "typeName": "description"
-            },
-            {
-              "background": null,
-              "childrenList": [],
-              "componentsDescription": {
-                "value": "АКЦИЯ"
-              },
-              "id": 6844,
-              "name": "belvebLabel2",
-              "order": null,
-              "style": 7,
-              "styles": {
-                "marginTop": null,
-                "marginBottom": null,
-                "fontSize": null,
-                "lineHeight": null,
-                "color": null
-              },
-              "typeName": "tag"
-            },
-            {
-              "background": null,
-              "childrenList": [],
-              "componentsDescription": {
-                "link": "/info/visitors/ad/belveb-kino/",
-                "value": "Подробнее"
-              },
-              "id": 6845,
-              "name": "belvebButton",
-              "order": null,
-              "style": 1,
-              "styles": {
-                "marginTop": null,
-                "marginBottom": null,
-                "fontSize": null,
-                "lineHeight": null,
-                "color": null
-              },
-              "typeName": "button"
-            }],
-          "id": 5555,
-          "typeName": "containerColumn"
+          "typeName": "section",
+          "styles": {
+            "width": "40%"
+          }
         }
       ],
-      "componentsDescription": {
-        "theme": "light",
-        "reverse": "false"
-      },
-      "id": 6841,
-      "name": "Belveb-Kino",
-      "order": 2,
-      "style": null,
       "styles": {
-        "filter": "blur(20px)",
-        "backgroundColor": "rgba(0, 0, 0, 0.7)"
+        "width": null,
+        "minHeight": null,
+        "margin": "0 auto",
+        "padding": "25px",
+        "marginTop": null,
+        "marginRight": null,
+        "marginBottom": null,
+        "marginLeft": null,
+        "paddingTop": null,
+        "paddingRight": null,
+        "paddingBottom": null,
+        "paddingLeft": null
       },
-      "typeName": "patternInfo"
+      "typeName": "section"
     }
-
   ],
-  "id": "00001",
+  "styles": {
+    "backgroundColor": null
+  },
   "typeName": "page"
 }

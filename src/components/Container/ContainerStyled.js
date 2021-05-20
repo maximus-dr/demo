@@ -50,6 +50,7 @@ export const ContainerBackground = styled.div`
 
 export const ContainerBody = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 30px;

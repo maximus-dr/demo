@@ -9,7 +9,5 @@ body {
 }
 
 body {
-  color: rgba(255, 255, 255, .8);
   font: 400 16px/26px Ubuntu, Roboto, Arial, Helvetica, sans-serif;
-  background-color: #27272a;
 }
