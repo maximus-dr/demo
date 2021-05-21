@@ -5,15 +5,22 @@
         {
           "typeName": "section",
           "styles": {
-            "width": "40%"
+            "width": "50%",
+            "backgroundColor": "rgba(0, 0 , 0, 0.7)"
+          }
+        },
+        {
+          "typeName": "section",
+          "styles": {
+            "width": "50%",
+            "backgroundColor": "rgba(0, 0, 0, 0.7)"
           }
         }
       ],
       "styles": {
         "width": null,
         "minHeight": null,
-        "margin": "0 auto",
-        "padding": "25px",
+        "margin": null,
         "marginTop": null,
         "marginRight": null,
         "marginBottom": null,
@@ -21,13 +28,24 @@
         "paddingTop": null,
         "paddingRight": null,
         "paddingBottom": null,
-        "paddingLeft": null
+        "paddingLeft": null,
+        "flexDirection": null,
+        "justifyContent": null,
+        "border": "1px solid gray",
+        "borderRadius": null
       },
       "typeName": "section"
     }
   ],
   "styles": {
-    "backgroundColor": null
+    "flexDirection": null,
+    "justifyContent": null,
+    "paddingTop": null,
+    "paddingRight": null,
+    "paddingBottom": null,
+    "paddingLeft": null,
+    "backgroundColor": null,
+    "backgroundImage": "url('https://www.film.ru/sites/default/files/movies/posters/49486017-1237181.jpg')"
   },
   "typeName": "page"
 }

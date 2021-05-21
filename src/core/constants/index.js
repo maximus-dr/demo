@@ -7,6 +7,6 @@ export const screens = {
 };
 
 export const colors = {
-    outline_page: '#b2ebf2',
-    outline_section: '#81d4fa'
+    outline_page: '#E0E0E0',
+    outline_section: '#81D4FA'
 }

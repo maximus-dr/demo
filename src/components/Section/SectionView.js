@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionWrapper } from './SectionStyled'
+import { SectionWrapper, SectionBody } from './SectionStyled'
 
 
 export default function Section(props) {
@@ -10,7 +10,9 @@ export default function Section(props) {
 
     return (
         <SectionWrapper styles={styles}>
-            {props.children}
+            <SectionBody styles={styles}>
+                {props.children}
+            </SectionBody>
         </SectionWrapper>
     )
 }
