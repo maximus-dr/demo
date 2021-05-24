@@ -1,51 +1,28 @@
 {
   "childrenList": [
     {
+      "typeName": "section",
       "childrenList": [
         {
-          "typeName": "section",
-          "styles": {
-            "width": "50%",
-            "backgroundColor": "rgba(0, 0 , 0, 0.7)"
-          }
-        },
-        {
-          "typeName": "section",
-          "styles": {
-            "width": "50%",
-            "backgroundColor": "rgba(0, 0, 0, 0.7)"
-          }
+          "typeName": "image",
+          "link": "https://www.film.ru/sites/default/files/movies/posters/49486017-1237181.jpg"
         }
-      ],
-      "styles": {
-        "width": null,
-        "minHeight": null,
-        "margin": null,
-        "marginTop": null,
-        "marginRight": null,
-        "marginBottom": null,
-        "marginLeft": null,
-        "paddingTop": null,
-        "paddingRight": null,
-        "paddingBottom": null,
-        "paddingLeft": null,
-        "flexDirection": null,
-        "justifyContent": null,
-        "border": "1px solid gray",
-        "borderRadius": null
-      },
-      "typeName": "section"
+      ]
     }
   ],
   "styles": {
     "flexDirection": null,
     "justifyContent": null,
+    "flexWrap": null,
+
     "paddingTop": null,
     "paddingRight": null,
     "paddingBottom": null,
     "paddingLeft": null,
+
     "backgroundColor": null,
-    "backgroundImage": "url('https://www.film.ru/sites/default/files/movies/posters/49486017-1237181.jpg')"
+    "backgroundImage": null,
+    "backgroundSize": null
   },
   "typeName": "page"
 }

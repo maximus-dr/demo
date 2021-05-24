@@ -21,6 +21,7 @@ export const PageBody = styled.div`
   display: flex;
   min-height: 100vh;
   width: 100%;
+  background-repeat: no-repeat;
 
   ${props => props.styles && css`
     flex-direction: ${props.styles.flexDirection || 'column'};
@@ -33,6 +34,6 @@ export const PageBody = styled.div`
 
     background-color: ${props.styles.backgroundColor || 'transparent'};
     background-image: ${props.styles.backgroundImage || 'none'};
-    background-size: cover;
+    background-size: ${props.styles.backgroundSize || 'cover'};
   `}
 `;

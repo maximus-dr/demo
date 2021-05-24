@@ -1,20 +1,20 @@
-import styled, { css } from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const ImageWrapper = styled.div`
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
 
-  ${props => props.data.order 
-    ? css` order: ${props.data.order};`
-    : css`order: 0;`
-  }
-  ${props => props.data.styles && props.data.styles.marginTop 
-    ? css`margin-top: ${props.data.styles.marginTop};`
-    : css`margin-top: 0;`
-  }
-  ${props => props.data.styles && props.data.styles.marginBottom 
-    ? css`margin-bottom: ${props.data.styles.marginBottom};`
-    : css`margin-bottom: 30px;`
-  }
+`;
+
+export const ImageBody = styled.img.attrs(props => {
+    const styles = props && props.styles ? props.styles : null;
+
+    return ({
+        src: props && props.link ? props.link : '',
+        width: styles ? styles.width : '200px',
+        height: styles ? props.styles.height : 'auto'
+    })
+})`
+    margin-top: ${props => {
+        return css``
+    }}
+
 `;

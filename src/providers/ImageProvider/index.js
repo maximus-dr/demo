@@ -1,10 +1,10 @@
 import React from 'react'
-import ImageView from '../../components/Image/ImageView'
+import { Image } from '../../components'
 
 export default function ImageProvider(props) {
-  return (
-    <>
-      <ImageView componentsData={props.data} />
-    </>
-  )
+    return (
+        <Image {...props}>
+            {props.children}
+        </Image>
+    )
 }

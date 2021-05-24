@@ -33,9 +33,9 @@ export const SectionBody = styled.div`
     background-repeat: no-repeat;
 
     ${props => props.styles && css`
-        flex-direction: ${props.styles.flexDirection || 'flex-row'};
+        flex-direction: ${props.styles.flexDirection || 'column'};
         justify-content: ${props.styles.justifyContent || 'flex-start'};
-        flex-wrap: ${props.styles.flexWrap || 'wrap'};
+        flex-wrap: ${props.styles.flexWrap || 'nowrap'};
 
         padding-top: ${props.styles.paddingTop || '0'};
         padding-right: ${props.styles.paddingRight || '0'};

@@ -1,10 +1,11 @@
-import Outline from "./Outline/Outline";
+import Image from "./Image/ImageView";
 import Page from "./Page/PageView";
 import Section from "./Section/SectionView";
 
 
+
 export {
-    Outline,
+    Image,
     Page,
     Section
 }
