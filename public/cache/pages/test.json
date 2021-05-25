@@ -1,28 +1,296 @@
 {
+  "type": "page",
+  "styles": {
+    "backgroundColor": "#fafafa"
+  },
   "childrenList": [
+
     {
-      "typeName": "section",
+      "type": "section",
+      "styles": {
+        "minHeight": "100vh",
+        "width": "640px",
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "backgroundColor": "#ffffff"
+      },
       "childrenList": [
         {
-          "typeName": "image",
-          "link": "https://www.film.ru/sites/default/files/movies/posters/49486017-1237181.jpg"
+          "type": "section",
+          "styles": {
+            "minHeight": "50px",
+            "paddingTop": "10px",
+            "paddingRight": "10px",
+            "paddingBottom": "10px",
+            "paddingLeft": "10px",
+            "flexDirection": "row",
+            "justifyContent": "space-between"
+          },
+          "childrenList": [
+            {
+              "type": "section",
+              "styles": {
+                "width": "100px"
+              },
+              "childrenList": [
+                {
+                  "type": "image",
+                  "link": "https://hh.ru/employer-logo/2492599.png"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "styles": {
+                "width": "120px",
+                "marginLeft": "auto"
+              }
+            },
+            {
+              "type": "section",
+              "styles": {
+                "width": "50px",
+                "marginLeft": "10px"
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "section",
+          "styles": {
+            "minHeight": "150px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px"
+          },
+          "childrenList": [
+            {
+              "type": "section",
+              "styles": {
+                "minHeight": "250px",
+                "paddingLeft": "30px",
+                "paddingRight": "30px",
+                "paddingTop": "15px"
+              },
+              "childrenList": [
+                {
+                  "type": "section",
+                  "styles": {
+                    "flexDirection": "row",
+                    "flexWrap": "wrap"
+                  },
+                  "childrenList": [
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    },
+    
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    },
+    
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    },
+    
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    },
+
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    },
+
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    },
+
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    },
+
+                    {
+                      "type": "section",
+                      "styles": {
+                        "width": "50%"
+                      }
+                    }
+                  ]
+                },
+
+
+                {
+                  "type": "section",
+                  "styles": {
+                    "marginTop": "100px"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "section",
+          "styles": {
+            "minHeight": "150px"
+          },
+          "childrenList": [
+            {
+              "type": "section",
+              "styles": {
+                "minHeight": "150px"
+              },
+              "childrenList": [
+                {
+                  "type": "label"
+                },
+                {
+                  "type": "label",
+                  "value": "Label h1",
+                  "styles": {
+                    "marginTop": "20px"
+                  },
+                  "heading": "h1"
+                },
+
+                {
+                  "type": "label",
+                  "value": "Label h2",
+                  "heading": "h2"
+                },
+                {
+                  "type": "label",
+                  "value": "Label h3",
+                  "heading": "h3"
+                },
+                {
+                  "type": "label",
+                  "value": "Label h4",
+                  "heading": "h4"
+                },
+                {
+                  "type": "label",
+                  "value": "Label h5",
+                  "heading": "h5"
+                },
+                {
+                  "type": "label",
+                  "value": "Label h6",
+                  "heading": "h6"
+                },
+                {
+                  "type": "label",
+                  "value": "Label default"
+                }
+                
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "section",
+          "styles": {
+            "minHeight": "150px",
+            "paddingLeft": "50px",
+            "paddingRight": "50px",
+            "paddingTop": "50px",
+            "paddingBottom": "50px"
+          },
+          "childrenList": [
+            {
+              "type": "section",
+              "childrenList": [
+                {
+                  "type": "label",
+                  "value": "Заголовок",
+                  "heading": "h2",
+                  "styles": {
+                    "paddingLeft": "50px",
+                    "marginBottom": "50px"
+                  }
+                },
+                {
+                  "type": "section",
+                  "styles": {
+                    "flexDirection": "row"
+                  },
+                  "childrenList": [
+                    {
+                      "type": "image",
+                      "link": "https://www.film.ru/sites/default/files/movies/posters/49486017-1237181.jpg",
+                      "styles": {
+                        "width": "30%",
+                        "alignSelf": "center"
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "childrenList": [
+                        {
+                          "type": "label",
+                          "value": "Подзаголовок",
+                          "heading": "h3",
+                          "styles": {
+                            "textAlign": "center"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "styles": {
+                            "width": "100%",
+                            "marginTop": null,
+                            "marginRight": null,
+                            "marginBottom": null,
+                            "marginLeft": null,
+                            "paddingTop": "25px",
+                            "paddingRight": "25px",
+                            "paddingBottom": "25px",
+                            "paddingLeft": "25px",
+                            "textAlign": null,
+                            "textIndent": "25px",
+                            "fontSize": "14px",
+                            "lineHeight": "20px",
+                            "fontWeight": null,
+                            "fontStyle": "italic"
+                          },
+                          "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "section"
         }
       ]
     }
-  ],
-  "styles": {
-    "flexDirection": null,
-    "justifyContent": null,
-    "flexWrap": null,
 
-    "paddingTop": null,
-    "paddingRight": null,
-    "paddingBottom": null,
-    "paddingLeft": null,
-
-    "backgroundColor": null,
-    "backgroundImage": null,
-    "backgroundSize": null
-  },
-  "typeName": "page"
+  ]
 }

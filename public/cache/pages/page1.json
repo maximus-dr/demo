@@ -1,0 +1,189 @@
+{
+    "type": "page",
+    "styles": {
+      "backgroundColor": "#fafafa"
+    },
+    "childrenList": [
+  
+      {
+        "type": "section",
+        "styles": {
+          "minHeight": "100vh",
+          "width": "640px",
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "backgroundColor": "#ffffff"
+        },
+        "childrenList": [
+          {
+            "type": "section",
+            "styles": {
+              "minHeight": "50px",
+              "paddingTop": "10px",
+              "paddingRight": "10px",
+              "paddingBottom": "10px",
+              "paddingLeft": "10px",
+              "flexDirection": "row",
+              "justifyContent": "space-between"
+            },
+            "childrenList": [
+              {
+                "type": "section",
+                "styles": {
+                  "width": "100px"
+                },
+                "childrenList": [
+                  {
+                    "type": "image",
+                    "link": "https://hh.ru/employer-logo/2492599.png"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "styles": {
+                  "width": "120px",
+                  "marginLeft": "auto"
+                }
+              },
+              {
+                "type": "section",
+                "styles": {
+                  "width": "50px",
+                  "marginLeft": "10px"
+                }
+              }
+            ]
+          },
+  
+          {
+            "type": "section",
+            "styles": {
+              "minHeight": "150px",
+              "paddingLeft": "50px",
+              "paddingRight": "50px"
+            },
+            "childrenList": [
+              {
+                "type": "section",
+                "styles": {
+                  "minHeight": "250px",
+                  "paddingLeft": "30px",
+                  "paddingRight": "30px",
+                  "paddingTop": "15px"
+                },
+                "childrenList": [
+                  {
+                    "type": "section",
+                    "styles": {
+                      "flexDirection": "row",
+                      "flexWrap": "wrap"
+                    },
+                    "childrenList": [
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      },
+      
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      },
+      
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      },
+      
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      },
+  
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      },
+  
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      },
+  
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      },
+  
+                      {
+                        "type": "section",
+                        "styles": {
+                          "width": "50%"
+                        }
+                      }
+                    ]
+                  },
+  
+  
+                  {
+                    "type": "section",
+                    "styles": {
+                      "marginTop": "100px"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+  
+          {
+            "type": "section",
+            "styles": {
+              "minHeight": "150px"
+            },
+            "childrenList": [
+              {
+                "type": "section",
+                "styles": {
+                  "minHeight": "150px"
+                }
+              }
+            ]
+          },
+  
+          {
+            "type": "section",
+            "styles": {
+              "minHeight": "150px",
+              "paddingLeft": "50px",
+              "paddingRight": "50px"
+            },
+            "childrenList": [
+              {
+                "type": "section",
+                "styles": {
+                  "minHeight": "150px"
+                }
+              }
+            ]
+          }
+        ]
+      }
+  
+    ]
+  }
+  

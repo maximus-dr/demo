@@ -8,5 +8,8 @@ export const screens = {
 
 export const colors = {
     outline_page: '#E0E0E0',
-    outline_section: '#81D4FA'
+    outline_section: '#81D4FA',
+    outline_image: '#ff5252',
+    outline_label: '#d4e157',
+    outline_text: '#ffa726'
 }

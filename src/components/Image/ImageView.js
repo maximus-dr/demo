@@ -1,12 +1,10 @@
 import React from 'react'
-import { ImageBody, ImageWrapper } from './ImageStyled'
+import { ImageBody } from './ImageStyled'
+
 
 export default function ImageView(props) {
+
     return (
-        <ImageWrapper>
-            <ImageBody {...props.componentData}>
-                {props.children}
-            </ImageBody>
-        </ImageWrapper>
+        <ImageBody {...props.componentData} />
     )
 }
