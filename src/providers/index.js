@@ -7,9 +7,8 @@ import PageProvider from './PageProvider/index';
 import SectionProvider from './SectionProvider';
 
 
-export const providerByComponentTitle = (title) => {
-
-  switch (title) {
+export const providerByComponentType = (type) => {
+  switch (type) {
     case 'button':
       return ButtonProvider;
     case 'description':

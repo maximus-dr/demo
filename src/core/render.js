@@ -1,6 +1,6 @@
 
 import { nanoid } from 'nanoid';
-import { providerByComponentTitle } from '../providers'
+import { providerByComponentType } from '../providers'
 
 
 // рекурсивно перебирает childrenList в структуре и возвращает массив провайдеров по type
@@ -11,12 +11,12 @@ export function getProviders(props) {
         props.component.childrenList &&
         props.component.childrenList.length > 0 &&
         props.component.childrenList.map(child => {
-            const provider = providerByComponentTitle(child.type);
+            const provider = providerByComponentType(child.type);
 
             if (provider) {
             const childProps = {
                 id: child.id,
-                provider: providerByComponentTitle(child.type),
+                provider: providerByComponentType(child.type),
                 component: child
             }
             return getProviders(childProps);
@@ -40,7 +40,7 @@ export function getProviders(props) {
 export function renderComponents(component) {
     const props = {
         id: component.id,
-        provider: providerByComponentTitle(component.type),
+        provider: providerByComponentType(component.type),
         component
     }
     return getProviders(props);

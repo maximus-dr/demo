@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config';
+import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
@@ -9,6 +9,10 @@ const commonStyles = css`${props => {
 
     return css`
         position: ${styles && styles.position || 'relative'};
+        top: ${styles && styles.top || ''};
+        right: ${styles && styles.right || ''};
+        bottom: ${styles && styles.bottom || ''};
+        left: ${styles && styles.left || ''};
 
         align-self: ${styles && styles.alignSelf || 'flex-start'}; 
 
@@ -32,6 +36,8 @@ const commonStyles = css`${props => {
 
         color: ${styles && styles.color || ''};
         background-color: ${styles && styles.backgroundColor || ''};
+
+        transform: ${styles && styles.transform || ''};
     `;
 }}`;
 

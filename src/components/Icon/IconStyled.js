@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config';
+import { SHOW_OUTLINES } from '../../core/config/config';
 import { enableOutlines } from '../../core/utils';
 import { colors } from '../../core/variables';
 

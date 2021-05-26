@@ -8,6 +8,7 @@ export default function DescriptionView(props) {
     return (
         <DescriptionBody {...componentData}>
             {content}
+            {props.children}
         </DescriptionBody>
     )
 }

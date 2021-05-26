@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config';
+import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
@@ -39,6 +39,7 @@ export const SectionWrapper = styled.div`
 
 export const SectionBody = styled.div`
     background-repeat: no-repeat;
+    width: 100%;
 
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -51,8 +52,6 @@ export const SectionBody = styled.div`
             justify-content: ${styles && styles.justifyContent || 'flex-start'};
             flex-wrap: ${styles && styles.flexWrap || 'nowrap'};
 
-            width: ${styles && styles.width || '100%'};
-            height: ${styles && styles.height || "auto"};
             min-height: ${styles && styles.minHeight || '50px'};
             min-width: ${styles && styles.minWidth || '50px'};
 

@@ -2,7 +2,6 @@ import styled, {css} from 'styled-components';
 
 
 const commonStyles = (styles) => css`
-
     font-weight: ${styles && styles.fotnWeight || 'bold'};
 
     outline: ${styles && styles.outline || 'none'};
@@ -11,6 +10,7 @@ const commonStyles = (styles) => css`
     border-right: ${styles && styles.borderRight || ''};
     border-bottom: ${styles && styles.borderBottom || ''};
     border-left: ${styles && styles.borderLeft || ''};
+    border-color: ${styles && styles.borderColor || ''};
     border-radius: ${styles && styles.borderRadius || '0'};
 
     box-shadow: ${styles && styles.boxShadow || ''};
@@ -24,7 +24,6 @@ const commonStyles = (styles) => css`
 // для :hover и :active задается свой styles, соответствующий содержимому props.styles.hover и props.styles.active
 export const ButtonBody = styled.button`
 
-    position: relative;
     border: none;
     background: none;
 
@@ -34,6 +33,12 @@ export const ButtonBody = styled.button`
 
         return css`
             ${commonStyles(styles)}
+
+            position: ${styles && styles.position || 'relative'};
+            top: ${styles && styles.position || ''};
+            right: ${styles && styles.right || ''};
+            bottom: ${styles && styles.bottom || ''};
+            left: ${styles && styles.left || ''};
 
             align-self: ${styles && styles.alignSelf || 'flex-start'};
 
@@ -62,7 +67,9 @@ export const ButtonBody = styled.button`
 
             cursor: ${styles && styles.cursor || 'pointer'};
 
-            transition: ${transitions && transitions.join(', ') || ''};
+            transform: ${styles && styles.transform || ''};
+
+            transition: ${transitions && transitions.join(', ') || 'background-color 200ms, color 200ms'};
 
             &:hover {
                 ${props => {
@@ -71,6 +78,7 @@ export const ButtonBody = styled.button`
                     return css`
                         background-color: ${styles && styles.backgroundColor || '#000000'};
                         color: ${styles && styles.color || '#ffffff'};
+                        border-color: ${styles && styles.borderColor || ''};
 
                         ${commonStyles(styles)}
                     `
