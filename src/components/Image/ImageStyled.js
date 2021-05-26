@@ -1,8 +1,20 @@
 import styled, {css} from 'styled-components';
 import { SHOW_OUTLINES } from '../../core/config';
-import { colors } from '../../core/constants';
+import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
+export const ImageWrapper = styled.div`
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+
+        return css`
+            align-self: ${styles && styles.alignSelf || 'flex-start'};
+
+            width: ${styles && styles.width || '100%'};
+            height: ${styles && styles.height || 'auto'};
+        `
+    }}
+`;
 
 export const ImageBody = styled.img.attrs(props => {
     const styles = props.styles ? props.styles : null
@@ -31,5 +43,4 @@ export const ImageBody = styled.img.attrs(props => {
             margin-left: ${styles && styles.marginLeft || '0'};
         `
     }}
-
 `;

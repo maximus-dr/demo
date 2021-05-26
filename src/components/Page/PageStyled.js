@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import { SHOW_OUTLINES } from '../../core/config';
-import { colors } from '../../core/constants';
+import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
 
@@ -12,8 +12,6 @@ export const PageBody = styled.div`
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  min-width: 100vw;
-
   background-repeat: no-repeat;
 
   ${props => {

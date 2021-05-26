@@ -59,100 +59,6 @@
         {
           "type": "section",
           "styles": {
-            "minHeight": "150px",
-            "paddingLeft": "50px",
-            "paddingRight": "50px"
-          },
-          "childrenList": [
-            {
-              "type": "section",
-              "styles": {
-                "minHeight": "250px",
-                "paddingLeft": "30px",
-                "paddingRight": "30px",
-                "paddingTop": "15px"
-              },
-              "childrenList": [
-                {
-                  "type": "section",
-                  "styles": {
-                    "flexDirection": "row",
-                    "flexWrap": "wrap"
-                  },
-                  "childrenList": [
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    },
-    
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    },
-    
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    },
-    
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    },
-
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    },
-
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    },
-
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    },
-
-                    {
-                      "type": "section",
-                      "styles": {
-                        "width": "50%"
-                      }
-                    }
-                  ]
-                },
-
-
-                {
-                  "type": "section",
-                  "styles": {
-                    "marginTop": "100px"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-
-        {
-          "type": "section",
-          "styles": {
             "minHeight": "150px"
           },
           "childrenList": [
@@ -217,19 +123,46 @@
             "paddingRight": "50px",
             "paddingTop": "50px",
             "paddingBottom": "50px"
+            
           },
           "childrenList": [
             {
               "type": "section",
               "childrenList": [
                 {
+                  "type": "icon",
+                  "styles": {
+                    "top": "15px",
+                    "right": "15px",
+                    "left": "auto",
+                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/star.svg?alt=media&token=cf271c29-3554-4c2e-8890-ba724f4fd406')",
+                    "backgroundSize": "auto 100%",
+                    "width": "50px",
+                    "height": "50px"
+                  }
+                },
+                
+                {
                   "type": "label",
                   "value": "Заголовок",
                   "heading": "h2",
                   "styles": {
                     "paddingLeft": "50px",
-                    "marginBottom": "50px"
-                  }
+                    "marginBottom": "30px",
+                    "fontSize": "36px",
+                    "lineHeight": "48px"
+                  },
+                  "childrenList": [
+                    {
+                      "type": "icon",
+                      "styles": {
+                        "top": "8px",
+                        "left": "10px",
+                        "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/star.svg?alt=media&token=cf271c29-3554-4c2e-8890-ba724f4fd406')",
+                        "backgroundSize": "auto 100%"
+                      }
+                    }
+                  ]
                 },
                 {
                   "type": "section",
@@ -243,7 +176,15 @@
                       "styles": {
                         "width": "30%",
                         "alignSelf": "center"
-                      }
+                      },
+                      "childrenList": [
+                        {
+                          "type": "icon",
+                          "styles": {
+                            "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/star.svg?alt=media&token=cf271c29-3554-4c2e-8890-ba724f4fd406')"
+                          }
+                        }
+                      ]
                     },
                     {
                       "type": "section",
@@ -253,11 +194,12 @@
                           "value": "Подзаголовок",
                           "heading": "h3",
                           "styles": {
-                            "textAlign": "center"
+                            "textAlign": "center",
+                            "alignSelf": "center"
                           }
                         },
                         {
-                          "type": "text",
+                          "type": "description",
                           "styles": {
                             "width": "100%",
                             "marginTop": null,
@@ -276,8 +218,75 @@
                             "fontStyle": "italic"
                           },
                           "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        },
+                        {
+                          "type": "section",
+                          "childrenList": [
+                            {
+                              "type": "button",
+                              "styles": {
+                                "paddingLeft": "50px",
+                                "before": {
+                                  "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/arrow-down.svg?alt=media&token=b9fe4977-406a-44f7-bc78-eb857bfc7edd')"
+                                }
+                              },
+                              "childrenList": [
+                                {
+                                  "type": "icon",
+                                  "styles": {
+                                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/arrow-down.svg?alt=media&token=b9fe4977-406a-44f7-bc78-eb857bfc7edd')"
+                                  }
+                                }
+                              ]
+                                
+                              
+                            }
+                          ]
                         }
                       ]
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "styles": {
+                    "flexDirection": "row",
+                    "justifyContent": "space-between"
+                  },
+                  "childrenList": [
+                    {
+                      "type": "button",
+                      "value": "Описание",
+                      "styles": {
+                        "transitions": [
+                          "transform 200ms",
+                          "background-color 200ms",
+                          "color 200ms"
+                        ],
+                        "hover": {
+                          "transform": "scale(0.8)"
+                        },
+                        "boxShadow": "0px 2px 2px rgba(0, 0, 0, 0.3)"
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "value": "Ceансы",
+                      "styles": {
+                        
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "styles": {
+                        
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "styles": {
+                        
+                      }
                     }
                   ]
                 }
@@ -287,7 +296,19 @@
         },
 
         {
-          "type": "section"
+          "type": "section",
+          "childrenList": [
+            {
+              "type": "description",
+              "styles": {
+                "width": "80%",
+                "marginLeft": "auto",
+                "marginRight": "auto",
+                "marginTop": "50px",
+                "marginBottom": "50px"
+              }
+            }
+          ]
         }
       ]
     }
