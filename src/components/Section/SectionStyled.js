@@ -11,7 +11,7 @@ export const SectionWrapper = styled.div`
         const styles = props.styles ? props.styles : null;
 
         return css`
-            align-self: ${styles && styles.alignSelf || 'flex-start'};
+            align-self: ${styles && styles.alignSelf || ''};
 
             width: ${styles && styles.width || '100%'};
             height: ${styles && styles.height || "auto"};
@@ -51,6 +51,7 @@ export const SectionBody = styled.div`
             flex-direction: ${styles && styles.flexDirection || 'column'};
             justify-content: ${styles && styles.justifyContent || 'flex-start'};
             flex-wrap: ${styles && styles.flexWrap || 'nowrap'};
+            align-items: ${styles && styles.alignItems || 'flex-start'};
 
             min-height: ${styles && styles.minHeight || '50px'};
             min-width: ${styles && styles.minWidth || '50px'};

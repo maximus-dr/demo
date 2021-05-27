@@ -6,7 +6,7 @@ export default function ButtonView(props) {
 
     return (
         <ButtonBody {...props.componentData}>
-            {props.componentData.value || 'Кнопка'}
+            {props.componentData && props.componentData.value || 'Кнопка'}
             {props.children}
         </ButtonBody>
     )

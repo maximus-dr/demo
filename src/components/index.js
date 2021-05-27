@@ -5,7 +5,7 @@ import Page from "./Page/PageView";
 import Section from "./Section/SectionView";
 import Label from "./Label/LabelView";
 import Icon from "./Icon/IconView";
-
+import Link from "./Link/LinkView";
 
 
 export {
@@ -14,6 +14,7 @@ export {
     Icon,
     Image,
     Label,
+    Link,
     Page,
     Section
 }

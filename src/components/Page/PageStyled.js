@@ -26,7 +26,7 @@ export const PageBody = styled.div`
       padding-bottom: ${styles && styles.paddingBottom || '0'};
       padding-left: ${styles && styles.paddingLeft || '0'};
 
-      background-color: ${styles && styles.backgroundColor || 'transparent'};
+      background-color: ${styles && styles.backgroundColor || '#f5f5f5'};
       background-image: ${styles && styles.backgroundImage || 'none'};
       background-size: ${styles && styles.backgroundSize || 'cover'};
     `

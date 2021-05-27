@@ -3,6 +3,7 @@ import DescriptionProvider from './DescriptionProvider';
 import IconProvider from './Icon/IconProvider';
 import ImageProvider from './ImageProvider';
 import LabelProvider from './Label';
+import LinkProvider from './LinkProvider';
 import PageProvider from './PageProvider/index';
 import SectionProvider from './SectionProvider';
 
@@ -15,6 +16,8 @@ export const providerByComponentType = (type) => {
       return DescriptionProvider;
     case 'label':
       return LabelProvider;
+    case 'link':
+      return LinkProvider;
     case 'icon':
       return IconProvider;
     case 'image':
