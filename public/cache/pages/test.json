@@ -768,9 +768,82 @@
           "type": "section",
           "childrenList": [
             {
-              "type": "link",
-              "value": "",
+              "type": "section",
+              "styles": {
+                "paddingRight": "0",
+                "paddingLeft": "0",
+                "paddingTop": "0",
+                "paddingBottom": "0"
+              },
               "childrenList": [
+                {
+                  "type": "link",
+                  "styles": {
+                    "fontSize": "0",
+                    "lineHeight": "0",
+                    "marginRight": "0",
+                    "marginBottom": "0",
+                    "marginLeft": "0",
+                    "marginTop": "0"
+                  },
+                  "childrenList": [
+                    {
+                      "type": "image",
+                      "link": "https://www.film.ru/sites/default/files/movies/posters/49486017-1237181.jpg",
+                      "styles": {
+                        
+                      },
+                      "childrenList": [
+                        {
+                          "type": "label",
+                          "styles": {
+                            "position": "absolute",
+                            "top": "200px",
+                            "left": "50%",
+                            "transform": "translateX(-50%)",
+                            "color": "#ffffff",
+                            "backgroundColor": "rgba(0, 0, 0, 0.7)",
+                            "paddingTop": "15px",
+                            "paddingBottom": "15px",
+                            "paddingLeft": "25px",
+                            "paddingRight": "25px",
+                            "fontSize": "28px",
+                            "width": "320px"
+                          },
+                          "heading": "h2",
+                          "value": "Это изображение - кликабельная ссылка"
+                        },
+    
+                        {
+                          "type": "description",
+                          "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+                          "styles": {
+                            "position": "absolute",
+                            "top": "0",
+                            "color": "#ffffff",
+                            "backgroundColor": "rgba(0, 0, 0, 0.7)"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "type": "description",
+                  "value": "Этот блок перекрывает изображение - ссылку Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+                  "styles": {
+                    "position": "absolute",
+                    "bottom": "0",
+                    "width": "100%",
+                    "color": "#ffffff",
+                    "backgroundColor": "rgba(0, 0, 0, 0.7)",
+                    "paddingBottom": "100px",
+                    "paddingTop": "50px"
+                  }
+                }
+
+                
               ]
             }
           ]

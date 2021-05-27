@@ -10,6 +10,12 @@ export const DescriptionBody = styled.p`
         const styles = props.styles ? props.styles : null;
         
         return css`
+            position: ${styles && styles.position || 'relative'};
+            top: ${styles && styles.top || ''};
+            right: ${styles && styles.right || ''};
+            bottom: ${styles && styles.bottom || ''};
+            left: ${styles && styles.left || ''};
+
             width: ${styles && styles.width || ''};
 
             margin-top: ${styles && styles.marginTop || '0'};
@@ -24,12 +30,13 @@ export const DescriptionBody = styled.p`
 
             text-align: ${styles && styles.textAlign || 'left'};
             text-indent: ${styles && styles.textIndent || ''};
-            font-size: ${styles && styles.fontSize || ''};
-            line-height: ${styles && styles.lineHeight || ''};
+            font-size: ${styles && styles.fontSize || 'medium'};
+            line-height: ${styles && styles.lineHeight || 'normal'};
             font-weight: ${styles && styles.fontWeight || ''};
             font-style: ${styles && styles.fontStyle || ''};
 
             color: ${styles && styles.color || ''};
+            background-color: ${styles && styles.backgroundColor || ''};
         `;
     }}
 `;

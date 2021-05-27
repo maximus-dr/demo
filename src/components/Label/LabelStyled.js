@@ -29,8 +29,8 @@ const commonStyles = css`${props => {
         padding-left: ${styles && styles.paddingLeft || '15px'};
 
         text-align: ${styles && styles.textAlign || 'left'};
-        font-size: ${styles && styles.fontSize || ''};
-        line-height: ${styles && styles.lineHeight || ''};
+        font-size: ${styles && styles.fontSize || 'medium'};
+        line-height: ${styles && styles.lineHeight || 'normal'};
         font-weight: ${styles && styles.fotnWeight || ''};
         font-style: ${styles && styles.fontStyle || ''};
 

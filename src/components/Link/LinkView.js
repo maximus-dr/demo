@@ -6,11 +6,11 @@ import { LinkBody, LinkWrapper } from './LinkStyled'
 export default function LinkView(props) {
     return (
         <LinkWrapper {...props.componentData}>
-            <Link to='/' style={{textDecoration: 'none'}}>
+            <Link to='/link' style={{textDecoration: 'none'}}>
                 <LinkBody {...props.componentData}>
                     {props.componentData && props.componentData.value || 'Link'}
                 </LinkBody>
-                {props.children}
+                    {props.children}
             </Link>
         </LinkWrapper> 
     )

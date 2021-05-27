@@ -16,7 +16,7 @@ const wrapperCommonStyles = (styles) => css`
     border-radius: ${styles && styles.borderRadius || ''};
 
     outline: ${styles && styles.outline || ''};
-    outline-offset: ${styles && styles.outlineStyle || ''};
+    outline-offset: ${styles && styles.outlineStyle || ''};   
 
     background-color: ${styles && styles.backgroundColor || ''};
 
@@ -50,7 +50,7 @@ export const LinkWrapper = styled.div`
         const transitions = getTransitions(props);
 
         return css`
-            ${enableOutlines(false, colors.outline_link)}
+            ${enableOutlines(SHOW_OUTLINES, colors.outline_link)}
             ${wrapperCommonStyles(styles)}
 
             position: ${styles && styles.position || 'relative'};
@@ -60,6 +60,8 @@ export const LinkWrapper = styled.div`
             margin-bottom: ${styles && styles.marginBottom || '5px'};
             margin-left: ${styles && styles.marginLeft || '5px'};
             transition: ${transitions && transitions.join(', ') || ''};
+            font-size: 0;
+            line-height: 0;
 
             &:hover {
                 ${props => {
@@ -95,9 +97,9 @@ export const LinkBody = styled.span`
             text-align: ${styles && styles.textAlign || ''};
             text-transform: ${styles && styles.textTransform || ''};
 
-            font-size: ${styles && styles.fontSize || ''};
+            font-size: ${styles && styles.fontSize || '14px'};
             font-style: ${styles && styles.fontStyle || ''};
-            line-height: ${styles && styles.lineHeight || ''};
+            line-height: ${styles && styles.lineHeight || '26px'};
 
             transition: ${transitions && transitions.join(', ') || ''};
 
