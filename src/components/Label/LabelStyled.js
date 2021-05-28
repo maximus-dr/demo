@@ -29,10 +29,9 @@ const commonStyles = css`${props => {
         padding-left: ${styles && styles.paddingLeft || '15px'};
 
         text-align: ${styles && styles.textAlign || 'left'};
-        font-size: ${styles && styles.fontSize || 'medium'};
-        line-height: ${styles && styles.lineHeight || 'normal'};
         font-weight: ${styles && styles.fotnWeight || ''};
         font-style: ${styles && styles.fontStyle || ''};
+        line-height: ${styles && styles.lineHeight || '1.6'};
 
         color: ${styles && styles.color || ''};
         background-color: ${styles && styles.backgroundColor || ''};
@@ -45,36 +44,80 @@ const commonStyles = css`${props => {
 export const LabelSpan = styled.span`
     ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || 'medium'};
+            line-height: ${styles && styles.lineHeight || 'normal'};
+        `
+    }}
 `;
 
 export const LabelH1 = styled.h1`
     ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || '32px'};
+        `
+    }}
+    
 `;
 
 export const LabelH2 = styled.h2`
     ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || '24px'};
+        `
+    }}
 `;
 
 export const LabelH3 = styled.h3`
     ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || '19px'};
+        `
+    }}
 `;
 
 export const LabelH4 = styled.h4`
     ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || ''};
+        `
+    }}
 `;
 
 export const LabelH5 = styled.h5`
     ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || ''};
+        `
+    }}
 `;
 
 export const LabelH6 = styled.h6`
     ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || ''};
+        `
+    }}
 `;
 
 export const LabelWarning = styled.span`

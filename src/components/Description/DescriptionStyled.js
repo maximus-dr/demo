@@ -30,8 +30,8 @@ export const DescriptionBody = styled.p`
 
             text-align: ${styles && styles.textAlign || 'left'};
             text-indent: ${styles && styles.textIndent || ''};
-            font-size: ${styles && styles.fontSize || 'medium'};
-            line-height: ${styles && styles.lineHeight || 'normal'};
+            font-size: ${styles && styles.fontSize || ''};
+            line-height: ${styles && styles.lineHeight || ''};
             font-weight: ${styles && styles.fontWeight || ''};
             font-style: ${styles && styles.fontStyle || ''};
 

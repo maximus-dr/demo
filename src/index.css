@@ -9,5 +9,7 @@ body {
 }
 
 body {
-  font: 400 16px/26px Ubuntu, Roboto, Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
 }

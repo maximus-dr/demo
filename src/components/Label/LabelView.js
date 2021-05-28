@@ -8,7 +8,7 @@ export default function LabelView(props) {
 
     const label = (heading) => {
 
-        const text = componentData.value || 'Заголовок';
+        const text = componentData.value || 'Label';
 
         switch(heading) {
             case 'h1':

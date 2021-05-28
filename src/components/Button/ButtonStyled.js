@@ -2,20 +2,19 @@ import styled, {css} from 'styled-components';
 
 
 const commonStyles = (styles) => css`
-    font-weight: ${styles && styles.fotnWeight || 'bold'};
+    font-weight: ${styles && styles.fotnWeight || '500'};
+    font-family: inherit;
 
     outline: ${styles && styles.outline || 'none'};
-    border: ${styles && styles.border || '1px solid #000000'};
+    border: ${styles && styles.border || 'none'};
     border-top: ${styles && styles.borderTop || ''};
     border-right: ${styles && styles.borderRight || ''};
     border-bottom: ${styles && styles.borderBottom || ''};
     border-left: ${styles && styles.borderLeft || ''};
     border-color: ${styles && styles.borderColor || ''};
-    border-radius: ${styles && styles.borderRadius || '0'};
+    border-radius: ${styles && styles.borderRadius || '4px'};
 
-    box-shadow: ${styles && styles.boxShadow || ''};
-
-    opacity: ${styles && styles.opacity || ''};
+    box-shadow: ${styles && styles.boxShadow || '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)'};
 
     transform: ${styles && styles.transform || ''}; 
 `;
@@ -23,9 +22,6 @@ const commonStyles = (styles) => css`
 
 // для :hover и :active задается свой styles, соответствующий содержимому props.styles.hover и props.styles.active
 export const ButtonBody = styled.button`
-
-    border: none;
-    background: none;
 
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -45,42 +41,44 @@ export const ButtonBody = styled.button`
             width: ${styles && styles.width || ''};
             max-width: ${styles && styles.maxWidth || ''};
 
-            margin-top: ${styles && styles.marginTop || '0'};
-            margin-right: ${styles && styles.marginRight || '0'};
-            margin-bottom: ${styles && styles.marginBottom || '0'};
-            margin-left: ${styles && styles.marginLeft || '0'};
+            margin-top: ${styles && styles.marginTop || '5px'};
+            margin-right: ${styles && styles.marginRight || '5px'};
+            margin-bottom: ${styles && styles.marginBottom || '5px'};
+            margin-left: ${styles && styles.marginLeft || '5px'};
 
-            padding-top: ${styles && styles.paddingTop || '6px'};
-            padding-right: ${styles && styles.paddingRight || '16px'};
-            padding-bottom: ${styles && styles.paddingBottom || '6px'};
-            padding-left: ${styles && styles.paddingLeft || '16px'};
+            padding-top: ${styles && styles.paddingTop || '5px'};
+            padding-right: ${styles && styles.paddingRight || '15px'};
+            padding-bottom: ${styles && styles.paddingBottom || '5px'};
+            padding-left: ${styles && styles.paddingLeft || '15px'};
 
-            color: ${styles && styles.color || 'rgba(0, 0, 0, 0.7)'};
-            background-color: ${styles && styles.backgroundColor || ''};
+            color: ${styles && styles.color || 'rgba(0, 0, 0, 0.87)'};
+            background-color: ${styles && styles.backgroundColor || '#e0e0e0'};
             
             font-size: ${styles && styles.fontSize || '14px'};
             text-align: ${styles && styles.textAlign || 'center'};
-            text-transform: capitalize;
+            text-transform: ${styles && styles.textTransform || 'uppercase'};
 
             font-style: ${styles && styles.fontStyle || ''};
-            line-height: ${styles && styles.lineHeight || ''};
+            line-height: ${styles && styles.lineHeight || '1.8'};
 
             cursor: ${styles && styles.cursor || 'pointer'};
 
             transform: ${styles && styles.transform || ''};
-
-            transition: ${transitions && transitions.join(', ') || 'background-color 200ms, color 200ms'};
+            opacity: ${styles && styles.opacity || ''};
+            transition: ${transitions && transitions.join(', ') || 'background-color 200ms, color 200ms, opacity 200ms, transform 200ms'};
 
             &:hover {
                 ${props => {
                     const styles = props.styles && props.styles.hover ? props.styles.hover : null;
 
                     return css`
-                        background-color: ${styles && styles.backgroundColor || '#000000'};
+                        ${commonStyles(styles)}
+
+                        background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.7)'};
                         color: ${styles && styles.color || '#ffffff'};
                         border-color: ${styles && styles.borderColor || ''};
-
-                        ${commonStyles(styles)}
+                        transform: ${styles && styles.transform || ''};
+                        opacity: ${styles && styles.opacity || ''};
                     `
                 }}
             }
@@ -91,6 +89,11 @@ export const ButtonBody = styled.button`
 
                     return css`
                         ${commonStyles(styles)}
+                        background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.7)'};
+                        color: ${styles && styles.color || '#ffffff'};
+                        border-color: ${styles && styles.borderColor || ''};
+                        transform: ${styles && styles.transform || ''};
+                        opacity: ${styles && styles.opacity || '0.7'};
                     `;
                 }}
             }

@@ -33,6 +33,8 @@ export const SectionWrapper = styled.div`
             border-bottom: ${styles && styles.borderBottom || ''};
             border-left: ${styles && styles.borderLeft || ''};
             border-radius: ${styles && styles.borderRadius || '0'};
+
+            box-shadow: ${styles && styles.boxShadow || '0'};
         `
     }}
 `;

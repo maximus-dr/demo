@@ -99,7 +99,7 @@ export const LinkBody = styled.span`
 
             font-size: ${styles && styles.fontSize || '14px'};
             font-style: ${styles && styles.fontStyle || ''};
-            line-height: ${styles && styles.lineHeight || '26px'};
+            line-height: ${styles && styles.lineHeight || '1.8'};
 
             transition: ${transitions && transitions.join(', ') || ''};
 

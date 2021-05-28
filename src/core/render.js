@@ -6,6 +6,8 @@ import { providerByComponentType } from '../providers'
 // рекурсивно перебирает childrenList в структуре и возвращает массив провайдеров по type
 export function getProviders(props) {
 
+    if (!props.component) return;
+
     const getChildrenProviders = (props) => {
         return (
         props.component.childrenList &&

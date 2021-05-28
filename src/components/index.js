@@ -6,6 +6,7 @@ import Section from "./Section/SectionView";
 import Label from "./Label/LabelView";
 import Icon from "./Icon/IconView";
 import Link from "./Link/LinkView";
+import Input from "./Input/InputView";
 
 
 export {
@@ -13,6 +14,7 @@ export {
     Description,
     Icon,
     Image,
+    Input,
     Label,
     Link,
     Page,

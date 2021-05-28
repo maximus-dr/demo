@@ -2,6 +2,7 @@ import ButtonProvider from './Button';
 import DescriptionProvider from './DescriptionProvider';
 import IconProvider from './Icon/IconProvider';
 import ImageProvider from './ImageProvider';
+import InputProvider from './InputProvider';
 import LabelProvider from './Label';
 import LinkProvider from './LinkProvider';
 import PageProvider from './PageProvider/index';
@@ -14,6 +15,8 @@ export const providerByComponentType = (type) => {
       return ButtonProvider;
     case 'description':
       return DescriptionProvider;
+    case 'input':
+      return InputProvider;
     case 'label':
       return LabelProvider;
     case 'link':
