@@ -1,4 +1,6 @@
 import styled, {css} from 'styled-components';
+import { colors } from '../../core/variables';
+import { enableOutlines } from './../../core/utils';
 
 
 const commonStyles = (styles) => css`
@@ -29,6 +31,7 @@ export const ButtonBody = styled.button`
 
         return css`
             ${commonStyles(styles)}
+            ${props => enableOutlines(props.showOutlines, colors.outline_button)}
 
             position: ${styles && styles.position || 'relative'};
             top: ${styles && styles.position || ''};
@@ -53,8 +56,11 @@ export const ButtonBody = styled.button`
 
             color: ${styles && styles.color || 'rgba(0, 0, 0, 0.87)'};
             background-color: ${styles && styles.backgroundColor || '#e0e0e0'};
+            background-image: ${styles && styles.backgroundImage || ''};
+            background-size: ${styles && styles.backgroundSize || ''};
+            backgground-position: ${styles && styles.backgroundPosition || ''};
             
-            font-size: ${styles && styles.fontSize || '14px'};
+            font-size: ${styles && styles.fontSize || '13px'};
             text-align: ${styles && styles.textAlign || 'center'};
             text-transform: ${styles && styles.textTransform || 'uppercase'};
 

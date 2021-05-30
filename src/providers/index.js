@@ -7,6 +7,7 @@ import LabelProvider from './Label';
 import LinkProvider from './LinkProvider';
 import PageProvider from './PageProvider/index';
 import SectionProvider from './SectionProvider';
+import TestProvider from './TestProvider/index';
 
 
 export const providerByComponentType = (type) => {
@@ -29,6 +30,8 @@ export const providerByComponentType = (type) => {
       return PageProvider;
     case 'section':
       return SectionProvider;
+    case 'test':
+      return TestProvider;
     default:
       return null
   }

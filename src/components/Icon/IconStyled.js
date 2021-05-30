@@ -1,11 +1,10 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config/config';
 import { enableOutlines } from '../../core/utils';
 import { colors } from '../../core/variables';
 
 export const IconBody = styled.div`
 
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_icon)}
+    ${props => enableOutlines(props.showOutlines, colors.outline_icon)}
 
     position: absolute;
     max-height: 100%;
@@ -25,7 +24,7 @@ export const IconBody = styled.div`
             
             background-repeat: ${styles && styles.backgroundRepeat || 'no-repeat'};
             background-color: ${styles && styles.backgroundColor || ''};
-            background-size: ${styles && styles.backgroundSize || '50% auto'};
+            background-size: ${styles && styles.backgroundSize || '100% auto'};
             background-position-x: ${styles && styles.backgroundPositionX || '50%'};
             background-position-y: ${styles && styles.backgroundPositionY || '50%'};
             background-image: ${styles && styles.backgroundImage || 'none'};

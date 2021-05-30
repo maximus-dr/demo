@@ -1,11 +1,10 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
 
 export const DescriptionBody = styled.p`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_text)}
+    ${props => enableOutlines(props.showOutlines, colors.outline_text)}
     ${props => {
         const styles = props.styles ? props.styles : null;
         

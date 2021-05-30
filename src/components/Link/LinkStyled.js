@@ -1,5 +1,4 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config/config';
 import { getActiveStyles, getHoverStyles, getStyles, getTransitions } from '../../core/functions/styles';
 import { enableOutlines } from '../../core/utils';
 import { colors } from '../../core/variables';
@@ -19,6 +18,10 @@ const wrapperCommonStyles = (styles) => css`
     outline-offset: ${styles && styles.outlineStyle || ''};   
 
     background-color: ${styles && styles.backgroundColor || ''};
+    background-image: ${styles && styles.backgroundImage || ''};
+    background-repeat: no-repeat;
+    background-size: ${styles && styles.backgroundSize || '28px auto'};
+    background-position: ${styles && styles.backgroundPosition || '10px 50%'};
 
     cursor: ${styles && styles.cursor || ''};
 
@@ -50,7 +53,7 @@ export const LinkWrapper = styled.div`
         const transitions = getTransitions(props);
 
         return css`
-            ${enableOutlines(SHOW_OUTLINES, colors.outline_link)}
+            ${props => enableOutlines(props.showOutlines, colors.outline_link)}
             ${wrapperCommonStyles(styles)}
 
             position: ${styles && styles.position || 'relative'};

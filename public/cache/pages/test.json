@@ -1,12 +1,12 @@
 {
-  "type": "page",
+  "typeName": "page",
   "styles": {
 
   },
   "childrenList": [
 
     {
-      "type": "section",
+      "typeName": "section",
       "styles": {
         "minHeight": "100vh",
         "width": "640px",
@@ -14,10 +14,174 @@
         "marginRight": "auto"
       },
       "childrenList": [
+
+        {
+          "typeName": "section",
+          "styles": {
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+          },
+          "childrenList": [
+            {
+              "typeName": "label",
+              "heading": "h2",
+              "value": "Section"
+            }
+          ]
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+            "backgroundImage": "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)"
+          }
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+            "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+          }
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+            "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')",
+            "overlay": "rgba(0, 0, 0, 0.6)"
+          }
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
+            "width": "auto",
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+          },
+
+          "childrenList": [
+            {
+              "typeName": "label",
+              "heading": "h2",
+              "value": "Label",
+              "styles": {
+                "marginBottom": "30px"
+              }
+            },
+
+            {
+              "typeName": "label",
+              "heading": "h1",
+              "value": "Heading 1"
+            },
+
+            {
+              "typeName": "label",
+              "heading": "h2",
+              "value": "Heading2"
+            },
+
+            {
+              "typeName": "label",
+              "heading": "h3",
+              "value": "Heading3"
+            },
+
+            {
+              "typeName": "label",
+              "heading": "h4",
+              "value": "Heading4"
+            },
+
+            {
+              "typeName": "label",
+              "heading": "h5",
+              "value": "Heading5"
+            },
+
+            {
+              "typeName": "label",
+              "heading": "h6",
+              "value": "Heading6",
+              "styles": {
+                "marginBottom": "15px"
+              }
+            },
+
+            {
+              "typeName": "label",
+              "value": "Default"
+            }
+          ]
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+          },
+
+          "childrenList": [
+            {
+              "typeName": "label",
+              "heading": "h2",
+              "value": "Description"
+            },
+
+            {
+              "typeName": "description"
+            }
+          ]
+        },
         
         {
-          "type": "section",
+          "typeName": "section",
           "styles": {
+            "width": "auto",
             "backgroundColor": "#ffffff",
             "paddingTop": "15px",
             "paddingRight": "15px",
@@ -30,46 +194,35 @@
           "childrenList": [
             
             {
-              "type": "label",
+              "typeName": "label",
               "heading": "h2",
               "value": "Link",
               "styles": {
-                "marginBottom": "30px"
               }
             },
 
             {
-              "type": "label",
-              "value": "Text",
-              "heading": "h3",
-              "styles": {
-                "color":"rgba(0, 0, 0, 0.4)"
-              }
-            },
-
-            {
-              "type": "section",
+              "typeName": "section",
               "styles": {
                 "flexDirection": "row",
-                "alignItems": "baseline",
-                "marginBottom": "15px"
+                "alignItems": "baseline"
               },
               "childrenList": [
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "default"
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "link",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.87)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -94,14 +247,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "primary",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "#1976d2",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -123,14 +276,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "secondary",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(220, 0, 78)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -153,13 +306,13 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "disabled",
                   "styles": {
                     "textDecoration": "none",
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.26)",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
     
                     "hover": {
                       "textDecoration": "none",
@@ -176,14 +329,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "link",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.87)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -207,7 +360,7 @@
                   },
                   "childrenList": [
                     {
-                      "type": "icon",
+                      "typeName": "icon",
                       "styles": {
                         "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
                         "backgroundSize": "86% auto",
@@ -222,32 +375,22 @@
             },
 
             {
-              "type": "label",
-              "value": "Outlined",
-              "heading": "h3",
-              "styles": {
-                "color":"rgba(0, 0, 0, 0.4)"
-              }
-            },
-
-            {
-              "type": "section",
+              "typeName": "section",
               "styles": {
                 "flexDirection": "row",
-                "alignItems": "baseline",
-                "marginBottom": "15px"
+                "alignItems": "baseline"
               },
               "childrenList": [
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "link",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.87)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -272,14 +415,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "primary",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "#1976d2",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -301,14 +444,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "secondary",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(220, 0, 78)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -332,13 +475,13 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "disabled",
                   "styles": {
                     "textDecoration": "none",
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.26)",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "border": "1px solid rgba(0, 0, 0, 0.12)",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
@@ -361,14 +504,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "link",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.87)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -392,7 +535,7 @@
                   },
                   "childrenList": [
                     {
-                      "type": "icon",
+                      "typeName": "icon",
                       "styles": {
                         "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
                         "backgroundSize": "86% auto",
@@ -406,16 +549,7 @@
             },
 
             {
-              "type": "label",
-              "value": "Contained",
-              "heading": "h3",
-              "styles": {
-                "color": "rgba(0, 0, 0, 0.4)"
-              }
-            },
-
-            {
-              "type": "section",
+              "typeName": "section",
               "styles": {
                 "flexDirection": "row",
                 "alignItems": "baseline"
@@ -423,14 +557,14 @@
               "childrenList": [
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "link",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.87)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -456,14 +590,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "primary",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "#ffffff",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -489,14 +623,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "secondary",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "#ffffff",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -522,13 +656,13 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "disabled",
                   "styles": {
                     "textDecoration": "none",
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.26)",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -551,14 +685,14 @@
                 },
 
                 {
-                  "type": "link",
+                  "typeName": "link",
                   "value": "upload",
                   "styles": {
                     "textTransform": "uppercase",
                     "color": "rgba(0, 0, 0, 0.87)",
                     "textDecoration": "none",
                     "fontWeight": "500",
-                    "fontSize": "14px",
+                    "fontSize": "13px",
                     "paddingTop": "5px",
                     "paddingRight": "15px",
                     "paddingBottom": "5px",
@@ -567,6 +701,7 @@
                     "transitions": ["background-color 200ms, box-shadow 200ms"],
                     "backgroundColor": "#e0e0e0",
                     "boxShadow": "0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
+                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
     
                     "hover": {
                       "color": "rgba(0, 0, 0, 0.87)",
@@ -582,15 +717,7 @@
                     }
                   },
                   "childrenList": [
-                    {
-                      "type": "icon",
-                      "styles": {
-                        "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
-                        "backgroundSize": "86% auto",
-                        "top": "3px",
-                        "left": "7px"
-                      }
-                    }
+
                   ]
                 }
               ]
@@ -599,8 +726,9 @@
         },
 
         {
-          "type": "section",
+          "typeName": "section",
           "styles": {
+            "width": "auto",
             "backgroundColor": "#ffffff",
             "paddingTop": "15px",
             "paddingRight": "15px",
@@ -613,7 +741,7 @@
           "childrenList": [
 
             {
-              "type": "label",
+              "typeName": "label",
               "heading": "h2",
               "value": "Button",
               "styles": {
@@ -622,19 +750,22 @@
             },
 
             {
-              "type": "section",
+              "typeName": "section",
               "styles": {
                 "flexDirection": "row"
               },
               "childrenList": [
                 
                 {
-                  "type": "button",
-                  "value": "default"
+                  "typeName": "button",
+                  "value": "default",
+                  "action": {
+                    "onClick": "sayHello"
+                  }
                 },
 
                 {
-                  "type": "button",
+                  "typeName": "button",
                   "value": "Primary",
                   "styles": {
                     "color": "#ffffff",
@@ -656,7 +787,7 @@
                 },
 
                 {
-                  "type": "button",
+                  "typeName": "button",
                   "value": "Secondary",
                   "styles": {
                     "color": "#ffffff",
@@ -678,7 +809,7 @@
                 },
 
                 {
-                  "type": "button",
+                  "typeName": "button",
                   "value": "Disabled",
                   "styles": {
                     "color": "rgba(0,0,0,0.26)",
@@ -705,8 +836,9 @@
         },
 
         {
-          "type": "section",
+          "typeName": "section",
           "styles": {
+            "width": "auto",
             "backgroundColor": "#ffffff",
             "paddingTop": "15px",
             "paddingRight": "15px",
@@ -718,19 +850,187 @@
           },
           "childrenList": [
             {
-              "type": "label",
+              "typeName": "label",
               "heading": "h2",
               "value": "Input"
             },
             {
-              "type": "section",
+              "typeName": "section",
+              "styles": {
+                "flexDirection": "row"  
+              },
               "childrenList": [
                 {
-                  "type": "input",
-                  "inputType": "text",
-                  "value": "Текстовый инпут"
+                  "typeName": "section",
+                  "styles": {
+                    "marginRight": "30px"
+                  },
+                  "childrenList": [
+                    {
+                      "typeName": "input",
+                      "value": "Label",
+                      "attrs": {
+                        "type": "text"
+                      },
+                      "styles": {
+                        "marginBottom": "5px"
+                      }
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "email",
+                        "placeholder": "email"
+                      },
+                      "value": "Email"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "password",
+                        "placeholder": "password"
+                      },
+                      "value": "Password"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "tel",
+                        "placeholder": "tel"
+                      },
+                      "value": "Tel"
+                    }
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "childrenList": [
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "checkbox"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Checkbox"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "radio",
+                        "name": "test"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Radio1"
+                    },
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "radio",
+                        "name": "test"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Radio1"
+                    },
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "radio",
+                        "name": "test"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Radio1"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "range"
+                      },
+                      "value": "Range",
+                      "styles": {
+    
+                      }
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "submit",
+                        "value": "Submit"
+                      }
+                    }
+                  ]
                 }
               ]
+            }
+          ]
+        },
+
+
+        {
+          "typeName": "section",
+          "styles": {
+            "width": "100%",
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+          },
+          "childrenList": [
+            {
+              "typeName": "label",
+              "heading": "h2",
+              "value": "Image"
+            },
+
+            {
+              "typeName": "image",
+              "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg"
+            }
+          ]
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
+            "width": "100%",
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+          },
+
+          "childrenList": [
+
+            {
+              "typeName": "label",
+              "heading": "h2",
+              "value": "Icon"
+            },
+
+            {
+              "typeName": "icon"
             }
           ]
         }

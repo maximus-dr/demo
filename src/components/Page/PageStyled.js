@@ -1,12 +1,11 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
 
 export const PageBody = styled.div`
 
-  ${enableOutlines(SHOW_OUTLINES, colors.outline_page)}
+  ${props => enableOutlines(props.showOutlines, colors.outline_page)}
 
   display: flex;
   height: 100%;

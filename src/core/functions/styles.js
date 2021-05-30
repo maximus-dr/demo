@@ -10,8 +10,16 @@ function getActiveStyles(props) {
     return props.styles && props.styles.active ? props.styles.active : null;
 }
 
+function getFocusStyles(props) {
+    return props.styles && props.styles.focus ? props.styles.focus : null;
+}
+
 function getTransitions(props) {
     return props.styles && props.styles.transitions && props.styles.transitions.length ? props.styles.transitions : null;
+}
+
+function getAttrs(props) {
+    return props.attrs ? props.attrs : null;
 }
 
 
@@ -19,5 +27,7 @@ export {
     getStyles,
     getHoverStyles,
     getActiveStyles,
-    getTransitions
+    getTransitions,
+    getAttrs,
+    getFocusStyles
 }

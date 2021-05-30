@@ -31,7 +31,7 @@ export const ImageBody = styled.img.attrs(props => {
         height: styles && styles.height ? styles.height : 'auto'
     })
 })`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_image)}
+    ${props => enableOutlines(props.showOutlines, colors.outline_image)}
     display: block;
     
     ${props => {

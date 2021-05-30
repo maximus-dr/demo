@@ -1,4 +1,4 @@
-export const SHOW_OUTLINES = true;
+export const SHOW_OUTLINES = false;
 
 // изображения для тестов
 'https://www.film.ru/sites/default/files/movies/posters/49486017-1237181.jpg';

@@ -1,5 +1,4 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
@@ -8,6 +7,8 @@ const commonStyles = css`${props => {
     const styles = props.styles ? props.styles : null;
 
     return css`
+        ${props => enableOutlines(props.showOutlines, colors.outline_label)}
+
         position: ${styles && styles.position || 'relative'};
         top: ${styles && styles.top || ''};
         right: ${styles && styles.right || ''};
@@ -42,7 +43,6 @@ const commonStyles = css`${props => {
 
 
 export const LabelSpan = styled.span`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -54,7 +54,6 @@ export const LabelSpan = styled.span`
 `;
 
 export const LabelH1 = styled.h1`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -66,7 +65,6 @@ export const LabelH1 = styled.h1`
 `;
 
 export const LabelH2 = styled.h2`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -77,7 +75,6 @@ export const LabelH2 = styled.h2`
 `;
 
 export const LabelH3 = styled.h3`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -88,7 +85,6 @@ export const LabelH3 = styled.h3`
 `;
 
 export const LabelH4 = styled.h4`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -99,7 +95,6 @@ export const LabelH4 = styled.h4`
 `;
 
 export const LabelH5 = styled.h5`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -110,7 +105,6 @@ export const LabelH5 = styled.h5`
 `;
 
 export const LabelH6 = styled.h6`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_label)}
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -118,9 +112,4 @@ export const LabelH6 = styled.h6`
             font-size: ${styles && styles.fontSize || ''};
         `
     }}
-`;
-
-export const LabelWarning = styled.span`
-    font-size: 12px;
-    color: red;
 `;

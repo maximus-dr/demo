@@ -1,11 +1,11 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/utils';
 
 
 export const SectionWrapper = styled.div`
-    ${enableOutlines(SHOW_OUTLINES, colors.outline_section)}
+
+    ${props => enableOutlines(props.showOutlines, colors.outline_section)}
     
     ${props => {
         const styles = props.styles ? props.styles : null;
@@ -14,8 +14,6 @@ export const SectionWrapper = styled.div`
             align-self: ${styles && styles.alignSelf || ''};
 
             width: ${styles && styles.width || '100%'};
-            height: ${styles && styles.height || "auto"};
-            min-height: ${styles && styles.minHeight || '50px'};
             min-width: ${styles && styles.minWidth || '50px'};
 
             margin-top: ${styles && styles.marginTop || '0'};
@@ -35,11 +33,13 @@ export const SectionWrapper = styled.div`
             border-radius: ${styles && styles.borderRadius || '0'};
 
             box-shadow: ${styles && styles.boxShadow || '0'};
+            overflow: ${styles && styles.overflow || 'hidden'};
         `
     }}
 `;
 
 export const SectionBody = styled.div`
+
     background-repeat: no-repeat;
     width: 100%;
 
@@ -55,13 +55,20 @@ export const SectionBody = styled.div`
             flex-wrap: ${styles && styles.flexWrap || 'nowrap'};
             align-items: ${styles && styles.alignItems || 'flex-start'};
 
-            min-height: ${styles && styles.minHeight || '50px'};
-            min-width: ${styles && styles.minWidth || '50px'};
+            height: ${styles && styles.height || "auto"};
+            min-height: ${styles && styles.minHeight || '100px'};
 
             padding-top: ${styles && styles.paddingTop || '10px'};
             padding-right: ${styles && styles.paddingRight || '10px'};
             padding-bottom: ${styles && styles.paddingBottom || '10px'};
-            padding-left: ${styles && styles.paddingLeft || '10px'}; 
+            padding-left: ${styles && styles.paddingLeft || '10px'};
+
+            border-radius: ${styles && styles.borderRadius || '0'};
+
+            background-color: ${styles && styles.overlay || ''};
+            background-image: ${styles && styles.overlayImage || ''};
+
+            opacity: ${styles && styles.overlayOpacity || ''};
         `
     }}
 `;

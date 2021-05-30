@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Outlines } from './context/outlinesContext';
 import { renderComponents } from './core/render';
 
 
 
-
 export default function App(props) {
+  const components = renderComponents(props.routes);
+
   return (
-    <Router>
-      { renderComponents(props.routes) }
+    <>
+      <Router>
+        <Outlines>
+          { components }
+        </Outlines>
+        
+
+      
 
       <Switch>
         <Route exact path="/about">
@@ -16,5 +24,6 @@ export default function App(props) {
         </Route>
       </Switch>
     </Router>
+    </>
   )
 }
