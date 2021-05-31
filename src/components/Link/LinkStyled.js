@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import { getActiveStyles, getHoverStyles, getStyles, getTransitions } from '../../core/functions/styles';
-import { enableOutlines } from '../../core/utils';
+import { enableOutlines } from '../../core/functions/outlines';
 import { colors } from '../../core/variables';
 
 

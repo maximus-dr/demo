@@ -1,6 +1,6 @@
 
 import { nanoid } from 'nanoid';
-import { providerByComponentType } from '../providers'
+import { providerByComponentType } from '../../providers'
 
 
 // рекурсивно перебирает childrenList в структуре и возвращает массив провайдеров по typeName

@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
-import { enableOutlines } from '../../core/utils';
+import { enableOutlines } from '../../core/functions/outlines';
 
 export const ImageWrapper = styled.div`
     ${props => {

@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import { colors } from '../../core/variables';
-import { enableOutlines } from '../../core/utils';
+import { enableOutlines } from '../../core/functions/outlines';
+import { getStyles } from '../../core/functions/styles';
 
 
 export const SectionWrapper = styled.div`
@@ -8,7 +9,7 @@ export const SectionWrapper = styled.div`
     ${props => enableOutlines(props.showOutlines, colors.outline_section)}
     
     ${props => {
-        const styles = props.styles ? props.styles : null;
+        const styles = getStyles(props.componentData);
 
         return css`
             align-self: ${styles && styles.alignSelf || ''};
@@ -20,10 +21,6 @@ export const SectionWrapper = styled.div`
             margin-right: ${styles && styles.marginRight || '0'};
             margin-bottom: ${styles && styles.marginBottom || '0'};
             margin-left: ${styles && styles.marginLeft || '0'};
-
-            background-image: ${styles && styles.backgroundImage || 'none'};
-            background-size: ${styles && styles.backgroundSize || 'cover'};
-            background-color: ${styles && styles.backgroundColor || 'transparent'};
 
             border: ${styles && styles.border || 'none'};
             border-top: ${styles && styles.borderTop || ''};
@@ -38,13 +35,28 @@ export const SectionWrapper = styled.div`
     }}
 `;
 
+export const SectionBackground = styled.div`
+    width: 100%;
+    height: 100%;
+
+    ${props => {
+        const styles = getStyles(props.componentData);
+        return css`
+            background-image: ${styles && styles.backgroundImage || 'none'};
+            background-size: ${styles && styles.backgroundSize || 'cover'};
+            background-color: ${styles && styles.backgroundColor || 'transparent'};
+            filter: ${styles && styles.filter || ''};
+        `;
+    }}
+`;
+
 export const SectionBody = styled.div`
 
     background-repeat: no-repeat;
     width: 100%;
 
     ${props => {
-        const styles = props.styles ? props.styles : null;
+        const styles = getStyles(props.componentData);
 
         return css`
             display: ${styles && styles.display || 'flex'};

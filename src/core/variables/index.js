@@ -16,4 +16,5 @@ export const colors = {
     outline_link: '#ffeb3b',
     outline_button: '#bcaaa4',
     outline_input: 'red',
+    outline_form: '#0277bd'
 }

@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { enableOutlines } from '../../core/utils';
+import { enableOutlines } from '../../core/functions/outlines';
 import { colors } from '../../core/variables';
 
 export const IconBody = styled.div`

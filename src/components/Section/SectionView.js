@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { SectionWrapper, SectionBody } from './SectionStyled'
+import { SectionWrapper, SectionBody, SectionBackground } from './SectionStyled'
 import { OutlinesContext } from './../../context/outlinesContext';
 
 
@@ -8,10 +8,12 @@ export default function Section(props) {
     const outlines = useContext(OutlinesContext);
 
     return (
-        <SectionWrapper {...props.componentData} showOutlines={outlines}>
-            <SectionBody {...props.componentData}>
-                {props.children}
-            </SectionBody>
+        <SectionWrapper componentData={props.componentData} showOutlines={outlines}>
+            <SectionBackground componentData={props.componentData}>
+                <SectionBody componentData={props.componentData}>
+                    {props.children}
+                </SectionBody>
+            </SectionBackground>
         </SectionWrapper>
     )
 }

@@ -1,13 +1,13 @@
-import ButtonProvider from './Button';
+import ButtonProvider from './ButtonProvider';
 import DescriptionProvider from './DescriptionProvider';
-import IconProvider from './Icon/IconProvider';
+import IconProvider from './IconProvider/IconProvider';
 import ImageProvider from './ImageProvider';
 import InputProvider from './InputProvider';
-import LabelProvider from './Label';
+import LabelProvider from './LabelProvider';
 import LinkProvider from './LinkProvider';
 import PageProvider from './PageProvider/index';
 import SectionProvider from './SectionProvider';
-import TestProvider from './TestProvider/index';
+import FormProvider from './FormProvider';
 
 
 export const providerByComponentType = (type) => {
@@ -16,6 +16,8 @@ export const providerByComponentType = (type) => {
       return ButtonProvider;
     case 'description':
       return DescriptionProvider;
+    case 'form':
+      return FormProvider;
     case 'input':
       return InputProvider;
     case 'label':
@@ -30,8 +32,6 @@ export const providerByComponentType = (type) => {
       return PageProvider;
     case 'section':
       return SectionProvider;
-    case 'test':
-      return TestProvider;
     default:
       return null
   }

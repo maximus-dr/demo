@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import { colors } from '../../core/variables';
-import { enableOutlines } from './../../core/utils';
+import { enableOutlines } from '../../core/functions/outlines';
 
 
 const commonStyles = (styles) => css`

@@ -16,6 +16,82 @@
       "childrenList": [
 
         {
+          "typeName": "form",
+          "attrs": {
+          },
+          "childrenList": [
+            {
+              "typeName": "label",
+              "value": "Form",
+              "heading": "h2",
+              "styles": {
+                "marginBottom": "15px"
+              }
+            },
+            {
+              "typeName": "input",
+              "value": "Email",
+              "attrs": {
+                "type": "email",
+                "id": "email-input"
+              },
+              "styles": {
+                "flexDirection": "column-reverse"
+              },
+              "childrenList": [
+                {
+                  "typeName": "label",
+                  "heading": "label",
+                  "value": "Email",
+                  "attrs": {
+                    "for": "email-input"
+                  },
+                  "styles": {
+                    "marginBottom": "5px"
+                  }
+                }
+
+              ]
+            },
+            {
+              "typeName": "input",
+              "value": "Password",
+              "attrs": {
+                "type": "password",
+                "id": "password-input"
+              },
+              "styles": {
+                "flexDirection": "column-reverse"
+              },
+              "childrenList": [
+                {
+                  "typeName": "label",
+                  "heading": "label",
+                  "value": "Password",
+                  "attrs": {
+                    "for": "password-input"
+                  },
+                  "styles": {
+                    "marginBottom": "5px"
+                  }
+                }
+              ]
+            },
+
+            {
+              "typeName": "input",
+              "attrs": {
+                "type": "submit"
+              },
+              "styles": {
+                "marginTop": "50px"
+              }
+            }
+          ]
+          
+        },
+        
+        {
           "typeName": "section",
           "styles": {
             "backgroundColor": "#ffffff",
@@ -85,6 +161,22 @@
         {
           "typeName": "section",
           "styles": {
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+            "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')",
+            "filter": "blur(24px)"
+          }
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
             "width": "auto",
             "backgroundColor": "#ffffff",
             "paddingTop": "15px",
@@ -143,6 +235,11 @@
               "styles": {
                 "marginBottom": "15px"
               }
+            },
+
+            {
+              "typeName": "label",
+              "heading": "label"
             },
 
             {
@@ -880,6 +977,7 @@
                     {
                       "typeName": "input",
                       "attrs": {
+                        "id": "auth-email",
                         "type": "email",
                         "placeholder": "email"
                       },

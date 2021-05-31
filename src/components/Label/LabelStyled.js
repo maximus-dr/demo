@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import { colors } from '../../core/variables';
-import { enableOutlines } from '../../core/utils';
+import { enableOutlines } from '../../core/functions/outlines';
 
 
 const commonStyles = css`${props => {
@@ -111,5 +111,15 @@ export const LabelH6 = styled.h6`
         return css`
             font-size: ${styles && styles.fontSize || ''};
         `
+    }}
+`;
+
+export const Label = styled.label`
+    ${commonStyles}
+    ${props => {
+        const styles = props.styles ? props.styles : null;
+        return css`
+            font-size: ${styles && styles.fontSize || ''};
+        `;
     }}
 `;
