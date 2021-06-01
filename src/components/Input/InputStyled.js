@@ -21,7 +21,7 @@ export const InputWrapper = styled.div`
 
         return css`
             flex-wrap: ${styles && styles.flexWrap || 'wrap'};
-            flex-direction: ${styles && styles.flexDirection || 'column'};
+            flex-direction: ${styles && styles.flexDirection || ''};
             justify-content: ${styles && styles.justifyContent || ''};
             align-items: ${styles && styles.alignItems || ''};
             align-self: ${styles && styles.alignSelf || ''};

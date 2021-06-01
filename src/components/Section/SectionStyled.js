@@ -27,7 +27,7 @@ export const SectionWrapper = styled.div`
             border-right: ${styles && styles.borderRight || ''};
             border-bottom: ${styles && styles.borderBottom || ''};
             border-left: ${styles && styles.borderLeft || ''};
-            border-radius: ${styles && styles.borderRadius || '0'};
+            border-radius: ${styles && styles.borderRadius || ''};
 
             box-shadow: ${styles && styles.boxShadow || '0'};
             overflow: ${styles && styles.overflow || 'hidden'};
@@ -42,6 +42,7 @@ export const SectionBackground = styled.div`
     ${props => {
         const styles = getStyles(props.componentData);
         return css`
+            border-radius: ${styles && styles.borderRadius || ''};
             background-image: ${styles && styles.backgroundImage || 'none'};
             background-size: ${styles && styles.backgroundSize || 'cover'};
             background-color: ${styles && styles.backgroundColor || 'transparent'};
@@ -75,7 +76,7 @@ export const SectionBody = styled.div`
             padding-bottom: ${styles && styles.paddingBottom || '10px'};
             padding-left: ${styles && styles.paddingLeft || '10px'};
 
-            border-radius: ${styles && styles.borderRadius || '0'};
+            border-radius: ${styles && styles.borderRadius || ''};
 
             background-color: ${styles && styles.overlay || ''};
             background-image: ${styles && styles.overlayImage || ''};

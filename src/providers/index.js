@@ -8,6 +8,8 @@ import LinkProvider from './LinkProvider';
 import PageProvider from './PageProvider/index';
 import SectionProvider from './SectionProvider';
 import FormProvider from './FormProvider';
+import SelectProvider from './SelectProvider';
+import DropdownProvider from './DropdownProvider';
 
 
 export const providerByComponentType = (type) => {
@@ -16,6 +18,8 @@ export const providerByComponentType = (type) => {
       return ButtonProvider;
     case 'description':
       return DescriptionProvider;
+    case 'dropdown':
+      return DropdownProvider;
     case 'form':
       return FormProvider;
     case 'input':
@@ -32,6 +36,8 @@ export const providerByComponentType = (type) => {
       return PageProvider;
     case 'section':
       return SectionProvider;
+    case 'select':
+      return SelectProvider;
     default:
       return null
   }
