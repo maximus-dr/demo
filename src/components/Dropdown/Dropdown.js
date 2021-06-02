@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { DropdownHead, DropdownMenu, DropdownOption, DropdownWrapper, HeadIcon } from './DropdownStyled';
 import icon from '../../assets/arrow-down.svg';
 import { renderComponents } from '../../core/functions/render';
-import { nanoid } from 'nanoid';
 
 
 export default function Dropdown(props) {
@@ -27,8 +26,7 @@ export default function Dropdown(props) {
                         actions: {
                             onDropdownCheckboxChange: (e) => {setHeaderValue(e.target.name)}
                         }
-                    },
-                    key: nanoid()
+                    }
                 }
             );
         }
@@ -36,7 +34,7 @@ export default function Dropdown(props) {
         
 
         return (
-            <DropdownOption key={nanoid()}>
+            <DropdownOption key={child.props.componentData.id}>
                 {optionComponent}
             </DropdownOption>
         );
@@ -44,7 +42,7 @@ export default function Dropdown(props) {
 
     return (
         <DropdownWrapper>
-            <DropdownHead key={nanoid()}>
+            <DropdownHead>
                 {headerValue}
                 <HeadIcon>
                     <img src={icon} width="10" height="auto" />

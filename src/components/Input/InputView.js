@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import React, { useContext, useState } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
 import { getAttrs } from '../../core/functions/styles';

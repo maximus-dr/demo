@@ -1,5 +1,4 @@
 
-import { nanoid } from 'nanoid';
 import { providerByComponentType } from '../../providers'
 
 
@@ -33,7 +32,7 @@ export function getProviders(props) {
 
 
     return (
-            <props.provider key={nanoid()} componentData={props.component} >
+            <props.provider key={props.id} componentData={props.component} >
                 { getChildrenProviders(props) }
             </props.provider>
     );
