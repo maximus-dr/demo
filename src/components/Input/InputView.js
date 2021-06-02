@@ -1,4 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react'
+import { nanoid } from 'nanoid';
+import React, { useContext, useState } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
 import { getAttrs } from '../../core/functions/styles';
 import { InputField, InputLabel, InputWrapper } from './InputStyled';
@@ -8,34 +9,12 @@ const DEFAULT_PLACEHOLDER = 'Text...';
 
 
 export default function InputView(props) {
-    
-    const actions = props.componentData.actions ? props.componentData.actions : null;
-
-    const actionProvider = (action) => {
-        switch(action) {
-            case 'onDropdownCheckboxChange':
-                return (e) => console.log(e.target.value);
-            default:
-                return;
-        }
-    }
-
-    const inputActions = {};
-    if (actions && actions.onChange) {
-        inputActions.onChange = actionProvider(actions.onChange[0]); 
-    }
-
-
+    console.log(props);
 
     const outlines = useContext(OutlinesContext);
     const attrs = getAttrs(props.componentData);
-    const defalutValue = attrs && attrs.value || '';
 
-    const [value, setValue] = useState(defalutValue);
 
-    useEffect(() => {
-        console.log(value);
-    }, [value])
     // добавляет опциональные аттрибуты для компонента
     const inputAttrs = attrs || {};
     const labelAttrs = props.componentData.label && props.componentData.label.attrs || {};
@@ -44,18 +23,10 @@ export default function InputView(props) {
 
     const input = 
         <InputField
-            {...attrs}
-            {...inputActions}
             type={attrs && attrs.type || 'text'}
-            name={attrs && attrs.name || ''}
-            value={attrs && attrs.type && attrs.type === 'submit' ? 'Submit' : value}
-            placeholder={attrs && attrs.placeholder || DEFAULT_PLACEHOLDER}
-            disabled={attrs && attrs.disabled || false}
-            required={attrs && attrs.required || false}
+            name={attrs && attrs.name || 'name'}
             componentData={props.componentData}
-            onChange={(e) => {
-                setValue(e.target.value);
-            }}
+            onChange={props.componentData.actions.onDropdownCheckboxChange} 
         />
     ;
 

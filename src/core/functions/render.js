@@ -31,8 +31,9 @@ export function getProviders(props) {
         );
     }
 
+
     return (
-            <props.provider key={nanoid()} componentData={props.component}>
+            <props.provider key={nanoid()} componentData={props.component} >
                 { getChildrenProviders(props) }
             </props.provider>
     );
@@ -45,6 +46,7 @@ export function renderComponents(component) {
         provider: providerByComponentType(component.typeName),
         component
     }
+
     return getProviders(props);
 }
 

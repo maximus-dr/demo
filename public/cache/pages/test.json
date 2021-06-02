@@ -53,18 +53,13 @@
                   "typeName": "input",
                   "attrs": {
                     "type": "checkbox",
-                    "id": "option-4",
-                    "value": "option 4"
-                  },
-                  "actions": {
-                    "onChange": [
-                      "onDropdownCheckboxChange"
-                    ]
+                    "id": "option-4"
                   },
                   "label": {
                     "attrs": {
                       "value": "option 4",
-                      "htmlFor": "option-4"
+                      "htmlFor": "option-4",
+                      "name": "opt 4"
                     }
                   },
                   "styles": {
@@ -76,7 +71,7 @@
                   "attrs": {
                     "type": "checkbox",
                     "id": "option-5",
-                    "value": "option 5"
+                    "name": "opt 5"
                   },
                   "label": {
                     "attrs": {
@@ -87,6 +82,9 @@
                   "styles": {
                     "marginBottom": "0"
                   }
+                },
+                {
+                  "typeName": "input"
                 },
                 {
                   "typeName": "input"
