@@ -38,6 +38,7 @@ const commonStyles = css`${props => {
         background-color: ${styles && styles.backgroundColor || ''};
 
         transform: ${styles && styles.transform || ''};
+        cursor: ${styles && styles.cursor || ''};
     `;
 }}`;
 

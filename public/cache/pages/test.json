@@ -38,70 +38,118 @@
               "value": "Dropdown"
             },
 
+
             {
               "typeName": "dropdown",
               "id": "5",
-              "childrenList": [
-                {
-                  "typeName": "label",
-                  "id": "6",
-                  "value": "option1"
-                },
-                {
-                  "typeName": "label",
-                  "id": "7",
-                  "value": "option2"
-                },
-                {
-                  "typeName": "label",
-                  "id": "8",
-                  "value": "option3"
-                },
-                {
-                  "typeName": "input",
-                  "id": "9",
-                  "attrs": {
-                    "type": "checkbox",
-                    "id": "option-4",
-                    "name": "opt 4"
+
+              "dropdownMenu": {
+                "childrenList": [
+                  {
+                    "typeName": "label",
+                    "id": "14",
+                    "value": "Heading",
+                    "heading": "h2"
                   },
-                  "label": {
+                  {
+                    "typeName": "label",
+                    "id": "6",
+                    "value": "option1",
+                    "role": "dropdownOption",
+                    "styles": {
+                      "width": "100%",
+                      "cursor": "pointer"
+                    }
+                  },
+                  {
+                    "typeName": "label",
+                    "id": "7",
+                    "value": "option2",
+                    "role": "dropdownOption",
+                    "styles": {
+                      "width": "100%",
+                      "cursor": "pointer"
+                    }
+                  },
+                  {
+                    "typeName": "label",
+                    "id": "8",
+                    "value": "option3",
+                    "role": "dropdownOption",
+                    "styles": {
+                      "width": "100%",
+                      "cursor": "pointer"
+                    }
+                  },
+                  {
+                    "typeName": "label",
+                    "id": "15",
+                    "value": "subheading",
+                    "heading": "h3"
+                  },
+                  {
+                    "typeName": "input",
+                    "id": "9",
+                    "role": "dropdownOption",
                     "attrs": {
-                      "value": "option 4",
-                      "htmlFor": "option-4",
+                      "type": "checkbox",
+                      "id": "option-4",
                       "name": "opt 4"
+                    },
+                    "label": {
+                      "attrs": {
+                        "value": "option 4",
+                        "htmlFor": "option-4",
+                        "name": "opt 4"
+                      }
+                    },
+                    "styles": {
+                      "marginBottom": "0"
                     }
                   },
-                  "styles": {
-                    "marginBottom": "0"
-                  }
-                },
-                {
-                  "typeName": "input",
-                  "id": "10",
-                  "attrs": {
-                    "type": "checkbox",
-                    "id": "option-5",
-                    "name": "opt 5"
-                  },
-                  "label": {
+                  {
+                    "typeName": "input",
+                    "id": "10",
+                    "role": "dropdownOption",
                     "attrs": {
-                      "htmlFor": "option-5",
-                      "value": "option 5"
+                      "type": "checkbox",
+                      "id": "option-5",
+                      "name": "opt 5"
+                    },
+                    "label": {
+                      "attrs": {
+                        "htmlFor": "option-5",
+                        "value": "option 5"
+                      }
+                    },
+                    "styles": {
+                      "marginBottom": "0"
                     }
                   },
-                  "styles": {
-                    "marginBottom": "0"
+                  {
+                    "typeName": "input",
+                    "role": "dropdownOption",
+                    "id": "13",
+                    "attrs": {
+                      "type": "checkbox",
+                      "id": "option-6",
+                      "name": "opt 6"
+                    },
+                    "label": {
+                      "attrs": {
+                        "htmlFor": "option-6",
+                        "value": "option 6"
+                      }
+                    },
+                    "styles": {
+                      "marginBottom": "0"
+                    }
                   }
-                },
-                {
-                  "typeName": "input",
-                  "id": "11"
-                },
-                {
-                  "typeName": "input",
-                  "id": "12"
-                }
+                ]
+              },
+
+              "childrenList": [
+                
               ]
             }
           ]

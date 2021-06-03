@@ -4,11 +4,6 @@ import {enableOutlines} from '../../core/functions/outlines';
 import { React } from 'react';
 import { colors } from '../../core/variables';
 
-const Input = () => {
-    return (
-        <Input />
-    );
-}
 
 export const InputWrapper = styled.div`
     ${props => enableOutlines(props.showOutlines, colors.outline_input)};
@@ -49,7 +44,7 @@ export const InputWrapper = styled.div`
     }}
 `;
 
-export const InputField = styled.input`
+export const Input = styled.input`
 
     ${props => {
         const styles = getStyles(props.componentData);

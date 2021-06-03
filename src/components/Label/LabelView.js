@@ -60,14 +60,14 @@ export default function LabelView(props) {
                 );
             case 'label':
                 return (
-                    <Label htmlFor={htmlFor} {...props.componentData}>
+                    <Label htmlFor={htmlFor} {...props.componentData} onClick={props.componentData.actions.dropdown.onClick}>
                         {text}
                         {props.children}
                     </Label>
                 );
             default:
                 return (
-                    <LabelSpan {...props.componentData} showOutlines={outlines}>
+                    <LabelSpan {...props.componentData} showOutlines={outlines} onClick={() => props.componentData.actions.dropdown.onClick(props)}>
                         {text}
                         {props.children}
                     </LabelSpan>

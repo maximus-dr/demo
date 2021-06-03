@@ -17,29 +17,22 @@ export const DropdownHead = styled.div`
     background-color: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 5px;
-    cursor: pointer;
     outline: 1px dashed yellow;
 `;
 
-export const DropdownMenu = styled.div`
-    position: relative;
-    top: 5px;
-    left: 5px;
-    display: flex;
-    flex-direction: column;
-    min-width: 10px;
-
-    padding: 10px;
-    outline: 1px dashed red;
-
-    text-align: center;
-`;
-
 export const DropdownOption = styled.div`
-    width: 100%;
     outline: 1px dashed yellowgreen;
     margin-bottom: 10px;
     display: flex;
+`;
+
+export const HeadCaption = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    width: 100%;
 `;
 
 export const HeadIcon = styled.div`
@@ -56,4 +49,26 @@ export const HeadIcon = styled.div`
     & > img {
 
     }
+`;
+
+export const DropdownMenu = styled.div`
+    position: absolute;
+    top: 45px;
+    left: 5px;
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+
+    padding: 10px;
+    outline: 1px dashed red;
+
+    text-align: center;
+`;
+
+export const Clear = styled.button`
+
+`;
+
+export const OptionsGroup = styled.div`
+
 `;

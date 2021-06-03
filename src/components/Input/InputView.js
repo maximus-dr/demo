@@ -1,14 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
 import { getAttrs } from '../../core/functions/styles';
-import { InputField, InputLabel, InputWrapper } from './InputStyled';
-
-
-const DEFAULT_PLACEHOLDER = 'Text...';
+import { Input, InputLabel, InputWrapper } from './InputStyled';
 
 
 export default function InputView(props) {
-    console.log(props);
 
     const outlines = useContext(OutlinesContext);
     const attrs = getAttrs(props.componentData);
@@ -19,13 +15,14 @@ export default function InputView(props) {
     const labelAttrs = props.componentData.label && props.componentData.label.attrs || {};
     const optionAttrs = props.componentData.option && props.componentData.option.attrs || {};
 
-
     const input = 
-        <InputField
+        <Input
+            ref={props.componentData.ref}
+            {...inputAttrs}
             type={attrs && attrs.type || 'text'}
             name={attrs && attrs.name || 'name'}
             componentData={props.componentData}
-            onChange={props.componentData.actions.onDropdownCheckboxChange} 
+            onChange={props.componentData.actions.dropdown.onChange} 
         />
     ;
 
