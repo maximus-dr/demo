@@ -12,6 +12,24 @@ import SelectProvider from './SelectProvider';
 import DropdownProvider from './DropdownProvider';
 
 
+
+export const Providers = {
+  button: ButtonProvider,
+  description: DescriptionProvider,
+  dropdown: DropdownProvider,
+  form: FormProvider,
+  input: InputProvider,
+  label: LabelProvider,
+  link: LinkProvider,
+  icon: IconProvider,
+  image: ImageProvider,
+  page: PageProvider,
+  section: SectionProvider,
+  select: SelectProvider
+};
+
+
+
 export const providerByComponentType = (type) => {
   switch (type) {
     case 'button':

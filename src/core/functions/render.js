@@ -1,53 +1,50 @@
 
-import { providerByComponentType } from '../../providers'
+import { Provider } from '../../components';
+
+
+// рендерит провайдеры на страницу
+export function renderComponents(componentData) {
+    const props = {
+        componentData,
+        id: componentData.id,
+        component: Provider[componentData.typeName]
+    }
+
+    return getComponents(props);
+}
 
 
 // рекурсивно перебирает childrenList в структуре и возвращает массив провайдеров по typeName
-export function getProviders(props) {
+function getComponents(props) {
 
-    if (!props.component) return;
+    if (!props.componentData) return;
+    if (!props.componentData.id) console.log(`Не задан id у компонента ${props.componentData.typeName}`);
 
-    const getChildrenProviders = (props) => {
+    const getChildrenComponents = (props) => {
         return (
-        props.component.childrenList &&
-        props.component.childrenList.length > 0 &&
-        props.component.childrenList.map(child => {
-            const provider = providerByComponentType(child.typeName);
+        props.componentData.childrenList &&
+        props.componentData.childrenList.length > 0 &&
+        props.componentData.childrenList.map(child => {
+            const component = Provider[child.typeName];
 
-            if (provider) {
+            if (component) {
             const childProps = {
                 id: child.id,
-                provider: providerByComponentType(child.typeName),
-                component: child
+                component: Provider[child.typeName],
+                componentData: child
             }
-            return getProviders(childProps);
+            return getComponents(childProps);
             }
 
-            if (!provider) {
-            console.log(`Провайдер "${child.typeName}" не найден`);
+            if (!component) {
+            console.log(`Компонент "${child.typeName}" не найден`);
             }
-        })
-        );
+        }));
     }
-
 
     return (
-            <props.provider key={props.id} componentData={props.component} >
-                { getChildrenProviders(props) }
-            </props.provider>
+            <props.component key={props.id} componentData={props.componentData} >
+                { getChildrenComponents(props) }
+            </props.component>
     );
 }
-
-// рендерит провайдеры на страницу
-export function renderComponents(component) {
-    const props = {
-        id: component.id,
-        provider: providerByComponentType(component.typeName),
-        component
-    }
-
-    return getProviders(props);
-}
-
-
-

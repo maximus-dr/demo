@@ -12,7 +12,12 @@ const isLabel = (component) => {
     return component.props.componentData.typeName === 'label' || null; 
 }
 
+const getRole = (component) => {
+    return component.props.componentData.role && component.props.componentData.role || null;
+}
+
 export {
     isLabel,
-    isCheckbox
+    isCheckbox,
+    getRole
 }

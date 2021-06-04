@@ -8,7 +8,7 @@ import { colors } from '../../core/variables';
 export const InputWrapper = styled.div`
     ${props => enableOutlines(props.showOutlines, colors.outline_input)};
     display: flex;
-    
+    width: 100%;
     ${props => {
         const styles = getStyles(props.componentData);
         const attrs = getAttrs(props.componentData);
@@ -26,6 +26,8 @@ export const InputWrapper = styled.div`
             margin-right: ${styles && styles.marginRight || ''};
             margin-bottom: ${styles && styles.marginBottom || '10px'};
             margin-left: ${styles && styles.marginLeft || ''};
+
+            cursor: ${styles && styles.cursor || ''};
 
             ${() => {
                 if (type === 'text' || type === 'email' || type === 'password' || type === 'tel') {

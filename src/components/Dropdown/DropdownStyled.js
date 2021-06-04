@@ -18,6 +18,7 @@ export const DropdownHead = styled.div`
     border: 1px solid #eaeaea;
     border-radius: 5px;
     outline: 1px dashed yellow;
+    cursor: pointer;
 `;
 
 export const DropdownOption = styled.div`
@@ -69,6 +70,7 @@ export const Clear = styled.button`
 
 `;
 
-export const OptionsGroup = styled.div`
-
+export const Item = styled.div`
+    border: '1px solid gray';
+    cursor: auto;
 `;

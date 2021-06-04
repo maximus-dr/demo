@@ -28,19 +28,22 @@ const OutlineButton = styled.button`
 
 
 export const Outlines = (props) => {
-  const [showOutlines, setShowOutlines] = useState(SHOW_OUTLINES);
+  
+  const sessionValue = window.sessionStorage.getItem('show_outlines');
+  const [outlines, setOutlines] = useState(sessionValue);
 
-  const switchOutlines = () => {
-    setShowOutlines(!showOutlines);
+  const showOutlines = () => {
+    setOutlines(!outlines);
+    window.sessionStorage.setItem('show_outlines', !outlines);
   }
   
   return (
     <>
-      <OutlineButton onClick={switchOutlines}>
+      <OutlineButton onClick={showOutlines}>
         outlines
       </OutlineButton>
 
-      <OutlinesContext.Provider value={showOutlines}>
+      <OutlinesContext.Provider value={outlines}>
         {props.children}
       </OutlinesContext.Provider>
     </>

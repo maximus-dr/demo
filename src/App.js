@@ -34,8 +34,6 @@ export default function App(props) {
 
   return (
     <>
-
-      <NormalRef />
       <Router>
         <Outlines>
           { components }

@@ -67,7 +67,7 @@ export default function LabelView(props) {
                 );
             default:
                 return (
-                    <LabelSpan {...props.componentData} showOutlines={outlines} onClick={() => props.componentData.actions.dropdown.onClick(props)}>
+                    <LabelSpan {...props.componentData} showOutlines={outlines} onClick={() => props.onClick(props)}>
                         {text}
                         {props.children}
                     </LabelSpan>

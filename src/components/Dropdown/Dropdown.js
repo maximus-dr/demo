@@ -1,33 +1,29 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react';
 import { DropdownHead, DropdownMenu, DropdownOption, DropdownWrapper, HeadIcon, HeadCaption, Clear } from './DropdownStyled';
 import icon from '../../assets/arrow-down.svg';
 import { renderComponents } from '../../core/functions/render';
-import { isCheckbox, isLabel } from '../../core/functions/components';
+import { getRole, isCheckbox, isLabel } from '../../core/functions/components';
+import { Provider } from '..';
 
 
 const Item = (props) => {
     return (
-        <div style={{border: '1px solid gray', cursor: 'pointer'}} onClick={props.onClick}>
+        <div style={{border: '1px solid gray'}} onClick={props.onClick}>
             {props.value}
         </div>
     );
 }
-
-const defaultItem = <Item key="default-item" value="Выберите значение" />;
-
+const defaultItem = <Item key="default-item" value="Выберите значение" onClick={(e) => e.stopPropagation()}/>;
 
 
 export default function Dropdown(props) {
 
     const [state, setState] = useState(() => new Set().add(defaultItem));
-
+    const [resetSelect, setResetSelect] = useState(false);
     
-
-    const childrenList = props.componentData.dropdownMenu.childrenList;
-    const options = childrenList && childrenList.map(component => renderComponents(component));
-
-    const optionRefs = new Set();
-
+    const childrenList = props.componentData.dropdownMenu && props.componentData.dropdownMenu.childrenList || null;
+    const childrenComponents = childrenList && childrenList.map(component => renderComponents(component)) || null;
+    
     const addItem = item => {
         setState(prev => {
             const next = new Set(prev);
@@ -49,25 +45,33 @@ export default function Dropdown(props) {
         })
     }
 
-    const clearItems = () => {
+    const resetItems = () => {
         setState(() => new Set().add(defaultItem));
-        for (let item of optionRefs) {
-            item.current.checked = false;
-        }
+        setResetSelect(true);
     }
 
-    const onChange = (e) => {
-        const key = e.target.name;
-        const value = e.target.name;
-        const checkbox = e.target;
+    const onSelect = (props) => {
+        const key = props.componentData.id;
+        const value = props.componentData.value;
+        const item = 
+            <Item key={key} value={value} onClick={(e) => {
+                e.stopPropagation();
+                removeItem(item);
+            }} />
+        resetItems();
+        addItem(item);
+    }
 
-        const item = <Item key={key} value={value} multiple={true} onClick={() => {
-            removeItem(item);
-            checkbox.checked = false;
-        }} />
+    const onMultipleSelect = (e) => {
+        const key = e.currentTarget.name;
+        const value = e.currentTarget.name;
+        const item = 
+            <Item key={key} value={value} multiple={true} onClick={(e) => {
+                e.stopPropagation();
+                removeItem(item);
+            }} />
 
         for (let item of state) {
-            
             if (!item.props.multiple) {
                 removeItem(item);
             }
@@ -77,72 +81,53 @@ export default function Dropdown(props) {
             }
         }
         addItem(item);
+        setResetSelect(false);
     };
-
-    const onClick = (props) => {
-        const key = props.componentData.id;
-        const value = props.componentData.value;
-
-        const item = <Item key={key} value={value} onClick={() => {
-            removeItem(item);
-        }} />
-        clearItems();
-        addItem(item);
-    }
     
 
-    
-
-    const optionsList = options.map(child => {
+    const optionsList = childrenComponents && childrenComponents.map(child => {
         let optionComponent = child;
+        const componentData = child.props.componentData;   
+        const type = componentData.typeName;
         
-        if (isCheckbox(child) && child.props.componentData.role && child.props.componentData.role === 'dropdownOption') {
-            const ref = React.useRef();
-            optionRefs.add(ref);
-            
-            
-            optionComponent = React.cloneElement(child, 
-                {
-                    ...child.props,
-                    componentData: {
-                        ...child.props.componentData,
-                        actions: {
-                            dropdown: {
-                                onChange: onChange
-                            }
-                        },
-                        ref
-                    }
-                }
+        const el ={
+            item: Provider[type]
+        }
+        
+        if (isCheckbox(child) && getRole(child) === 'dropdownOption') {
+            optionComponent = <el.item 
+                {...child.props} 
+                onChange={onMultipleSelect} 
+                resetSelect={resetSelect} 
+                setResetSelect={setResetSelect} />
+            return (
+                <DropdownOption key={componentData.id}>
+                    {optionComponent}
+                </DropdownOption>
             );
         }
 
-        if (isLabel(child) && child.props.componentData.role && child.props.componentData.role === 'dropdownOption') {
-            optionComponent = React.cloneElement(child, {
-                ...child.props,
-                componentData: {
-                    ...child.props.componentData,
-                    actions: {
-                        dropdown: {
-                            onClick: onClick
-                        }
-                    }
-                }
-            })
+        if (isLabel(child) && getRole(child) === 'dropdownOption') {
+            optionComponent = <el.item 
+                {...child.props} 
+                onClick={onSelect} 
+                setResetSelect={setResetSelect} />
+            return (
+                <DropdownOption key={componentData.id}>
+                    {optionComponent}
+                </DropdownOption>
+            );
         }
 
-        return (
-            <DropdownOption key={child.props.componentData.id}>
-                {optionComponent}
-            </DropdownOption>
-        );
-    });
+        return <el.item key={componentData.id} {...child.props} />
+    }) || [];
 
     
-
     return (
         <DropdownWrapper>
-            <DropdownHead>
+            <DropdownHead onClick={(e) => {
+                console.log('close');
+            }}>
                 <HeadCaption>
                     {state}
                 </HeadCaption>
@@ -154,9 +139,9 @@ export default function Dropdown(props) {
 
             <DropdownMenu>
                 {optionsList}
-                <Clear onClick={clearItems}>Очистить</Clear>
+                <Clear onClick={resetItems}>Очистить</Clear>
             </DropdownMenu>
-
+            {props.children}
         </DropdownWrapper>
     )
 }

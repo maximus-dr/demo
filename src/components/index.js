@@ -10,6 +10,7 @@ import Input from "./Input/InputView";
 import Select from "./Select/SelectView";
 import Dropdown from './Dropdown/Dropdown';
 
+
 export const componentByType = (type) => {
     switch(type) {
         case 'input':
@@ -27,6 +28,20 @@ export const AnotherInput = (props) => {
             <input type="text" value={props.headerValue} onChange={props.onChange} />
         </div>
     );
+}
+
+export const Provider = {
+    'button': Button,
+    'description': Description,
+    'dropdown': Dropdown,
+    'icon': Icon,
+    'image': Image,
+    'input': Input,
+    'label': Label,
+    'link': Link,
+    'page': Page,
+    'section': Section,
+    'select': Select
 }
 
 
