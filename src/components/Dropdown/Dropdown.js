@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DropdownHead, DropdownMenu, DropdownOption, DropdownWrapper, HeadIcon, HeadCaption, Clear } from './DropdownStyled';
 import icon from '../../assets/arrow-down.svg';
 import { renderComponents } from '../../core/functions/render';
@@ -6,23 +6,40 @@ import { getRole, isCheckbox, isLabel } from '../../core/functions/components';
 import { Provider } from '..';
 
 
-const Item = (props) => {
+const HeadItem = (props) => {
     return (
         <div style={{border: '1px solid gray'}} onClick={props.onClick}>
             {props.value}
         </div>
     );
 }
-const defaultItem = <Item key="default-item" value="Выберите значение" onClick={(e) => e.stopPropagation()}/>;
+const defaultItem = <HeadItem key="default-item" value="Выберите значение" />;
 
 
 export default function Dropdown(props) {
 
     const [state, setState] = useState(() => new Set().add(defaultItem));
+    const [isOpen, setIsOpen] = useState(false);
     const [resetSelect, setResetSelect] = useState(false);
     
     const childrenList = props.componentData.dropdownMenu && props.componentData.dropdownMenu.childrenList || null;
     const childrenComponents = childrenList && childrenList.map(component => renderComponents(component)) || null;
+
+    const dropdownMenuRef = useRef(null);
+
+    // закрывает выпадающее меню при клике вне этого меню
+    useEffect(() => {
+        const onClickOutside = (e) => {
+            if (!dropdownMenuRef.current.contains(e.target) && e.target.id !== 'outlines') {
+                setIsOpen(false);
+            }
+        }
+        if (isOpen) {
+            document.addEventListener('click', onClickOutside);
+        }
+
+        return () => document.removeEventListener('click', onClickOutside);
+    }, [isOpen]);
     
     const addItem = item => {
         setState(prev => {
@@ -50,23 +67,22 @@ export default function Dropdown(props) {
         setResetSelect(true);
     }
 
-    const onSelect = (props) => {
+    const onSelect = (e, props) => {
         const key = props.componentData.id;
         const value = props.componentData.value;
         const item = 
-            <Item key={key} value={value} onClick={(e) => {
-                e.stopPropagation();
-                removeItem(item);
-            }} />
+            <HeadItem key={key} value={value} />
         resetItems();
         addItem(item);
+        setIsOpen(false);
     }
 
-    const onMultipleSelect = (e) => {
-        const key = e.currentTarget.name;
-        const value = e.currentTarget.name;
+    const onMultipleSelect = (e, props) => {
+        const key = props.componentData.id;
+        const value = props.componentData.value;
+        
         const item = 
-            <Item key={key} value={value} multiple={true} onClick={(e) => {
+            <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
                 e.stopPropagation();
                 removeItem(item);
             }} />
@@ -84,7 +100,7 @@ export default function Dropdown(props) {
         setResetSelect(false);
     };
     
-
+    
     const optionsList = childrenComponents && childrenComponents.map(child => {
         let optionComponent = child;
         const componentData = child.props.componentData;   
@@ -93,13 +109,15 @@ export default function Dropdown(props) {
         const el ={
             item: Provider[type]
         }
+
+        
         
         if (isCheckbox(child) && getRole(child) === 'dropdownOption') {
             optionComponent = <el.item 
-                {...child.props} 
+                {...child.props}
                 onChange={onMultipleSelect} 
-                resetSelect={resetSelect} 
-                setResetSelect={setResetSelect} />
+                resetSelect={resetSelect}
+            />
             return (
                 <DropdownOption key={componentData.id}>
                     {optionComponent}
@@ -108,14 +126,28 @@ export default function Dropdown(props) {
         }
 
         if (isLabel(child) && getRole(child) === 'dropdownOption') {
-            optionComponent = <el.item 
-                {...child.props} 
-                onClick={onSelect} 
-                setResetSelect={setResetSelect} />
+            const onClick = child.props.componentData.multipleSelect ? onMultipleSelect : onSelect;
+
+            const newProps = {
+                ...child.props,
+                callbacks: {
+                    onClick,
+                    setResetSelect
+                }
+            }
+
+            optionComponent = <el.item {...newProps} />
+
             return (
                 <DropdownOption key={componentData.id}>
                     {optionComponent}
                 </DropdownOption>
+            );
+        }
+
+        if (getRole(child) === 'dropdownResetButton') {
+            return (
+                <el.item key={componentData.id} {...child.props} onClick={resetItems} />
             );
         }
 
@@ -126,7 +158,7 @@ export default function Dropdown(props) {
     return (
         <DropdownWrapper>
             <DropdownHead onClick={(e) => {
-                console.log('close');
+                setIsOpen(!isOpen);
             }}>
                 <HeadCaption>
                     {state}
@@ -137,9 +169,8 @@ export default function Dropdown(props) {
                 </HeadIcon>
             </DropdownHead>
 
-            <DropdownMenu>
+            <DropdownMenu isOpen={isOpen} ref={dropdownMenuRef}>
                 {optionsList}
-                <Clear onClick={resetItems}>Очистить</Clear>
             </DropdownMenu>
             {props.children}
         </DropdownWrapper>

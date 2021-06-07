@@ -10,6 +10,10 @@ export default function LabelView(props) {
     const componentData = props.componentData ? props.componentData : null;
     const attrs = getAttrs(props.componentData);
 
+    const handlers = {
+        onClick: props.callbacks ? (e) => props.callbacks.onClick(e, props) : null
+    }
+
     const label = (heading) => {
 
         const text = componentData.value || 'Label';
@@ -60,14 +64,18 @@ export default function LabelView(props) {
                 );
             case 'label':
                 return (
-                    <Label htmlFor={htmlFor} {...props.componentData} onClick={props.componentData.actions.dropdown.onClick}>
+                    <Label htmlFor={htmlFor} {...props.componentData} {...handlers}>
                         {text}
                         {props.children}
                     </Label>
                 );
             default:
                 return (
-                    <LabelSpan {...props.componentData} showOutlines={outlines} onClick={() => props.onClick(props)}>
+                    <LabelSpan 
+                        showOutlines={outlines}
+                        {...props.componentData} 
+                        {...handlers}
+                    >
                         {text}
                         {props.children}
                     </LabelSpan>

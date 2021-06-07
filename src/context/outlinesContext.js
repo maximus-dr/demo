@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 
-const SHOW_OUTLINES = false;
 export const OutlinesContext = React.createContext();
 
 const OutlineButton = styled.button`
@@ -33,13 +32,13 @@ export const Outlines = (props) => {
   const [outlines, setOutlines] = useState(sessionValue);
 
   const showOutlines = () => {
-    setOutlines(!outlines);
     window.sessionStorage.setItem('show_outlines', !outlines);
+    setOutlines(!outlines);
   }
   
   return (
     <>
-      <OutlineButton onClick={showOutlines}>
+      <OutlineButton id="outlines" onClick={showOutlines}>
         outlines
       </OutlineButton>
 

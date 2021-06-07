@@ -17,10 +17,10 @@ export default function InputView(props) {
         
     }, [props.resetSelect]);
 
+
     // добавляет опциональные аттрибуты для компонента
     const inputAttrs = attrs || {};
     const labelAttrs = props.componentData.label && props.componentData.label.attrs || {};
-    const optionAttrs = props.componentData.option && props.componentData.option.attrs || {};
 
     const input = 
         <Input
@@ -30,10 +30,7 @@ export default function InputView(props) {
             name={attrs && attrs.name || 'name'}
             componentData={props.componentData}
             checked={checked}
-            onChange={(e) => {
-                setChecked(!checked);
-                props.onChange(e);
-            }}
+            onChange={() => {}}
         />
     ;
 
@@ -41,17 +38,18 @@ export default function InputView(props) {
         <InputLabel 
             {...labelAttrs} 
             componentData={props.componentData}
-            htmlFor={labelAttrs.htmlFor || props.componentData.id}
         >
             {labelAttrs && labelAttrs.value || 'Label'}
         </InputLabel>
     ;
 
     return (
-        <InputWrapper componentData={props.componentData} showOutlines={outlines} onClick={(e) => {
-            if (e.target === e.currentTarget) {
+        <InputWrapper 
+            componentData={props.componentData}
+            showOutlines={outlines} 
+            onClick={(e) => {
                 setChecked(!checked);
-            }
+                props.onChange(e, props);
         }} >
             {input}
             {label}

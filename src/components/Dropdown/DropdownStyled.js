@@ -52,6 +52,10 @@ export const HeadIcon = styled.div`
     }
 `;
 
+export const HeadItem = styled.div`
+    border: 1px solid gray;
+`;
+
 export const DropdownMenu = styled.div`
     position: absolute;
     top: 45px;
@@ -64,6 +68,13 @@ export const DropdownMenu = styled.div`
     outline: 1px dashed red;
 
     text-align: center;
+
+    display: none;
+    ${props => {
+        return props.isOpen && css`
+            display: block
+        `; 
+    }}
 `;
 
 export const Clear = styled.button`

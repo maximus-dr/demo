@@ -41,6 +41,11 @@
                 "childrenList": [
                   {
                     "typeName": "label",
+                    "id": "12",
+                    "value": "Menu"
+                  },
+                  {
+                    "typeName": "label",
                     "id": "5",
                     "value": "option1",
                     "styles": {
@@ -62,9 +67,16 @@
                   },
 
                   {
+                    "typeName": "label",
+                    "id": "13",
+                    "value": "Subcaption"
+                  },
+
+                  {
                     "typeName": "input",
                     "id": "8",
                     "role": "dropdownOption",
+                    "value": "opt3",
                     "attrs": {
                       "type": "checkbox",
                       "name": "option3"
@@ -84,6 +96,7 @@
                   {
                     "typeName": "input",
                     "id": "9",
+                    "value": "opt4",
                     "role": "dropdownOption",
                     "attrs": {
                       "type": "checkbox",
@@ -99,6 +112,34 @@
                         "value": "option4"
                       }
                     }
+                  },
+
+                  {
+                    "typeName": "input",
+                    "id": "10",
+                    "role": "dropdownOption",
+                    "value": "opt6",
+                    "attrs": {
+                      "type": "checkbox",
+                      "name": "opt6"
+                    },
+                    "styles": {
+                      "width": "100%",
+                      "cursor": "pointer",
+                      "marginBottom": "0"
+                    },
+                    "label": {
+                      "attrs": {
+                        "value": "opt6"
+                      }
+                    }
+                  },
+
+                  {
+                    "typeName": "button",
+                    "id": "11",
+                    "value": "Reset",
+                    "role": "dropdownResetButton"
                   }
                 ]
               },
