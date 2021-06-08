@@ -16,8 +16,30 @@ const getRole = (component) => {
     return component.props.componentData.role && component.props.componentData.role || null;
 }
 
+function extractChildrenByRole(componentData, role) {
+    const result = new Set();
+
+    function getChild(data) {
+    
+        if (data.childrenList && data.childrenList.length > 0) {
+            data.childrenList.forEach(child => {
+                if (child.role === role) {
+                    result.add(child);
+                }
+                if (child.childrenList && child.childrenList.length > 0) {
+                    getChild(child);
+                }
+            });
+        } 
+        return;
+    }
+    getChild(componentData);
+    return result;
+}
+
 export {
     isLabel,
     isCheckbox,
-    getRole
+    getRole,
+    extractChildrenByRole
 }

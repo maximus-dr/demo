@@ -158,17 +158,14 @@ export default function Dropdown(props) {
 
         
         
-        if (isCheckbox(child) && getRole(child) === 'dropdownOption') {
+        if (isCheckbox(child) && getRole(child) === 'dropdownCheckbox') {
             optionComponent = <el.item 
                 {...child.props}
                 onClick={onMultipleSelect} 
                 resetSelect={resetSelect}
+                key={componentData.id}
             />
-            return (
-                <DropdownOption key={componentData.id}>
-                    {optionComponent}
-                </DropdownOption>
-            );
+            return optionComponent;
         }
 
         if (isLabel(child) && getRole(child) === 'dropdownOption') {

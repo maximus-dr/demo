@@ -1,8 +1,6 @@
-
 import { Provider } from '../../components';
 
 
-// рендерит провайдеры на страницу
 export function renderComponents(componentData) {
     const props = {
         componentData,
@@ -14,7 +12,7 @@ export function renderComponents(componentData) {
 }
 
 
-// рекурсивно перебирает childrenList в структуре и возвращает массив провайдеров по typeName
+// рекурсивно перебирает childrenList в структуре и возвращает массив компонентов по typeName
 function getComponents(props) {
 
     if (!props.componentData) return;
@@ -42,17 +40,11 @@ function getComponents(props) {
         }));
     }
 
-    return (
-            <props.component key={props.id} componentData={props.componentData} >
-                { getChildrenComponents(props) }
-            </props.component>
+    const result = (
+        <props.component key={props.id} componentData={props.componentData} >
+            { getChildrenComponents(props) }
+        </props.component>
     );
-}
 
-
-export function renderComponent(componentData) {
-    const component = {
-        item: Provider[componentData.typeName]
-    }
-    return <component.item key={componentData.id} componentData={componentData} />
+    return result;
 }

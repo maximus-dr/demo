@@ -9,6 +9,7 @@ import Link from "./Link/LinkView";
 import Input from "./Input/InputView";
 import Select from "./Select/SelectView";
 import Dropdown from './Dropdown/Dropdown';
+import Tab from "./Tab/Tab";
 
 
 export const componentByType = (type) => {
@@ -41,7 +42,8 @@ export const Provider = {
     'link': Link,
     'page': Page,
     'section': Section,
-    'select': Select
+    'select': Select,
+    'tab': Tab
 }
 
 
