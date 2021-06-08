@@ -1,20 +1,31 @@
 import React from 'react'
-import { extractChildrenByRole } from '../../core/functions/components'
+import { extractChildrenDataByRole, extractChildrenByRole } from './../../core/functions/components';
+import { Provider } from './../index';
+
 
 
 export default function Tab(props) {
 
-    console.log(props);
+    const tabs = extractChildrenDataByRole(props.componentData, 'tab');
+    
+    const onCLick = () => console.log('click');
 
-    const tabs = extractChildrenByRole(props.componentData, 'tab');
-    const tabBars = extractChildrenByRole(props.componentData, 'tabBar');
-    const tabLists = extractChildrenByRole(props.componentData, 'tabList');
+
+    const tabEls = tabs.map(tab => {
+        const component = {
+            item: Provider[tab.typeName]
+        }
+        return <component.item key={tab.id} {...tab} onClick={(e) => console.log(e.target)} />
+    })
 
 
     return (
         <>
             Tab component
             {props.children}
+            <div>
+                {tabEls}
+            </div>
         </>
     )
 }

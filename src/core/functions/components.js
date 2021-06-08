@@ -16,15 +16,15 @@ const getRole = (component) => {
     return component.props.componentData.role && component.props.componentData.role || null;
 }
 
-function extractChildrenByRole(componentData, role) {
-    const result = new Set();
+function extractChildrenDataByRole(componentData, role) {
+    const result = [];
 
     function getChild(data) {
     
         if (data.childrenList && data.childrenList.length > 0) {
             data.childrenList.forEach(child => {
                 if (child.role === role) {
-                    result.add(child);
+                    result.push(child);
                 }
                 if (child.childrenList && child.childrenList.length > 0) {
                     getChild(child);
@@ -37,9 +37,31 @@ function extractChildrenByRole(componentData, role) {
     return result;
 }
 
+function extractChildrenByRole(props, role) {
+    const result = [];
+    
+    function getChild(parent) {
+        if (parent.children && parent.children.length > 0) {
+            parent.children.forEach(child => {
+                if (child.props.componentData.role && child.props.componentData.role === role) {
+                    result.push(child);
+                }
+                if (child.props.children && child.props.children.length > 0) {
+                    getChild(child.props);
+                }
+            });
+            return;
+        }
+    }
+
+    getChild(props);
+    return result;
+}
+
 export {
     isLabel,
     isCheckbox,
     getRole,
+    extractChildrenDataByRole,
     extractChildrenByRole
 }
