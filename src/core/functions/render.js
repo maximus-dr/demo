@@ -48,3 +48,11 @@ function getComponents(props) {
             </props.component>
     );
 }
+
+
+export function renderComponent(componentData) {
+    const component = {
+        item: Provider[componentData.typeName]
+    }
+    return <component.item key={componentData.id} componentData={componentData} />
+}

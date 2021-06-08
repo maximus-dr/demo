@@ -19,7 +19,7 @@ const defaultItem = <HeadItem key="default-item" value="Выберите зна�
 export default function Dropdown(props) {
 
     const [state, setState] = useState(() => new Set().add(defaultItem));
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const [resetSelect, setResetSelect] = useState(false);
     
     const childrenList = props.componentData.dropdownMenu && props.componentData.dropdownMenu.childrenList || null;
@@ -106,12 +106,54 @@ export default function Dropdown(props) {
     
     
     const optionsList = childrenComponents && childrenComponents.map(child => {
+
         let optionComponent = child;
         const componentData = child.props.componentData;   
         const type = componentData.typeName;
         
         const el ={
             item: Provider[type]
+        }
+
+
+        if (getRole(child) === 'dropdownOptionGroup') {
+            const component = {
+                item: Provider[componentData.typeName]
+            }
+
+            const children = child.props.children.map(child => {
+
+                if (isLabel(child) && getRole(child) === 'dropdownOption') {
+                    const onClick = child.props.componentData.multipleSelect ? onMultipleSelect : onSelect;
+
+                    const component = {
+                        item: Provider[child.props.componentData.typeName]
+                    }
+        
+                    const newProps = {
+                        ...child.props,
+                        callbacks: {
+                            onClick,
+                            setResetSelect
+                        }
+                    }
+        
+                    optionComponent = <component.item {...newProps} />
+        
+                    return (
+                        <DropdownOption key={child.key}>
+                            {optionComponent}
+                        </DropdownOption>
+                    );
+                }
+                return child;
+            });
+
+            return (
+                <component.item key={componentData.id} componentData={componentData}>
+                    {children}
+                </component.item>
+            );    
         }
 
         

@@ -5,7 +5,6 @@ import { Input, InputLabel, InputWrapper } from './InputStyled';
 
 
 export default function InputView(props) {
-    console.log(props);
 
     const outlines = useContext(OutlinesContext);
     const attrs = getAttrs(props.componentData);

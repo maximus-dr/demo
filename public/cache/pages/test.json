@@ -44,84 +44,108 @@
                     "id": "12",
                     "value": "Menu"
                   },
+                  
                   {
-                    "typeName": "label",
-                    "id": "5",
-                    "value": "option1",
-                    "styles": {
-                      "width": "100%",
-                      "cursor": "pointer"
-                    },
-                    "role": "dropdownOption"
-                  },
+                    "typeName": "section",
+                    "id": "18",
+                    "role": "dropdownOptionGroup",
+                    "childrenList": [
+                      {
+                        "typeName": "label",
+                        "id": "5",
+                        "value": "option1",
+                        "styles": {
+                          "width": "100%",
+                          "cursor": "pointer"
+                        },
+                        "role": "dropdownOption"
+                      },
 
-                  {
-                    "typeName": "label",
-                    "id": "6",
-                    "role": "dropdownOption",
-                    "value": "option2",
-                    "styles": {
-                      "width": "100%",
-                      "cursor": "pointer"
-                    }
-                  },
+                      {
+                        "typeName": "section",
+                        "id": "19"
+                      },
+    
+                      {
+                        "typeName": "label",
+                        "id": "6",
+                        "role": "dropdownOption",
+                        "value": "option2",
+                        "styles": {
+                          "width": "100%",
+                          "cursor": "pointer"
+                        }
+                      },
 
-                  {
-                    "typeName": "label",
-                    "id": "13",
-                    "value": "Subcaption"
-                  },
+                      {
+                        "typeName": "label",
+                        "id": "20",
+                        "role": "dropdownOption",
+                        "value": "option3",
+                        "styles": {
+                          "width": "100%",
+                          "cursor": "pointer"
+                        }
+                      },
 
-                  {
-                    "typeName": "input",
-                    "id": "8",
-                    "role": "dropdownOption",
-                    "value": "opt3",
-                    "attrs": {
-                      "type": "checkbox",
-                      "name": "option3"
-                    },
-                    "styles": {
-                      "width": "100%",
-                      "cursor": "pointer",
-                      "marginBottom": "0"
-                    },
-                    "label": {
-                      "attrs": {
-                        "value": "option3"
+                      {
+                        "typeName": "button",
+                        "id": "21"
                       }
-                    }
+                    ]
                   },
 
-                  {
-                    "typeName": "input",
-                    "id": "9",
-                    "value": "opt4",
-                    "role": "dropdownOption",
-                    "attrs": {
-                      "type": "checkbox",
-                      "name": "option4"
-                    },
-                    "styles": {
-                      "width": "100%",
-                      "cursor": "pointer",
-                      "marginBottom": "0"
-                    },
-                    "label": {
-                      "attrs": {
-                        "value": "option4"
-                      }
-                    }
-                  },
 
                   {
                     "typeName": "input",
                     "id": "10",
                     "role": "dropdownOption",
+                    "value": "opt4",
+                    "attrs": {
+                      "type": "checkbox",
+                      "name": "opt4"
+                    },
+                    "styles": {
+                      "width": "100%",
+                      "cursor": "pointer",
+                      "marginBottom": "0"
+                    },
+                    "label": {
+                      "attrs": {
+                        "value": "opt4"
+                      }
+                    }
+                  },
+
+                  {
+                    "typeName": "input",
+                    "id": "22",
+                    "role": "dropdownOption",
+                    "value": "opt5",
+                    "attrs": {
+                      "type": "checkbox",
+                      "name": "opt5"
+                    },
+                    "styles": {
+                      "width": "100%",
+                      "cursor": "pointer",
+                      "marginBottom": "0"
+                    },
+                    "label": {
+                      "attrs": {
+                        "value": "opt5"
+                      }
+                    }
+                  },
+
+                  {
+                    "typeName": "input",
+                    "id": "23",
+                    "role": "dropdownOption",
                     "value": "opt6",
                     "attrs": {
                       "type": "checkbox",
-                      "name": "opt6"
+                      "name": "opt5"
                     },
                     "styles": {
                       "width": "100%",
