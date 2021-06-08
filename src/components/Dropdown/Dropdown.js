@@ -85,6 +85,10 @@ export default function Dropdown(props) {
             <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
                 e.stopPropagation();
                 removeItem(item);
+
+                if (props.componentData.typeName === 'input') {
+                    props.switchCheckbox();
+                }
             }} />
 
         for (let item of state) {
@@ -115,7 +119,7 @@ export default function Dropdown(props) {
         if (isCheckbox(child) && getRole(child) === 'dropdownOption') {
             optionComponent = <el.item 
                 {...child.props}
-                onChange={onMultipleSelect} 
+                onClick={onMultipleSelect} 
                 resetSelect={resetSelect}
             />
             return (
