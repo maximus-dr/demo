@@ -2,6 +2,14 @@ import React, { useContext } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
 import { ButtonBody } from './ButtonStyled'
 
+const getHandler = (props, action) => {
+    return (
+        (e) => props.handlers 
+        && props.handlers[action] 
+        && props.handlers.onClick(e, props) || null
+    );
+} 
+
 
 export default function ButtonView(props) {
 
@@ -11,7 +19,8 @@ export default function ButtonView(props) {
         <ButtonBody
             showOutlines={outlines}
             {...props.componentData}
-            {...props.handlers}
+            {...props}
+            onClick={getHandler(props, 'onClick')}
         >
             {props.componentData && props.componentData.value || 'Button'}
             {props.children}

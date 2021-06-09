@@ -41,11 +41,27 @@
                   "role": "tabBar",
                   "styles": {
                     "minHeight": "50px",
-                    "backgroundColor": "#1976d2",
-                    "width": "auto",
+                    "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                    "width": "100%",
                     "marginBottom": "30px"
                   },
                   "childrenList": [
+
+                    {
+                      "typeName": "section",
+                      "id": "13",
+                      "role": "tabHead",
+                      "styles": {
+                        "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                        "flexDirection": "row"
+                      },
+                      "childrenList": [
+                        {
+                          "typeName": "section",
+                          "id": "14"
+                        }
+                      ]
+                    },
 
                     {
                       "typeName": "section",
@@ -53,30 +69,58 @@
                       "role": "tabList",
                       "styles": {
                         "minHeight": "50px",
-                        "flexDirection": "row"
+                        "flexDirection": "row",
+                        "backgroundColor": "yellowgreen"
                       },
+
                       "childrenList": [
                         {
                           "typeName": "button",
                           "id": "7",
-                          "role": "tab"
+                          "role": "tab",
+                          "tabKey": "tabKey 1"
                         },
 
                         {
                           "typeName": "button",
                           "id": "8",
-                          "role": "tab"
+                          "role": "tab",
+                          "tabKey": "tabKey 2"
                         },
 
                         {
                           "typeName": "button",
                           "id": "9",
-                          "role": "tab"
+                          "role": "tab",
+                          "tabKey":"tabKey 3"
                         }
                       ]
                     }
 
 
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "id": "10",
+                  "role": "tabContent",
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "12",
+                      "childrenList": [
+                        {
+                          "typeName": "button",
+                          "id": "11"
+                        },
+
+                        {
+                          "typeName": "button",
+                          "id": "12"
+                        }
+                      ]
+                    }
                   ]
                 }
               ]

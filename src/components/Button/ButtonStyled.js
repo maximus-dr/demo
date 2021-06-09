@@ -103,6 +103,12 @@ export const ButtonBody = styled.button`
                     `;
                 }}
             }
+
+            ${props => {
+                return props.isActive && css`
+                    background: red;
+                `;
+            }}
         `
     }}
 `;
