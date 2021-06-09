@@ -42,7 +42,7 @@
                   "styles": {
                     "minHeight": "50px",
                     "backgroundColor": "rgba(0, 0, 0, 0.04)",
-                    "width": "100%",
+                    "width": "auto",
                     "marginBottom": "30px"
                   },
                   "childrenList": [
@@ -53,49 +53,57 @@
                       "role": "tabHead",
                       "styles": {
                         "backgroundColor":"rgba(0, 0, 0, 0.1)",
-                        "flexDirection": "row"
+                        "flexDirection": "row",
+                        "alignItems": "center"
                       },
                       "childrenList": [
+
+                        {
+                          "typeName": "label",
+                          "id": "14",
+                          "heading": "h2",
+                          "styles": {
+                            "alignSelf": "center"
+                          }
+                        },
+                        
+
                         {
                           "typeName": "section",
-                          "id": "14"
-                        }
-                      ]
-                    },
-
-                    {
-                      "typeName": "section",
-                      "id": "6",
-                      "role": "tabList",
-                      "styles": {
-                        "minHeight": "50px",
-                        "flexDirection": "row",
-                        "backgroundColor": "yellowgreen"
-                      },
-
-                      "childrenList": [
-                        {
-                          "typeName": "button",
-                          "id": "7",
-                          "role": "tab",
-                          "tabKey": "tabKey 1"
-                        },
-
-                        {
-                          "typeName": "button",
-                          "id": "8",
-                          "role": "tab",
-                          "tabKey": "tabKey 2"
-                        },
-
-                        {
-                          "typeName": "button",
-                          "id": "9",
-                          "role": "tab",
-                          "tabKey":"tabKey 3"
+                          "id": "6",
+                          "role": "tabList",
+                          "styles": {
+                            "minHeight": "50px",
+                            "flexDirection": "row"
+                          },
+    
+                          "childrenList": [
+                            {
+                              "typeName": "button",
+                              "id": "7",
+                              "role": "tab",
+                              "tabKey": "tabKey 1"
+                            },
+    
+                            {
+                              "typeName": "button",
+                              "id": "8",
+                              "role": "tab",
+                              "tabKey": "tabKey 2"
+                            },
+    
+                            {
+                              "typeName": "button",
+                              "id": "9",
+                              "role": "tab",
+                              "tabKey":"tabKey 3"
+                            }
+                          ]
                         }
                       ]
                     }
+
+                    
 
 
                   ]

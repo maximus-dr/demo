@@ -5,7 +5,6 @@ import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, Label 
 
 
 export default function LabelView(props) {
-    console.log('label props', props);
 
     const outlines = useContext(OutlinesContext);
     const componentData = props.componentData ? props.componentData : null;

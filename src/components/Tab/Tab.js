@@ -3,6 +3,10 @@ import { Provider } from '..';
 import { extractChildrenByRole } from '../../core/functions/components';
 
 
+
+
+
+
 export default function Tab(props) {
     
     const tabBarData = extractChildrenByRole(props, 'tabBar')[0];
@@ -47,6 +51,13 @@ export default function Tab(props) {
         ...tabContentData.props
     }
 
+    const tabHeadChildren = tabHeadData.props.children.map(child => {
+        if (child.props.componentData.role && child.props.componentData.role === 'tabList') {
+                return
+            }
+        return child;
+    });
+
 
     return (
         <el.TabBar key={tabBarData.key} {...tabBarData.props}>
@@ -54,7 +65,7 @@ export default function Tab(props) {
                 <el.TabList key={tabListData.key} {...tabListData.props}>
                     {tabItems}
                 </el.TabList>
-                {tabHeadData.props.children}
+                {tabHeadChildren}
             </el.TabHead>
             
             <el.TabContent key={tabContentData.key} {...tabContentProps}>
