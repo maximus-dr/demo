@@ -10,7 +10,8 @@ export default function ButtonView(props) {
     return (
         <ButtonBody
             showOutlines={outlines}
-             {...props.componentData} {...props}
+            {...props.componentData}
+            {...props.handlers}
         >
             {props.componentData && props.componentData.value || 'Button'}
             {props.children}

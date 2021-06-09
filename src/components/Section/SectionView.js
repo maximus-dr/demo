@@ -8,7 +8,7 @@ export default function Section(props) {
     const outlines = useContext(OutlinesContext);
 
     return (
-        <SectionWrapper componentData={props.componentData} showOutlines={outlines}>
+        <SectionWrapper componentData={props.componentData} showOutlines={outlines} onMouseEnter={props.onMouseEnter} {...props.handlers}>
             <SectionBackground componentData={props.componentData}>
                 <SectionBody componentData={props.componentData}>
                     {props.children}

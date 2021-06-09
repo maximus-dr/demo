@@ -78,50 +78,6 @@
 
 
                   ]
-                },
-
-                {
-                  "typeName": "section",
-                  "id": "10",
-                  "role": "tabBar",
-                  "styles": {
-                    "minHeight": "50px",
-                    "backgroundColor": "#1976d2",
-                    "width": "auto"
-                  },
-                  "childrenList": [
-
-                    {
-                      "typeName": "section",
-                      "id": "11",
-                      "role": "tabList",
-                      "styles": {
-                        "minHeight": "50px",
-                        "flexDirection": "row"
-                      },
-                      "childrenList": [
-                        {
-                          "typeName": "button",
-                          "id": "12",
-                          "role": "tab"
-                        },
-
-                        {
-                          "typeName": "button",
-                          "id": "13",
-                          "role": "tab"
-                        },
-
-                        {
-                          "typeName": "button",
-                          "id": "14",
-                          "role": "tab"
-                        }
-                      ]
-                    }
-
-
-                  ]
                 }
               ]
             }

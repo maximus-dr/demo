@@ -23,7 +23,7 @@ export default function Dropdown(props) {
     const [resetSelect, setResetSelect] = useState(false);
     
     const childrenList = props.componentData.dropdownMenu && props.componentData.dropdownMenu.childrenList || null;
-    const childrenComponents = childrenList && childrenList.map(component => renderComponents(component)) || null;
+    const childrenComponents = childrenList && childrenList.map(component => renderComponents(component, {})) || null;
 
     const dropdownMenuRef = useRef(null);
 

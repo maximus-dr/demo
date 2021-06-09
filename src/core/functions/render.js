@@ -2,10 +2,15 @@ import { Provider } from '../../components';
 
 
 export function renderComponents(componentData) {
+
     const props = {
         componentData,
         id: componentData.id,
         component: Provider[componentData.typeName]
+    }
+
+    if (componentData.role) {
+        props.handlers = {...HandlerProvider[child.role]};
     }
 
     return getComponents(props);
@@ -17,6 +22,7 @@ function getComponents(props) {
 
     if (!props.componentData) return;
     if (!props.componentData.id) console.log(`Не задан id у компонента ${props.componentData.typeName}`);
+
 
     const getChildrenComponents = (props) => {
         return (
@@ -31,6 +37,11 @@ function getComponents(props) {
                 component: Provider[child.typeName],
                 componentData: child
             }
+
+            if (child.role) {
+                childProps.handlers = {...HandlerProvider[child.role]};
+            }
+
             return getComponents(childProps);
             }
 
@@ -40,11 +51,35 @@ function getComponents(props) {
         }));
     }
 
+    
+
     const result = (
-        <props.component key={props.id} componentData={props.componentData} >
+        <props.component key={props.id} componentData={props.componentData} handlers={props.handlers}>
             { getChildrenComponents(props) }
         </props.component>
     );
 
     return result;
+}
+
+
+const HandlerProvider = {
+    tab: {
+        onClick: (e) => {
+            e.stopPropagation();
+            console.log(e.target);
+        }
+    },
+    tabBar: {
+        onClick: (e) => {
+            e.stopPropagation();
+            console.log(e.target);
+        }
+    },
+    tabList: {
+        onClick: (e) => {
+            e.stopPropagation();
+            console.log(e.target);
+        }
+    }
 }
