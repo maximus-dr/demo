@@ -39,6 +39,12 @@ const commonStyles = css`${props => {
 
         transform: ${styles && styles.transform || ''};
         cursor: ${styles && styles.cursor || ''};
+
+        ${props => {
+            return props.isActive && css`
+                background-color: red;
+            `;
+        }}
     `;
 }}`;
 

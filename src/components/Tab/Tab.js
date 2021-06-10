@@ -3,16 +3,12 @@ import { Provider } from '..';
 import { extractChildrenByRole } from '../../core/functions/components';
 
 
-
-
-
-
 export default function Tab(props) {
     
     const tabBarData = extractChildrenByRole(props, 'tabBar')[0];
     const tabHeadData = extractChildrenByRole(props, 'tabHead')[0];
     const tabListData = extractChildrenByRole(props, 'tabList')[0];
-    const tabsData = extractChildrenByRole(props, 'tab');
+    const tabsData = extractChildrenByRole(tabListData.props, 'tab');
     const tabContentData = extractChildrenByRole(props, 'tabContent')[0];
 
     const [activeTab, setActiveTab] = useState(tabsData[0].props.componentData.tabKey);
@@ -33,6 +29,7 @@ export default function Tab(props) {
             ...tab.props,
             handlers: {
                 onClick: (e, props) => {
+                    e.preventDefault();
                     setActiveTab(props.componentData.tabKey);
                 }
             }
@@ -51,6 +48,7 @@ export default function Tab(props) {
         ...tabContentData.props
     }
 
+    // предотвращает отрисовку табов из таб-баров на других уровнях  вложенности
     const tabHeadChildren = tabHeadData.props.children.map(child => {
         if (child.props.componentData.role && child.props.componentData.role === 'tabList') {
                 return

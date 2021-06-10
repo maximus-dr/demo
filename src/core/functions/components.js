@@ -16,6 +16,14 @@ const getRole = (component) => {
     return component.props.componentData.role && component.props.componentData.role || null;
 }
 
+const getHandler = (props, action) => {
+    return (
+        (e) => props.handlers 
+        && props.handlers[action] 
+        && props.handlers[action](e, props) || null
+    );
+}
+
 function extractChildrenDataByRole(componentData, role) {
     const result = [];
 
@@ -62,6 +70,7 @@ export {
     isLabel,
     isCheckbox,
     getRole,
+    getHandler,
     extractChildrenDataByRole,
     extractChildrenByRole
 }

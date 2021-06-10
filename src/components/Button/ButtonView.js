@@ -6,7 +6,7 @@ const getHandler = (props, action) => {
     return (
         (e) => props.handlers 
         && props.handlers[action] 
-        && props.handlers.onClick(e, props) || null
+        && props.handlers[action](e, props) || null
     );
 } 
 

@@ -1,9 +1,9 @@
 import styled, {css} from 'styled-components';
-import { SHOW_OUTLINES } from '../../core/config/config';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/functions/outlines';
 
 export const ImageWrapper = styled.div`
+    ${props => enableOutlines(props.showOutlines, colors.outline_image)}
     ${props => {
         const styles = props.styles ? props.styles : null;
 
@@ -18,6 +18,14 @@ export const ImageWrapper = styled.div`
             margin-right: ${styles && styles.marginRight || '0'};
             margin-bottom: ${styles && styles.marginBottom || '0'};
             margin-left: ${styles && styles.marginLeft || '0'};
+
+            cursor: ${styles && styles.cursor || ''};
+
+            ${props => {
+                return props.isActive && css`
+                    outline: 4px solid red;
+                `;
+            }}
         `
     }}
 `;
@@ -31,7 +39,6 @@ export const ImageBody = styled.img.attrs(props => {
         height: styles && styles.height ? styles.height : 'auto'
     })
 })`
-    ${props => enableOutlines(props.showOutlines, colors.outline_image)}
     display: block;
     
     ${props => {

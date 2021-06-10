@@ -31,6 +31,14 @@ export const SectionWrapper = styled.div`
 
             box-shadow: ${styles && styles.boxShadow || '0'};
             overflow: ${styles && styles.overflow || 'hidden'};
+
+            cursor: ${styles && styles.cursor || ''};
+
+            ${props => {
+                return props.isActive && css`
+                    background-color: red;
+                `;
+            }}
         `
     }}
 `;
@@ -67,6 +75,7 @@ export const SectionBody = styled.div`
             justify-content: ${styles && styles.justifyContent || 'flex-start'};
             flex-wrap: ${styles && styles.flexWrap || 'nowrap'};
             align-items: ${styles && styles.alignItems || 'flex-start'};
+            column-gap: ${styles && styles.columnGap || ''};
 
             height: ${styles && styles.height || "auto"};
             min-height: ${styles && styles.minHeight || '100px'};

@@ -11,7 +11,7 @@
       "id": "2",
       "styles": {
         "minHeight": "100vh",
-        "width": "640px",
+        "width": "780px",
         "marginLeft": "auto",
         "marginRight": "auto"
       },
@@ -31,6 +31,14 @@
             "overflow": "visible"
           },
           "childrenList": [
+
+            {
+              "typeName": "label",
+              "id": "15",
+              "value": "TabBar",
+              "heading": "h2"
+            },
+
             {
               "typeName": "tab",
               "id": "4",
@@ -42,7 +50,7 @@
                   "styles": {
                     "minHeight": "50px",
                     "backgroundColor": "rgba(0, 0, 0, 0.04)",
-                    "width": "auto",
+                    "width": "100%",
                     "marginBottom": "30px"
                   },
                   "childrenList": [
@@ -114,18 +122,404 @@
                   "id": "10",
                   "role": "tabContent",
                   "childrenList": [
+
                     {
-                      "typeName": "section",
-                      "id": "12",
+                      "typeName": "tab",
+                      "id": "4",
                       "childrenList": [
                         {
-                          "typeName": "button",
-                          "id": "11"
+                          "typeName": "section",
+                          "id": "5",
+                          "role": "tabBar",
+                          "styles": {
+                            "minHeight": "50px",
+                            "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                            "width": "auto",
+                            "marginBottom": "30px",
+                            "flexDirection": "row",
+                            "alignItems": "stretch"
+                          },
+                          "childrenList": [
+        
+                            {
+                              "typeName": "section",
+                              "id": "13",
+                              "role": "tabHead",
+                              "styles": {
+                                "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                                "flexDirection": "column-reverse",
+                                "alignItems": "center"
+                              },
+                              "childrenList": [
+        
+                                {
+                                  "typeName": "label",
+                                  "id": "14",
+                                  "heading": "h2",
+                                  "styles": {
+                                    "alignSelf": "center"
+                                  }
+                                },
+                                
+        
+                                {
+                                  "typeName": "section",
+                                  "id": "6",
+                                  "role": "tabList",
+                                  "styles": {
+                                    "minHeight": "50px",
+                                    "flexDirection": "column"
+                                  },
+            
+                                  "childrenList": [
+                                    {
+                                      "typeName": "label",
+                                      "id": "7",
+                                      "role": "tab",
+                                      "tabKey": "tabKey 1",
+                                      "heading": "h1",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer"
+                                      }
+                                    },
+            
+                                    {
+                                      "typeName": "label",
+                                      "id": "8",
+                                      "role": "tab",
+                                      "tabKey": "tabKey 2",
+                                      "heading": "h2",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer"
+                                      }
+                                    },
+            
+                                    {
+                                      "typeName": "label",
+                                      "id": "9",
+                                      "role": "tab",
+                                      "tabKey":"tabKey 3",
+                                      "heading": "h3",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer"
+                                      }
+                                    },
+
+                                    {
+                                      "typeName": "label",
+                                      "id": "11",
+                                      "role": "tab",
+                                      "tabKey":"tabKey 4",
+                                      "heading": "h4",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer"
+                                      }
+                                    },
+
+                                    {
+                                      "typeName": "label",
+                                      "id": "12",
+                                      "role": "tab",
+                                      "tabKey":"tabKey 5",
+                                      "heading": "h5",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer"
+                                      }
+                                    },
+
+                                    {
+                                      "typeName": "label",
+                                      "id": "13",
+                                      "role": "tab",
+                                      "tabKey":"tabKey 6",
+                                      "heading": "h6",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+        
+                            
+        
+        
+                          ]
                         },
 
                         {
-                          "typeName": "button",
-                          "id": "12"
+                          "typeName": "section",
+                          "id": "10",
+                          "role": "tabContent",
+                          "childrenList": [
+
+                            {
+                              "typeName": "tab",
+                              "id": "14",
+                              "childrenList": [
+                                {
+                                  "typeName": "section",
+                                  "id": "15",
+                                  "role": "tabBar",
+                                  "styles": {
+                                    "minHeight": "50px",
+                                    "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                                    "width": "auto",
+                                    "marginBottom": "30px",
+                                    "flexDirection": "row-reverse",
+                                    "alignItems": "stretch"
+                                  },
+                                  "childrenList": [
+                
+                                    {
+                                      "typeName": "section",
+                                      "id": "16",
+                                      "role": "tabHead",
+                                      "styles": {
+                                        "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                                        "flexDirection": "column-reverse",
+                                        "alignItems": "center"
+                                      },
+                                      "childrenList": [
+                
+                                        {
+                                          "typeName": "label",
+                                          "id": "17",
+                                          "heading": "h2",
+                                          "value": "Sections",
+                                          "styles": {
+                                            "alignSelf": "center"
+                                          }
+                                        },
+                                        
+                
+                                        {
+                                          "typeName": "section",
+                                          "id": "18",
+                                          "role": "tabList",
+                                          "styles": {
+                                            "minHeight": "50px",
+                                            "flexDirection": "column"
+                                          },
+                    
+                                          "childrenList": [
+                                            {
+                                              "typeName": "section",
+                                              "id": "19",
+                                              "role": "tab",
+                                              "tabKey": "tabKey 1",
+                                              "styles": {
+                                                "marginBottom": "5px",
+                                                "cursor": "pointer"
+                                              },
+                                              "childrenList": [
+                                                {
+                                                  "typeName": "label",
+                                                  "id": "25",
+                                                  "value": "1"
+                                                }
+                                              ]
+                                            },
+                    
+                                            {
+                                              "typeName": "section",
+                                              "id": "20",
+                                              "role": "tab",
+                                              "tabKey": "tabKey 2",
+                                              "styles": {
+                                                "marginBottom": "5px",
+                                                "cursor": "pointer"
+                                              },
+                                              "childrenList": [
+                                                {
+                                                  "typeName": "label",
+                                                  "id": "25",
+                                                  "value": "2"
+                                                }
+                                              ]
+                                            },
+        
+                                            {
+                                              "typeName": "section",
+                                              "id": "21",
+                                              "role": "tab",
+                                              "tabKey": "tabKey 3",
+                                              "styles": {
+                                                "marginBottom": "5px",
+                                                "cursor": "pointer"
+                                              },
+                                              "childrenList": [
+                                                {
+                                                  "typeName": "label",
+                                                  "id": "25",
+                                                  "value": "3"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                
+                                    
+                
+                
+                                  ]
+                                },
+        
+                                {
+                                  "typeName": "section",
+                                  "id": "10",
+                                  "role": "tabContent",
+                                  "childrenList": [
+                
+                                  ]
+                                }
+                              ]
+                            }
+        
+                          ]
+                        }
+                      ]
+                    },
+
+                    
+
+                    {
+                      "typeName": "tab",
+                      "id": "26",
+                      "childrenList": [
+                        {
+                          "typeName": "section",
+                          "id": "27",
+                          "role": "tabBar",
+                          "styles": {
+                            "minHeight": "50px",
+                            "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                            "width": "100%",
+                            "marginBottom": "30px",
+                            "flexDirection": "row-reverse",
+                            "alignItems": "stretch"
+                          },
+                          "childrenList": [
+        
+                            {
+                              "typeName": "section",
+                              "id": "28",
+                              "role": "tabHead",
+                              "styles": {
+                                "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                                "flexDirection": "column-reverse",
+                                "alignItems": "center"
+                              },
+                              "childrenList": [
+        
+                                {
+                                  "typeName": "label",
+                                  "id": "29",
+                                  "heading": "h2",
+                                  "value": "Images",
+                                  "styles": {
+                                    "alignSelf": "center"
+                                  }
+                                },
+                                
+        
+                                {
+                                  "typeName": "section",
+                                  "id": "30",
+                                  "role": "tabList",
+                                  "styles": {
+                                    "minHeight": "50px",
+                                    "flexDirection": "row",
+                                    "columnGap": "15px"
+                                  },
+            
+                                  "childrenList": [
+                                    {
+                                      "typeName": "image",
+                                      "id": "31",
+                                      "role": "tab",
+                                      "tabKey": "tabKey 1",
+                                      "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer",
+                                        "width": "auto"
+                                      },
+                                      "childrenList": [
+                                        {
+                                          "typeName": "label",
+                                          "id": "32",
+                                          "value": "image 1"
+                                        }
+                                      ]
+                                    },
+            
+                                    {
+                                      "typeName": "image",
+                                      "id": "33",
+                                      "role": "tab",
+                                      "tabKey": "tabKey 2",
+                                      "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer",
+                                        "width": "auto"
+                                      },
+                                      "childrenList": [
+                                        {
+                                          "typeName": "label",
+                                          "id": "34",
+                                          "value": "image 2"
+                                        }
+                                      ]
+                                    },
+
+                                    {
+                                      "typeName": "image",
+                                      "id": "35",
+                                      "role": "tab",
+                                      "tabKey": "tabKey 3",
+                                      "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                                      "styles": {
+                                        "marginBottom": "5px",
+                                        "cursor": "pointer",
+                                        "width": "auto"
+                                      },
+                                      "childrenList": [
+                                        {
+                                          "typeName": "label",
+                                          "id": "36",
+                                          "value": "image 3"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+        
+                            
+        
+        
+                          ]
+                        },
+
+                        {
+                          "typeName": "section",
+                          "id": "10",
+                          "role": "tabContent",
+                          "childrenList": [
+        
+                          ]
                         }
                       ]
                     }
