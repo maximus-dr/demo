@@ -46,7 +46,7 @@ export const InputWrapper = styled.div`
     }}
 `;
 
-export const Input = styled.input`
+export const InputBody = styled.input`
 
     ${props => {
         const styles = getStyles(props.componentData);

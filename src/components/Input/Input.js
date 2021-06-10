@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
 import { getAttrs } from '../../core/functions/styles';
-import { Input, InputLabel, InputWrapper } from './InputStyled';
+import { InputBody, InputLabel, InputWrapper } from './InputStyled';
 
 
-export default function InputView(props) {
+export default function Input(props) {
 
     const outlines = useContext(OutlinesContext);
     const attrs = getAttrs(props.componentData);
@@ -27,7 +27,7 @@ export default function InputView(props) {
     const labelAttrs = props.componentData.label && props.componentData.label.attrs || {};
 
     const input = 
-        <Input
+        <InputBody
             {...inputAttrs}
             id={attrs && attrs.id || props.componentData.id}
             type={attrs && attrs.type || 'text'}

@@ -63,7 +63,7 @@ function extractChildrenByRole(props, role) {
     }
 
     getChild(props);
-    return result;
+    return result.length > 0 ? result : null;
 }
 
 export {

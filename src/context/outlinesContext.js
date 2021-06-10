@@ -28,7 +28,7 @@ const OutlineButton = styled.button`
 
 export const Outlines = (props) => {
   
-  const sessionValue = window.sessionStorage.getItem('show_outlines');
+  const sessionValue = window.sessionStorage.getItem('show_outlines'); // boolean
   const [outlines, setOutlines] = useState(sessionValue);
 
   const showOutlines = () => {

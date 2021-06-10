@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { SectionWrapper, SectionBody, SectionBackground } from './SectionStyled'
-import { OutlinesContext } from './../../context/outlinesContext';
+import { OutlinesContext } from '../../context/outlinesContext';
 import { getHandler } from '../../core/functions/components';
 
 

@@ -1,27 +1,17 @@
 import React, { useContext } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
+import { getHandler } from '../../core/functions/components';
 import { getAttrs } from '../../core/functions/styles';
-import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, Label } from './LabelStyled'
+import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
 
 
-const getHandler = (props, action) => {
-    return (
-        (e) => props.handlers 
-        && props.handlers[action] 
-        && props.handlers[action](e, props) || null
-    );
-}
 
-
-export default function LabelView(props) {
+export default function Label(props) {
 
     const outlines = useContext(OutlinesContext);
     const componentData = props.componentData ? props.componentData : null;
     const attrs = getAttrs(props.componentData);
 
-    // const handlers = {
-    //     onClick: props.callbacks ? (e) => props.callbacks.onClick(e, props) : null
-    // }
 
     const label = (heading) => {
 
@@ -103,7 +93,7 @@ export default function LabelView(props) {
                 );
             case 'label':
                 return (
-                    <Label 
+                    <InputLabel 
                         htmlFor={htmlFor} 
                         {...props}
                         {...props.componentData} 
@@ -112,7 +102,7 @@ export default function LabelView(props) {
                     >
                         {text}
                         {props.children}
-                    </Label>
+                    </InputLabel>
                 );
             default:
                 return (

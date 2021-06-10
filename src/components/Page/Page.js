@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { PageBody } from './PageStyled';
-import { OutlinesContext } from './../../context/outlinesContext';
+import { OutlinesContext } from '../../context/outlinesContext';
 
 
 export default function Page(props) {

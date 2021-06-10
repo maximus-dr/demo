@@ -4,7 +4,7 @@ import { getHandler } from '../../core/functions/components';
 import { ImageBody, ImageWrapper } from './ImageStyled'
 
 
-export default function ImageView(props) {
+export default function Image(props) {
 
     const outlines = useContext(OutlinesContext);
 

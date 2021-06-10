@@ -121,7 +121,7 @@ export const LabelH6 = styled.h6`
     }}
 `;
 
-export const Label = styled.label`
+export const InputLabel = styled.label`
     ${commonStyles}
     ${props => {
         const styles = props.styles ? props.styles : null;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
 import { DescriptionBody } from './DescriptionStyled'
 
-export default function DescriptionView(props) {
+export default function Description(props) {
 
     const outlines = useContext(OutlinesContext);
     const componentData = props.componentData ? props.componentData : null;

@@ -4,7 +4,7 @@ import { getAttrs } from '../../core/functions/styles';
 import { FormBody } from './FormStyled'
 
 
-export default function FormView(props) {
+export default function Form(props) {
 
     const outlines = useContext(OutlinesContext);
     const attrs = getAttrs(props.componentData);

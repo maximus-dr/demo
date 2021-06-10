@@ -1,24 +1,47 @@
 import React, { useState } from 'react'
 import { Provider } from '..';
 import { extractChildrenByRole } from '../../core/functions/components';
+import { TabWarning, TabWarningCaption } from './TabStyled';
+
+
+const createMessage = (message) => {
+    return <div>{message}</div>
+}
 
 
 export default function Tab(props) {
     
-    const tabBarData = extractChildrenByRole(props, 'tabBar')[0];
-    const tabHeadData = extractChildrenByRole(props, 'tabHead')[0];
-    const tabListData = extractChildrenByRole(props, 'tabList')[0];
-    const tabsData = extractChildrenByRole(tabListData.props, 'tab');
-    const tabContentData = extractChildrenByRole(props, 'tabContent')[0];
+    const tabBarData = extractChildrenByRole(props, 'tabBar');
+    const tabHeadData = extractChildrenByRole(props, 'tabHead');
+    const tabListData = extractChildrenByRole(props, 'tabList');
+    const tabsData = tabListData && extractChildrenByRole(tabListData[0].props, 'tab') || null;
+    const tabContentData = extractChildrenByRole(props, 'tabContent');
 
-    const [activeTab, setActiveTab] = useState(tabsData[0].props.componentData.tabKey);
+    const warnings = [];
+
+    if (!tabBarData) warnings.push(createMessage('Добавьте tabBar'));
+    if (!tabHeadData) warnings.push(createMessage('Добавьте tabHead'));
+    if (!tabListData) warnings.push(createMessage('Добавьте tabList'));
+    if (!tabsData) warnings.push(createMessage('Добавьте tab'));
+    if (!tabContentData) warnings.push(createMessage('Добавьте tabContent'));
+    
+    if (warnings.length > 0) {
+        return (
+            <TabWarning>
+                <TabWarningCaption>Warning!</TabWarningCaption>
+                {warnings.map((item, i) => <div style={{}} key={i}>{item}</div>)}
+            </TabWarning>
+        );
+    }
+
+    const [activeTab, setActiveTab] = useState(tabsData && tabsData[0].props.componentData.tabKey || null);
 
     const el = {
-        TabBar: Provider[tabBarData.props.componentData.typeName],
-        TabHead: Provider[tabHeadData.props.componentData.typeName],
-        TabList: Provider[tabListData.props.componentData.typeName],
+        TabBar: Provider[tabBarData[0].props.componentData.typeName],
+        TabHead: Provider[tabHeadData[0].props.componentData.typeName],
+        TabList: Provider[tabListData[0].props.componentData.typeName],
         Tab,
-        TabContent: Provider[tabContentData.props.componentData.typeName]
+        TabContent: Provider[tabContentData[0].props.componentData.typeName]
     }
     
     // Tabs
