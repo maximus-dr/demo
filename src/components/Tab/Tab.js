@@ -46,6 +46,11 @@ export default function Tab(props) {
     
     // Tabs
     const tabItems = tabsData.map(tab => {
+
+        if (!tab.props.componentData.tabKey) {
+            console.log('Добавьте tabKey для tab');
+        }
+
         el.Tab = Provider[tab.props.componentData.typeName];
 
         const tabProps = {
@@ -68,30 +73,29 @@ export default function Tab(props) {
 
     // TabContent
     const tabContentProps = {
-        ...tabContentData.props
+        ...tabContentData[0].props
     }
 
     // предотвращает отрисовку табов из таб-баров на других уровнях  вложенности
-    const tabHeadChildren = tabHeadData.props.children.map(child => {
+    const tabHeadChildren = tabHeadData[0].props.children && tabHeadData[0].props.children.map(child => {
         if (child.props.componentData.role && child.props.componentData.role === 'tabList') {
                 return
             }
         return child;
-    });
-
+    }) || [];
 
     return (
-        <el.TabBar key={tabBarData.key} {...tabBarData.props}>
-            <el.TabHead key={tabHeadData.key} {...tabHeadData.props}>
-                <el.TabList key={tabListData.key} {...tabListData.props}>
+        <el.TabBar key={tabBarData[0].key} {...tabBarData[0].props}>
+            <el.TabHead key={tabHeadData[0].key} {...tabHeadData[0].props}>
+                <el.TabList key={tabListData[0].key} {...tabListData[0].props}>
                     {tabItems}
                 </el.TabList>
                 {tabHeadChildren}
             </el.TabHead>
             
-            <el.TabContent key={tabContentData.key} {...tabContentProps}>
+            <el.TabContent key={tabContentData[0].key} {...tabContentProps}>
                 Active tab: {activeTab}
-                {tabContentData.props.children}
+                {tabContentData[0].props.children}
             </el.TabContent>
         </el.TabBar>
     )

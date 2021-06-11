@@ -2,7 +2,7 @@
   "typeName": "page",
   "id": "1",
   "styles": {
-
+    "backgroundColor": "#F5F5F5"
   },
   "childrenList": [
 
@@ -20,9 +20,1077 @@
 
         {
           "typeName": "tab",
-          "id": "tab1",
+          "id": "3",
           "childrenList": [
+            {
+              "typeName": "section",
+              "id": "4",
+              "role": "tabBar",
+              "styles": {
+                "backgroundColor": "#ffffff",
+                "marginBottom": "30px",
+                "paddingTop": "0",
+                "paddingRight": "0",
+                "paddingBottom": "0",
+                "paddingLeft": "0"
+              },
+              "childrenList": [
+                {
+                  "typeName": "section",
+                  "id": "5",
+                  "role": "tabHead",
+                  "styles": {
+                    "minHeight": "10px",
+                    "paddingTop": "0",
+                    "paddingRight": "0",
+                    "paddingBottom": "0",
+                    "paddingLeft": "0",
+                    "backgroundColor": "#1976d2",
+                    "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+                  },
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "7",
+                      "role": "tabList",
+                      "styles": {
+                        "flexDirection": "row"
+                      },
+                      "childrenList": [
+
+                        {
+                          "typeName": "button",
+                          "id": "8",
+                          "role": "tab",
+                          "tabKey": "Button 1",
+
+                          "styles": {
+                            "hover": {
+                              "opacity": "0.87"
+                            },
+
+                            "isActive": {
+                              "hover": {
+                                "opacity": "1"
+                              }
+                            }
+                          }
+                        },
+
+                        {
+                          "typeName": "button",
+                          "id": "9",
+                          "role": "tab",
+                          "tabKey": "Button 2",
+
+                          "styles": {
+                            "hover": {
+                              "opacity": "0.87"
+                            },
+
+                            "isActive": {
+                              "hover": {
+                                "opacity": "1"
+                              }
+                            }
+                          }
+                        },
+
+                        {
+                          "typeName": "button",
+                          "id": "10",
+                          "role": "tab",
+                          "tabKey": "Button 3",
+
+                          "styles": {
+                            "hover": {
+                              "opacity": "0.87"
+                            },
+
+                            "isActive": {
+                              "hover": {
+                                "opacity": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "id": "6",
+                  "role": "tabContent",
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        
+        {
+          "typeName": "tab",
+          "id": "7",
+          "childrenList": [
+            {
+              "typeName": "section",
+              "id": "8",
+              "role": "tabBar",
+              "styles": {
+                "backgroundColor": "#ffffff",
+                "marginBottom": "30px",
+                "paddingTop": "0",
+                "paddingRight": "0",
+                "paddingBottom": "0",
+                "paddingLeft": "0"
+              },
+              "childrenList": [
+                {
+                  "typeName": "section",
+                  "id": "9",
+                  "role": "tabHead",
+                  "styles": {
+                    "minHeight": "10px",
+                    "paddingTop": "0",
+                    "paddingRight": "0",
+                    "paddingBottom": "0",
+                    "paddingLeft": "0",
+                    "backgroundColor": "#1976d2",
+                    "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+                  },
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "10",
+                      "role": "tabList",
+                      "styles": {
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "paddingBottom": "0"
+                      },
+                      "childrenList": [
+
+                        {
+                          "typeName": "label",
+                          "id": "11",
+                          "role": "tab",
+                          "tabKey": "Label 1",
+                          "styles": {
+                            "marginTop": "5px",
+                            "marginRight": "5px",
+                            "marginBottom": "0",
+                            "marginLeft": "5px",
+                            "paddingTop": "5px",
+                            "paddingRight": "15px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "15px",
+                            "cursor": "pointer",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "width": "100%",
+                            "transitions": ["color 200ms"],
+
+                            "hover": {
+                              "color": "#ffffff"
+                            },
+
+                            "isActive": {
+                              "color": "#ffffff",
+
+                              "hover": {
+                                "cursor": "default"
+                              },
+
+                              "after": {
+                                "width": "100%",
+                                "left": "0",
+                                "bottom": "0",
+                                "height": "2px",
+                                "backgroundColor": "#DC004E",
+                                "transitions": ["background-color 100ms"]
+                              }
+                            }
+                          }
+                        },
+
+                        {
+                          "typeName": "label",
+                          "id": "12",
+                          "role": "tab",
+                          "tabKey": "Label 2",
+                          "styles": {
+                            "cursor": "pointer",
+                            "marginTop": "5px",
+                            "marginRight": "5px",
+                            "marginBottom": "0",
+                            "marginLeft": "5px",
+                            "paddingTop": "5px",
+                            "paddingRight": "15px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "15px",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "transitions": ["color 200ms"],
+
+                            "hover": {
+                              "color": "#ffffff"
+                            },
+
+                            "isActive": {
+                              "color": "#ffffff",
+
+                              "hover": {
+                                "cursor": "default"
+                              },
+
+                              "after": {
+                                "width": "100%",
+                                "left": "0",
+                                "bottom": "0",
+                                "height": "2px",
+                                "backgroundColor": "#DC004E",
+                                "transitions": ["background-color 100ms"]
+                              }
+                            }
+                          }
+                        },
+
+                        {
+                          "typeName": "label",
+                          "id": "13",
+                          "role": "tab",
+                          "tabKey": "Label 3",
+                          "styles": {
+                            "cursor": "pointer",
+                            "marginTop": "5px",
+                            "marginRight": "5px",
+                            "marginBottom": "0",
+                            "marginLeft": "5px",
+                            "paddingTop": "5px",
+                            "paddingRight": "15px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "15px",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "transitions": ["color 200ms"],
+
+                            "hover": {
+                              "color":"#ffffff"
+                            },
+
+                            "isActive": {
+                              "color": "#ffffff",
+
+                              "hover": {
+                                "cursor": "default"
+                              },
+
+                              "after": {
+                                "width": "100%",
+                                "left": "0",
+                                "bottom": "0",
+                                "height": "2px",
+                                "backgroundColor": "#DC004E",
+                                "transitions": ["background-color 100ms"]
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "id": "14",
+                  "role": "tabContent",
+                  "styles": {
+                    "width": "100%",
+                    "textAlign": "center"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        
+        {
+          "typeName": "tab",
+          "id": "9",
+          "childrenList": [
+            {
+              "typeName": "section",
+              "id": "4",
+              "role": "tabBar",
+              "styles": {
+                "backgroundColor": "#ffffff",
+                "marginBottom": "30px",
+                "paddingTop": "0",
+                "paddingRight": "0",
+                "paddingBottom": "0",
+                "paddingLeft": "0"
+              },
+              "childrenList": [
+                {
+                  "typeName": "section",
+                  "id": "5",
+                  "role": "tabHead",
+                  "styles": {
+                    "minHeight": "10px",
+                    "paddingTop": "0",
+                    "paddingRight": "0",
+                    "paddingBottom": "0",
+                    "paddingLeft": "0",
+                    "backgroundColor": "#1976d2",
+                    "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+                  },
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "7",
+                      "role": "tabList",
+                      "styles": {
+                        "flexDirection": "row"
+                      },
+                      "childrenList": [
+
+                        {
+                          "typeName": "section",
+                          "id": "8",
+                          "role": "tab",
+                          "tabKey": "Section 1",
+
+                          "styles": {
+                            "cursor": "pointer",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "transitions": ["background-color 200ms", "color 200ms"],
+
+                            "hover": {
+                              "color":"rgba(255, 255, 255, 1)"
+                            },
+
+                            "isActive": {
+                              "backgroundColor": "rgba(0, 0, 0, 0.2)",
+                              "color": "#ffffff"
+                            }
+                          },
+                          "childrenList": [
+                            {
+                              "typeName": "label",
+                              "id": "37",
+                              "value": "Section"
+                            }
+                          ]
+                        },
+
+                        {
+                          "typeName": "section",
+                          "id": "9",
+                          "role": "tab",
+                          "tabKey": "Section 2",
+
+                          "styles": {
+                            "cursor": "pointer",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "transitions": ["background-color 200ms", "color 200ms"],
+
+                            "hover": {
+                              "color":"rgba(255, 255, 255, 1)"
+                            },
+
+                            "isActive": {
+                              "backgroundColor": "rgba(0, 0, 0, 0.2)",
+                              "color": "#ffffff"
+                            }
+                          },
+                          "childrenList": [
+                            {
+                              "typeName": "label",
+                              "id": "37",
+                              "value": "Section"
+                            }
+                          ]
+                        },
+
+                        {
+                          "typeName": "section",
+                          "id": "10",
+                          "role": "tab",
+                          "tabKey": "Section 3",
+
+                          "styles": {
+                            "cursor": "pointer",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "transitions": ["background-color 200ms", "color 200ms"],
+
+                            "hover": {
+                              "color":"rgba(255, 255, 255, 1)"
+                            },
+
+                            "isActive": {
+                              "backgroundColor": "rgba(0, 0, 0, 0.2)",
+                              "color": "#ffffff"
+                            }
+                          },
+                          "childrenList": [
+                            {
+                              "typeName": "label",
+                              "id": "37",
+                              "value": "Section"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "id": "6",
+                  "role": "tabContent",
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "typeName": "tab",
+          "id": "10",
+          "childrenList": [
+            {
+              "typeName": "section",
+              "id": "4",
+              "role": "tabBar",
+              "styles": {
+                "backgroundColor": "#ffffff",
+                "marginBottom": "30px",
+                "paddingTop": "0",
+                "paddingRight": "0",
+                "paddingBottom": "0",
+                "paddingLeft": "0",
+                "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+              },
+              "childrenList": [
+                {
+                  "typeName": "section",
+                  "id": "5",
+                  "role": "tabHead",
+                  "styles": {
+                    "minHeight": "10px",
+                    "paddingTop": "0",
+                    "paddingRight": "0",
+                    "paddingBottom": "0",
+                    "paddingLeft": "0",
+                    "backgroundColor": "rgba(0,0,0,0.04)",
+                    "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+                  },
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "7",
+                      "role": "tabList",
+                      "styles": {
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                        "paddingLeft": "25px",
+                        "paddingRight": "25px",
+                        "paddingTop": "25px",
+                        "paddingBottom": "25px"
+                      },
+                      "childrenList": [
+
+                        {
+                          "typeName": "image",
+                          "id": "31",
+                          "role": "tab",
+                          "tabKey": "tabKey 1",
+                          "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                          "styles": {
+                            "marginBottom": "5px",
+                            "cursor": "pointer",
+                            "width": "32%",
+                            "textAlign": "center"
+                          },
+                          "childrenList": [
+                            {
+                              "typeName": "label",
+                              "id": "32",
+                              "value": "Image",
+                              "styles": {
+                                "textTransform": "uppercase"
+                              }
+                            }
+                          ]
+                        },
+
+                        {
+                          "typeName": "image",
+                          "id": "32",
+                          "role": "tab",
+                          "tabKey": "tabKey 2",
+                          "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                          "styles": {
+                            "width": "32%",
+                            "marginBottom": "5px",
+                            "cursor": "pointer",
+                            "textAlign": "center"
+                          },
+                          "childrenList": [
+                            {
+                              "typeName": "label",
+                              "id": "32",
+                              "value": "Image",
+                              "styles": {
+                                "textTransform": "uppercase"
+                              }
+                            }
+                          ]
+                        },
+
+                        {
+                          "typeName": "image",
+                          "id": "33",
+                          "role": "tab",
+                          "tabKey": "tabKey 3",
+                          "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                          "styles": {
+                            "marginBottom": "5px",
+                            "cursor": "pointer",
+                            "width": "32%",
+                            "textAlign": "center"
+                          },
+                          "childrenList": [
+                            {
+                              "typeName": "label",
+                              "id": "32",
+                              "value": "Image",
+                              "styles": {
+                                "textTransform": "uppercase"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "id": "6",
+                  "role": "tabContent",
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+
+
+        {
+          "typeName": "tab",
+          "id": "4",
+          "childrenList": [
+            {
+              "typeName": "section",
+              "id": "5",
+              "role": "tabBar",
+              "styles": {
+                "minHeight": "50px",
+                "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                "width": "100%",
+                "marginBottom": "30px"
+              },
+              "childrenList": [
+
+                {
+                  "typeName": "section",
+                  "id": "13",
+                  "role": "tabHead",
+                  "styles": {
+                    "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                    "flexDirection": "row",
+                    "alignItems": "center",
+                    "width": "100%",
+                    "justifyContent": "space-between"
+                  },
+                  "childrenList": [
+
+                    {
+                      "typeName": "label",
+                      "id": "14",
+                      "heading": "h2",
+                      "styles": {
+                        "alignSelf": "center"
+                      }
+                    },
+                    
+
+                    {
+                      "typeName": "section",
+                      "id": "6",
+                      "role": "tabList",
+                      "styles": {
+                        "minHeight": "50px",
+                        "flexDirection": "row"
+                      },
+
+                      "childrenList": [
+                        {
+                          "typeName": "button",
+                          "id": "7",
+                          "role": "tab",
+                          "tabKey": "tabKey 1"
+                        },
+
+                        {
+                          "typeName": "button",
+                          "id": "8",
+                          "role": "tab",
+                          "tabKey": "tabKey 2"
+                        },
+
+                        {
+                          "typeName": "button",
+                          "id": "9",
+                          "role": "tab",
+                          "tabKey":"tabKey 3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+
+                
+
+
+              ]
+            },
+
+            {
+              "typeName": "section",
+              "id": "10",
+              "role": "tabContent",
+              "childrenList": [
+
+                {
+                  "typeName": "tab",
+                  "id": "4",
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "5",
+                      "role": "tabBar",
+                      "styles": {
+                        "minHeight": "50px",
+                        "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                        "width": "auto",
+                        "marginBottom": "30px",
+                        "flexDirection": "row",
+                        "alignItems": "stretch"
+                      },
+                      "childrenList": [
+    
+                        {
+                          "typeName": "section",
+                          "id": "13",
+                          "role": "tabHead",
+                          "styles": {
+                            "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                            "flexDirection": "column-reverse",
+                            "alignItems": "center"
+                          },
+                          "childrenList": [
+    
+                            {
+                              "typeName": "label",
+                              "value": "Labels",
+                              "id": "14",
+                              "heading": "h2",
+                              "styles": {
+                                "alignSelf": "center"
+                              }
+                            },
+                            
+    
+                            {
+                              "typeName": "section",
+                              "id": "6",
+                              "role": "tabList",
+                              "styles": {
+                                "minHeight": "50px",
+                                "flexDirection": "column"
+                              },
+        
+                              "childrenList": [
+                                {
+                                  "typeName": "label",
+                                  "id": "7",
+                                  "role": "tab",
+                                  "tabKey": "tabKey 1",
+                                  "heading": "h1",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer"
+                                  }
+                                },
+        
+                                {
+                                  "typeName": "label",
+                                  "id": "8",
+                                  "role": "tab",
+                                  "tabKey": "tabKey 2",
+                                  "heading": "h2",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer"
+                                  }
+                                },
+        
+                                {
+                                  "typeName": "label",
+                                  "id": "9",
+                                  "role": "tab",
+                                  "tabKey":"tabKey 3",
+                                  "heading": "h3",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer"
+                                  }
+                                },
+
+                                {
+                                  "typeName": "label",
+                                  "id": "11",
+                                  "role": "tab",
+                                  "tabKey":"tabKey 4",
+                                  "heading": "h4",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer"
+                                  }
+                                },
+
+                                {
+                                  "typeName": "label",
+                                  "id": "12",
+                                  "role": "tab",
+                                  "tabKey":"tabKey 5",
+                                  "heading": "h5",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer"
+                                  }
+                                },
+
+                                {
+                                  "typeName": "label",
+                                  "id": "13",
+                                  "role": "tab",
+                                  "tabKey":"tabKey 6",
+                                  "heading": "h6",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+    
+                        
+    
+    
+                      ]
+                    },
+
+                    {
+                      "typeName": "section",
+                      "id": "10",
+                      "role": "tabContent",
+                      "childrenList": [
+
+                        {
+                          "typeName": "tab",
+                          "id": "14",
+                          "childrenList": [
+                            {
+                              "typeName": "section",
+                              "id": "15",
+                              "role": "tabBar",
+                              "styles": {
+                                "minHeight": "50px",
+                                "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                                "width": "auto",
+                                "marginBottom": "30px",
+                                "flexDirection": "row-reverse",
+                                "alignItems": "stretch"
+                              },
+                              "childrenList": [
             
+                                {
+                                  "typeName": "section",
+                                  "id": "16",
+                                  "role": "tabHead",
+                                  "styles": {
+                                    "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                                    "flexDirection": "column-reverse",
+                                    "alignItems": "center"
+                                  },
+                                  "childrenList": [
+            
+                                    {
+                                      "typeName": "label",
+                                      "id": "17",
+                                      "heading": "h2",
+                                      "value": "Sections",
+                                      "styles": {
+                                        "alignSelf": "center"
+                                      }
+                                    },
+                                    
+            
+                                    {
+                                      "typeName": "section",
+                                      "id": "18",
+                                      "role": "tabList",
+                                      "styles": {
+                                        "minHeight": "50px",
+                                        "flexDirection": "column"
+                                      },
+                
+                                      "childrenList": [
+                                        {
+                                          "typeName": "section",
+                                          "id": "19",
+                                          "role": "tab",
+                                          "tabKey": "tabKey 1",
+                                          "styles": {
+                                            "marginBottom": "5px",
+                                            "cursor": "pointer"
+                                          },
+                                          "childrenList": [
+                                            {
+                                              "typeName": "label",
+                                              "id": "25",
+                                              "value": "1"
+                                            }
+                                          ]
+                                        },
+                
+                                        {
+                                          "typeName": "section",
+                                          "id": "20",
+                                          "role": "tab",
+                                          "tabKey": "tabKey 2",
+                                          "styles": {
+                                            "marginBottom": "5px",
+                                            "cursor": "pointer"
+                                          },
+                                          "childrenList": [
+                                            {
+                                              "typeName": "label",
+                                              "id": "25",
+                                              "value": "2"
+                                            }
+                                          ]
+                                        },
+    
+                                        {
+                                          "typeName": "section",
+                                          "id": "21",
+                                          "role": "tab",
+                                          "tabKey": "tabKey 3",
+                                          "styles": {
+                                            "marginBottom": "5px",
+                                            "cursor": "pointer"
+                                          },
+                                          "childrenList": [
+                                            {
+                                              "typeName": "label",
+                                              "id": "25",
+                                              "value": "3"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+            
+                                
+            
+            
+                              ]
+                            },
+    
+                            {
+                              "typeName": "section",
+                              "id": "10",
+                              "role": "tabContent",
+                              "childrenList": [
+            
+                              ]
+                            }
+                          ]
+                        }
+    
+                      ]
+                    }
+                  ]
+                },
+
+                
+
+                {
+                  "typeName": "tab",
+                  "id": "26",
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "27",
+                      "role": "tabBar",
+                      "styles": {
+                        "minHeight": "50px",
+                        "backgroundColor": "rgba(0, 0, 0, 0.04)",
+                        "width": "100%",
+                        "marginBottom": "30px",
+                        "flexDirection": "row-reverse",
+                        "alignItems": "stretch"
+                      },
+                      "childrenList": [
+    
+                        {
+                          "typeName": "section",
+                          "id": "28",
+                          "role": "tabHead",
+                          "styles": {
+                            "backgroundColor":"rgba(0, 0, 0, 0.1)",
+                            "flexDirection": "column-reverse",
+                            "alignItems": "center"
+                          },
+                          "childrenList": [
+    
+                            {
+                              "typeName": "label",
+                              "id": "29",
+                              "heading": "h2",
+                              "value": "Images",
+                              "styles": {
+                                "alignSelf": "center"
+                              }
+                            },
+                            
+    
+                            {
+                              "typeName": "section",
+                              "id": "30",
+                              "role": "tabList",
+                              "styles": {
+                                "minHeight": "50px",
+                                "flexDirection": "row",
+                                "columnGap": "15px"
+                              },
+        
+                              "childrenList": [
+                                {
+                                  "typeName": "image",
+                                  "id": "31",
+                                  "role": "tab",
+                                  "tabKey": "tabKey 1",
+                                  "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer",
+                                    "width": "auto"
+                                  },
+                                  "childrenList": [
+                                    {
+                                      "typeName": "label",
+                                      "id": "32",
+                                      "value": "image 1"
+                                    }
+                                  ]
+                                },
+        
+                                {
+                                  "typeName": "image",
+                                  "id": "33",
+                                  "role": "tab",
+                                  "tabKey": "tabKey 2",
+                                  "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer",
+                                    "width": "auto"
+                                  },
+                                  "childrenList": [
+                                    {
+                                      "typeName": "label",
+                                      "id": "34",
+                                      "value": "image 2"
+                                    }
+                                  ]
+                                },
+
+                                {
+                                  "typeName": "image",
+                                  "id": "35",
+                                  "role": "tab",
+                                  "tabKey": "tabKey 3",
+                                  "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+                                  "styles": {
+                                    "marginBottom": "5px",
+                                    "cursor": "pointer",
+                                    "width": "auto"
+                                  },
+                                  "childrenList": [
+                                    {
+                                      "typeName": "label",
+                                      "id": "36",
+                                      "value": "image 3"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+    
+                        
+    
+    
+                      ]
+                    },
+
+                    {
+                      "typeName": "section",
+                      "id": "10",
+                      "role": "tabContent",
+                      "styles": {
+                        "width": "100%"
+                      },
+                      "childrenList": [
+    
+                      ]
+                    }
+
+                    
+                  ]
+                }
+              ]
+            }
           ]
         }
 

@@ -80,11 +80,12 @@ export const ButtonBody = styled.button`
                     return css`
                         ${commonStyles(styles)}
 
-                        background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.7)'};
-                        color: ${styles && styles.color || '#ffffff'};
+                        background-color: ${styles && styles.backgroundColor || ''};
+                        color: ${styles && styles.color || ''};
                         border-color: ${styles && styles.borderColor || ''};
                         transform: ${styles && styles.transform || ''};
                         opacity: ${styles && styles.opacity || ''};
+                        box-shadow: ${styles && styles.boxShadow || ''};
                     `
                 }}
             }
@@ -95,18 +96,103 @@ export const ButtonBody = styled.button`
 
                     return css`
                         ${commonStyles(styles)}
-                        background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.7)'};
-                        color: ${styles && styles.color || '#ffffff'};
+                        background-color: ${styles && styles.backgroundColor || ''};
+                        color: ${styles && styles.color || ''};
                         border-color: ${styles && styles.borderColor || ''};
                         transform: ${styles && styles.transform || ''};
-                        opacity: ${styles && styles.opacity || '0.7'};
+                        opacity: ${styles && styles.opacity || ''};
                     `;
                 }}
             }
 
+            ${'' /* isActive */}
             ${props => {
+                const styles = props.styles && props.styles.isActive || null;
+
                 return props.isActive && css`
-                    background: red;
+                    color: ${styles && styles.color || '#ffffff'};
+                    background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
+
+                    &:hover {
+                        ${props => {
+                            const styles = props.styles && props.styles.isActive && props.styles.isActive.hover || null;
+
+                            return css`
+                                background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
+                                color: ${styles && styles.color || '#ffffff'};
+                                border-color: ${styles && styles.borderColor || ''};
+                                transform: ${styles && styles.transform || ''};
+                                opacity: ${styles && styles.opacity || ''};
+                                box-shadow: ${styles && styles.boxShadow || ''};
+                                cursor: ${styles && styles.cursor || 'default'};
+                            `
+                        }}
+                    }
+
+                    &:active {
+                        ${props => {
+                            const styles = props.styles && props.styles.isActive && props.styles.isActive.active || null;
+
+                            return css`
+                                background-color: ${styles && styles.backgroundColor || ''};
+                                color: ${styles && styles.color || ''};
+                                border-color: ${styles && styles.borderColor || ''};
+                                transform: ${styles && styles.transform || ''};
+                                opacity: ${styles && styles.opacity || ''};
+                            `;
+                        }}
+                    }
+
+                    &:after {
+                        ${props => {
+                            const styles = props.styles && props.styles.isActive && props.styles.isActive.after || null;
+                            const transitions = props.styles && props.styles.isActive && props.styles.isActive.after && props.styles.isActive.after.transitions || null;
+
+                            return css`
+                                    z-index: ${styles && styles.zIndex || ''};
+                                    content: ${styles && styles.content || `''`};
+
+                                    position: ${styles && styles.position || 'absolute'};
+                                    top: ${styles && styles.top || ''};
+                                    right: ${styles && styles.right || ''};
+                                    bottom: ${styles && styles.bottom || ''};
+                                    left: ${styles && styles.left || ''};
+                                    width: ${styles && styles.width || ''};
+                                    height: ${styles && styles.height || ''};
+
+                                    background-color: ${styles && styles.backgroundColor || ''};
+                                    box-shadow: ${styles && styles.boxShadow || ''};
+
+                                    transition: ${transitions && transitions.join(', ') || ''};
+                            `;
+                        }}
+                    }
+
+                    &:before {
+                        ${props => {
+                            const styles = props.styles && props.styles.isActive && props.styles.isActive.before || null;
+                            const transitions = props.styles && props.styles.isActive && props.styles.isActive.before && props.styles.isActive.before.transitions || null;
+
+                            return css`
+                                z-index: ${styles && styles.zIndex || ''};
+                                content: ${styles && styles.content || `''`};
+
+                                position: ${styles && styles.position || 'absolute'};
+                                top: ${styles && styles.top || ''};
+                                right: ${styles && styles.right || ''};
+                                bottom: ${styles && styles.bottom || ''};
+                                left: ${styles && styles.left || ''};
+
+                                width: ${styles && styles.width || ''};
+                                height: ${styles && styles.height || ''};
+
+                                background-color: ${styles && styles.backgroundColor || ''};
+                                box-shadow: ${styles && styles.boxShadow || ''};
+
+                                transition: ${transitions && transitions.join(', ') || ''};
+                            `;
+                        }}
+                    }
                 `;
             }}
         `

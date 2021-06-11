@@ -19,11 +19,14 @@ export const ImageWrapper = styled.div`
             margin-bottom: ${styles && styles.marginBottom || '0'};
             margin-left: ${styles && styles.marginLeft || '0'};
 
+            text-align: ${styles && styles.textAlign || ''};
+
             cursor: ${styles && styles.cursor || ''};
 
+            ${'' /* isActive */}
             ${props => {
                 return props.isActive && css`
-                    outline: 4px solid red;
+                    outline: 4px solid #1976d2;
                 `;
             }}
         `
