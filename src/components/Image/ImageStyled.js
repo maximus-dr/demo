@@ -6,6 +6,7 @@ export const ImageWrapper = styled.div`
     ${props => enableOutlines(props.showOutlines, colors.outline_image)}
     ${props => {
         const styles = props.styles ? props.styles : null;
+        const transitions = props.styles && props.styles.transitions || null;
 
         return css`
             position: ${styles && styles.position || 'relative'};
@@ -22,6 +23,9 @@ export const ImageWrapper = styled.div`
             text-align: ${styles && styles.textAlign || ''};
 
             cursor: ${styles && styles.cursor || ''};
+            user-select: none;
+
+            transition: ${transitions && transitions.join(', ') || 'outline 50ms'};
 
             ${'' /* isActive */}
             ${props => {
@@ -43,6 +47,8 @@ export const ImageBody = styled.img.attrs(props => {
     })
 })`
     display: block;
+    pointer-events: none;
+    
     
     ${props => {
         const styles = props.styles ? props.styles : null;

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext'
 import { getAttrs } from '../../core/functions/styles';
-import { RadioBody, RadioBox, RadioLabel, RadioWrapper } from './RadioButtonStyled'
+import { RadioBody, RadioBox, RadioLabel, RadioWrapper } from './RadioStyled'
 
-export default function RadioButton(props) {
+export default function Radio(props) {
     const [checked, setChecked] = useState(false);
     console.log('checked', checked);
 

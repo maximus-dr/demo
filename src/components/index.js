@@ -10,7 +10,7 @@ import Input from "./Input/Input";
 import Dropdown from './Dropdown/Dropdown';
 import Tab from "./Tab/Tab";
 import Form from "./Form/Form";
-import RadioButton from "./RadioButton/RadioButton";
+import Radio from "./Radio/Radio";
 
 
 export const Provider = {
@@ -24,7 +24,7 @@ export const Provider = {
     'label': Label,
     'link': Link,
     'page': Page,
-    'radio': RadioButton,
+    'radio': Radio,
     'section': Section,
     'tab': Tab
 }

@@ -16,7 +16,7 @@ const commonStyles = css`${props => {
         bottom: ${styles && styles.bottom || ''};
         left: ${styles && styles.left || ''};
 
-        display: ${styles && styles.display || ''};
+        display: ${styles && styles.display || 'inline-block'};
 
         align-self: ${styles && styles.alignSelf || ''}; 
 
@@ -41,7 +41,7 @@ const commonStyles = css`${props => {
         text-align: ${styles && styles.textAlign || 'left'};
         text-transform: ${styles && styles.textTransform || ''};
         text-decoration: ${styles && styles.textDecoration || ''};
-        font-weight: ${styles && styles.fotnWeight || ''};
+        font-weight: ${styles && styles.fontWeight || ''};
         font-style: ${styles && styles.fontStyle || ''};
         line-height: ${styles && styles.lineHeight || '1.6'};
 
@@ -50,6 +50,7 @@ const commonStyles = css`${props => {
 
         transform: ${styles && styles.transform || ''};
         cursor: ${styles && styles.cursor || ''};
+        user-select: ${styles && styles.userSelect || 'none'};
 
         transition: ${transitions && transitions.join(', ') || ''};
 

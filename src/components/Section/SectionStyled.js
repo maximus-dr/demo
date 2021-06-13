@@ -74,7 +74,7 @@ export const SectionWrapper = styled.div`
 
                 return props.isActive && css`
                     color: ${styles && styles.color || ''};
-                    background-color: ${styles && styles.backgroundColor || ''};
+                    background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
 
                     &:hover {
                         ${props => {
@@ -82,7 +82,7 @@ export const SectionWrapper = styled.div`
 
                             return css`
                                 background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
-                                color: ${styles && styles.color || '#ffffff'};
+                                color: ${styles && styles.color || ''};
                                 border-color: ${styles && styles.borderColor || ''};
                                 transform: ${styles && styles.transform || ''};
                                 opacity: ${styles && styles.opacity || ''};
