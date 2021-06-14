@@ -11,6 +11,7 @@ import Dropdown from './Dropdown/Dropdown';
 import Tab from "./Tab/Tab";
 import Form from "./Form/Form";
 import Radio from "./Radio/Radio";
+import RadioGroup from "./RadioGroup/RadioGroup";
 
 
 export const Provider = {
@@ -25,6 +26,7 @@ export const Provider = {
     'link': Link,
     'page': Page,
     'radio': Radio,
+    'radioGroup': RadioGroup,
     'section': Section,
     'tab': Tab
 }

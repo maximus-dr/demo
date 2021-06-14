@@ -1,26 +1,23 @@
 import React, { useContext, useState } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext'
+import { getHandler } from '../../core/functions/components';
 import { getAttrs } from '../../core/functions/styles';
-import { RadioBody, RadioBox, RadioLabel, RadioWrapper } from './RadioStyled'
+import { RadioButton, RadioGroup, RadioLabel, RadioWrapper, RadioOuterCircle, RadioInnerCircle } from './RadioStyled'
+
 
 export default function Radio(props) {
-    const [checked, setChecked] = useState(false);
-    console.log('checked', checked);
-
-    const outlines = useContext(OutlinesContext);
-    const attrs = getAttrs(props.componentData);
-    const radioAttrs = attrs || {};
-    const labelAttrs = props.componentData.label && props.componentData.label.attrs || {};
 
     return (
-        <RadioWrapper showOutlines={outlines}>
-            <div>
-                <RadioBody {...radioAttrs} type="radio" checked={checked} onChange={() => setChecked(prev => !prev)}/>
-                <RadioBox isChecked={checked}></RadioBox>
-            </div>
-            <RadioLabel {...labelAttrs} onClick={() => setChecked(!checked)}>
-                radio Label
-            </RadioLabel>
-        </RadioWrapper>
-    )
+        <>
+            <RadioButton type="radio"
+                id={props.componentData.id}
+                name={props.componentData.attrs && props.componentData.attrs.name || 'default'} 
+                checked={props.componentData.id === props.activeRadio}
+                onChange={() => props.onChange(props.componentData.id)}
+            />
+            <RadioLabel htmlFor={props.componentData.id}>Label</RadioLabel>
+        </>
+    );
 }
+
+

@@ -85,7 +85,6 @@ export const IconBody = styled.div`
     // isActive
     ${props => {
         const styles = props.styles && props.styles.isActive || null;
-        console.log('styles', styles);
 
         return props.isActive && css`
             opacity: ${styles && styles.opacity || ''};

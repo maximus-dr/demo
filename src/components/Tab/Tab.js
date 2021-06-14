@@ -40,7 +40,7 @@ export default function Tab(props) {
         TabBar: Provider[tabBarData[0].props.componentData.typeName],
         TabHead: Provider[tabHeadData[0].props.componentData.typeName],
         TabList: Provider[tabListData[0].props.componentData.typeName],
-        Tab,
+        Tab: null,
         TabContent: Provider[tabContentData[0].props.componentData.typeName]
     }
     
@@ -66,7 +66,8 @@ export default function Tab(props) {
             <el.Tab
                 {...tabProps}
                 key={tab.key}
-                isActive={tab.props.componentData.tabKey === activeTab}    
+                isActive={tab.props.componentData.tabKey === activeTab}
+                activeTab={activeTab}  
             />
         );
     });

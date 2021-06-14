@@ -18,21 +18,29 @@
       "childrenList": [
 
         {
-          "typeName": "section",
-          "id": "section-for-radio",
-          "styles": {
-            "backgroundColor": "#ffffff",
-            "marginBottom": "30px",
-            "paddingTop": "0",
-            "paddingRight": "0",
-            "paddingBottom": "0",
-            "paddingLeft": "0"
-          },
+          "typeName": "radioGroup",
+          "id": "radiogroup-1",
           "childrenList": [
+
             {
-              "typeName": "radio",
-              "id": "radio1"
+              "typeName": "section",
+              "id": "radioContainer",
+              "role": "radioContainer",
+              "childrenList": [
+                {
+                  "typeName": "radio",
+                  "id": "radio1"
+                },
+                {
+                  "typeName": "radio",
+                  "id": "radio2"
+                },{
+                  "typeName": "radio",
+                  "id": "radio3"
+                }
+              ]
             }
+
           ]
         },
 
