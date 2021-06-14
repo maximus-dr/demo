@@ -17,30 +17,189 @@
       },
       "childrenList": [
 
-        {
-          "typeName": "radioGroup",
-          "id": "radiogroup-1",
-          "childrenList": [
 
+
+        {
+          "typeName": "tab",
+          "id": "radiotab7",
+          "childrenList": [
             {
               "typeName": "section",
-              "id": "radioContainer",
-              "role": "radioContainer",
+              "id": "8",
+              "role": "tabBar",
+              "styles": {
+                "backgroundColor": "#ffffff",
+                "marginBottom": "30px",
+                "paddingTop": "0",
+                "paddingRight": "0",
+                "paddingBottom": "0",
+                "paddingLeft": "0"
+              },
               "childrenList": [
                 {
-                  "typeName": "radio",
-                  "id": "radio1"
+                  "typeName": "section",
+                  "id": "9",
+                  "role": "tabHead",
+                  "styles": {
+                    "minHeight": "10px",
+                    "paddingTop": "0",
+                    "paddingRight": "0",
+                    "paddingBottom": "0",
+                    "paddingLeft": "0",
+                    "backgroundColor": "#1976d2",
+                    "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+                  },
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "10",
+                      "role": "tabList",
+                      "styles": {
+                        "flexDirection": "row",
+                        "alignItems": "center",
+                        "paddingBottom": "0"
+                      },
+                      "childrenList": [
+
+                        {
+                          "typeName": "radio",
+                          "id": "11",
+                          "role": "tab",
+                          "tabKey": "Label 1",
+                          "styles": {
+                            "marginTop": "5px",
+                            "marginRight": "5px",
+                            "marginBottom": "0",
+                            "marginLeft": "5px",
+                            "paddingTop": "5px",
+                            "paddingRight": "15px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "15px",
+                            "cursor": "pointer",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "width": "100%",
+                            "transitions": ["color 200ms"],
+
+                            "hover": {
+                              "color": "#ffffff"
+                            },
+
+                            "isActive": {
+                              "color": "#ffffff",
+
+                              "hover": {
+                                "cursor": "default"
+                              },
+
+                              "after": {
+                                "width": "100%",
+                                "left": "0",
+                                "bottom": "0",
+                                "height": "2px",
+                                "backgroundColor": "#DC004E",
+                                "transitions": ["background-color 100ms"]
+                              }
+                            }
+                          }
+                        },
+
+                        {
+                          "typeName": "radio",
+                          "id": "12",
+                          "role": "tab",
+                          "tabKey": "Label 2",
+                          "styles": {
+                            "cursor": "pointer",
+                            "marginTop": "5px",
+                            "marginRight": "5px",
+                            "marginBottom": "0",
+                            "marginLeft": "5px",
+                            "paddingTop": "5px",
+                            "paddingRight": "15px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "15px",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "transitions": ["color 200ms"],
+
+                            "hover": {
+                              "color": "#ffffff"
+                            },
+
+                            "isActive": {
+                              "color": "#ffffff",
+
+                              "hover": {
+                                "cursor": "default"
+                              },
+
+                              "after": {
+                                "width": "100%",
+                                "left": "0",
+                                "bottom": "0",
+                                "height": "2px",
+                                "backgroundColor": "#DC004E",
+                                "transitions": ["background-color 100ms"]
+                              }
+                            }
+                          }
+                        },
+
+                        {
+                          "typeName": "radio",
+                          "id": "13",
+                          "role": "tab",
+                          "tabKey": "Label 3",
+                          "styles": {
+                            "cursor": "pointer",
+                            "marginTop": "5px",
+                            "marginRight": "5px",
+                            "marginBottom": "0",
+                            "marginLeft": "5px",
+                            "paddingTop": "5px",
+                            "paddingRight": "15px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "15px",
+                            "color": "rgba(255, 255, 255, 0.7)",
+                            "transitions": ["color 200ms"],
+
+                            "hover": {
+                              "color":"#ffffff"
+                            },
+
+                            "isActive": {
+                              "color": "#ffffff",
+
+                              "hover": {
+                                "cursor": "default"
+                              },
+
+                              "after": {
+                                "width": "100%",
+                                "left": "0",
+                                "bottom": "0",
+                                "height": "2px",
+                                "backgroundColor": "#DC004E",
+                                "transitions": ["background-color 100ms"]
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 },
+
                 {
-                  "typeName": "radio",
-                  "id": "radio2"
-                },{
-                  "typeName": "radio",
-                  "id": "radio3"
+                  "typeName": "section",
+                  "id": "14",
+                  "role": "tabContent",
+                  "styles": {
+                    "width": "100%",
+                    "textAlign": "center"
+                  }
                 }
               ]
             }
-
           ]
         },
 

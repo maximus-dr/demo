@@ -59,6 +59,9 @@ export default function Tab(props) {
                 onClick: (e, props) => {
                     e.preventDefault();
                     setActiveTab(props.componentData.tabKey);
+                },
+                onChange: (e, props) => {
+                    setActiveTab(props.componentData.tabKey);
                 }
             }
         }

@@ -10,6 +10,10 @@ export default function RadioGroup(props) {
 
     const [activeRadio, setActiveRadio] = useState(RadioContainerData[0].props.children[0].key);
 
+    // const onChange = (e, props) => {
+    //     setActiveRadio(props.componentData.id);
+    // } 
+
     const el = {
         RadioContainer: Provider[RadioContainerData[0].props.componentData.typeName],
         RadioButton: null
@@ -18,8 +22,23 @@ export default function RadioGroup(props) {
     const radioButtons = RadioContainerData[0].props.children.map(child => {
         el.RadioButton = Provider[child.props.componentData.typeName];
 
+        const radioProps = {
+            handlers: {
+                onChange: (e, props) => {
+                    setActiveRadio(props.componentData.id);
+                }
+            }
+        }
+
         return (
-            <el.RadioButton key={child.key} {...child.props} activeRadio={activeRadio} onChange={setActiveRadio} />
+            <el.RadioButton 
+                key={child.key} 
+                {...child.props} 
+                activeRadio={activeRadio}
+                {...radioProps}
+                isActive={child.key === activeRadio}
+                 
+            />
         );
     });
 

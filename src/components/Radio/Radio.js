@@ -6,14 +6,15 @@ import { RadioButton, RadioGroup, RadioLabel, RadioWrapper, RadioOuterCircle, Ra
 
 
 export default function Radio(props) {
+    console.log('radio props', props);
 
     return (
         <>
             <RadioButton type="radio"
                 id={props.componentData.id}
                 name={props.componentData.attrs && props.componentData.attrs.name || 'default'} 
-                checked={props.componentData.id === props.activeRadio}
-                onChange={() => props.onChange(props.componentData.id)}
+                checked={props.isActive}
+                onChange={getHandler(props, 'onChange')}
             />
             <RadioLabel htmlFor={props.componentData.id}>Label</RadioLabel>
         </>
