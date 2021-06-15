@@ -13,10 +13,16 @@ export const SectionWrapper = styled.div`
         const transitions = props.componentData.styles && props.componentData.styles.transitions || null;
 
         return css`
+            position: ${styles && styles.position || 'relative'};
+            top: ${styles && styles.top || ''};
+            right: ${styles && styles.right || ''};
+            bottom: ${styles && styles.bottom || ''};
+            left: ${styles && styles.left || ''};
+
             align-self: ${styles && styles.alignSelf || ''};
 
             width: ${styles && styles.width || ''};
-            min-width: ${styles && styles.minWidth || '50px'};
+            min-width: ${styles && styles.minWidth || '100px'};
 
             margin-top: ${styles && styles.marginTop || '0'};
             margin-right: ${styles && styles.marginRight || '0'};
@@ -188,7 +194,6 @@ export const SectionBody = styled.div`
 
         return css`
             display: ${styles && styles.display || 'flex'};
-            position: ${styles && styles.position || 'relative'};
 
             flex-direction: ${styles && styles.flexDirection || 'column'};
             justify-content: ${styles && styles.justifyContent || 'flex-start'};
@@ -197,7 +202,7 @@ export const SectionBody = styled.div`
             column-gap: ${styles && styles.columnGap || ''};
 
             height: ${styles && styles.height || "auto"};
-            min-height: ${styles && styles.minHeight || '10px'};
+            min-height: ${styles && styles.minHeight || '30px'};
 
             padding-top: ${styles && styles.paddingTop || '10px'};
             padding-right: ${styles && styles.paddingRight || '10px'};

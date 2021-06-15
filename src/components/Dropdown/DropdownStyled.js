@@ -8,6 +8,7 @@ export const DropdownWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     outline: 1px dashed blue;
+    overflow: visible;
 `;
 
 export const DropdownHead = styled.div`
@@ -57,6 +58,7 @@ export const HeadItem = styled.div`
 `;
 
 export const DropdownMenu = styled.div`
+    z-index: 1;
     position: absolute;
     top: 45px;
     left: 5px;

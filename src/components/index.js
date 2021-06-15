@@ -11,11 +11,12 @@ import Dropdown from './Dropdown/Dropdown';
 import Tab from "./Tab/Tab";
 import Form from "./Form/Form";
 import Radio from "./Radio/Radio";
-import RadioGroup from "./RadioGroup/RadioGroup";
+import Checkbox from "./Checkbox/Checkbox";
 
 
 export const Provider = {
     'button': Button,
+    'checkbox': Checkbox,
     'description': Description,
     'dropdown': Dropdown,
     'form': Form,
@@ -26,7 +27,6 @@ export const Provider = {
     'link': Link,
     'page': Page,
     'radio': Radio,
-    'radioGroup': RadioGroup,
     'section': Section,
     'tab': Tab
 }

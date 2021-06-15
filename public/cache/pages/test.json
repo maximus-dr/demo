@@ -17,6 +17,177 @@
       },
       "childrenList": [
 
+        {
+          "typeName": "section",
+          "id": "2",
+          "styles": {
+            "width": "640px",
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "overflow": "visible",
+            "paddingBottom": "500px"
+          },
+          "childrenList": [
+
+            {
+              "typeName": "section",
+              "id": "s1",
+              "styles": {
+                "backgroundColor": "#ffffff",
+                "paddingTop": "15px",
+                "paddingRight": "15px",
+                "paddingBottom": "15px",
+                "paddingLeft": "15px",
+                "marginBottom": "50px",
+                "borderRadius": "4px",
+                "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+                "overflow": "visible"
+              },
+              "childrenList": [
+
+                {
+                  "typeName": "checkbox",
+                  "id": "chb1"
+                },
+
+                {
+                  "typeName": "checkbox",
+                  "id": "chb2"
+                },
+
+                {
+                  "typeName": "radio",
+                  "id": "r1",
+                  "attrs": {
+                    "name": "group1"
+                  }
+                },
+
+                {
+                  "typeName": "radio",
+                  "id": "r2",
+                  "attrs": {
+                    "name": "group1"
+                  }
+                },
+
+                {
+                  "typeName": "radio",
+                  "id": "r3",
+                  "attrs": {
+                    "name": "group1"
+                  }
+                }
+
+              ]
+            },
+
+            {
+              "typeName": "dropdown",
+              "id": "4",
+              "childrenList": [
+                {
+                  "typeName": "section",
+                  "id": "head4",
+                  "role": "dropdownHead",
+                  "styles": {
+                    "paddingTop": "5px",
+                    "paddingRight": "35px",
+                    "paddingLeft": "5px",
+                    "paddingBottom": "5px",
+                    "minWidth": "150px"
+                  },
+                  "childrenList": [
+
+                    {
+                      "typeName": "section",
+                      "id": "head5",
+                      "role": "dropdownHeadCaption",
+                      "styles": {
+                        "width": "100%"
+                      },
+                      "childrenList": []
+                    },
+
+                    {
+                      "typeName": "icon",
+                      "id": "head6",
+                      "role": "dropdownHeadIcon",
+                      "styles": {
+                        "right": "0",
+                        "left": "auto"
+                      },
+                      "childrenList": []
+                    }
+
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "id": "menu1",
+                  "role": "dropdownMenu",
+                  "styles": {
+                    "top": "45px",
+                    "left": "0",
+                    "backgroundColor": "#ffffff",
+                    "position": "absolute",
+                    "width": "160px"
+                  },
+                  "childrenList": [
+
+                    {
+                      "typeName": "label",
+                      "id": "42",
+                      "value": "Optiongroup 1"
+                    },
+
+                    {
+                      "typeName": "section",
+                      "id": "38",
+                      "role": "dropdownOptionGroup",
+                      "childrenList": [
+
+                        {
+                          "typeName": "label",
+                          "id": "39",
+                          "role": "dropdownOption",
+                          "value": "option1",
+                          "styles": {
+                            "marginBottom": "5px",
+                            "cursor": "pointer"
+                          }
+                        },
+
+                        {
+                          "typeName": "label",
+                          "id": "40",
+                          "role": "dropdownOption",
+                          "value": "option2",
+                          "styles": {
+                            "marginBottom": "5px",
+                            "cursor": "pointer"
+                          }
+                        },
+
+                        {
+                          "typeName": "label",
+                          "id": "41",
+                          "role": "dropdownOption",
+                          "value": "option3",
+                          "styles": {
+                            "cursor": "pointer"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ] 
+        },
+
 
 
         {
@@ -65,7 +236,8 @@
                           "typeName": "radio",
                           "id": "11",
                           "role": "tab",
-                          "tabKey": "Label 1",
+                          "tabKey": "Radio 1",
+                          "controlled": "true",
                           "styles": {
                             "marginTop": "5px",
                             "marginRight": "5px",
@@ -108,6 +280,7 @@
                           "id": "12",
                           "role": "tab",
                           "tabKey": "Label 2",
+                          "controlled": "true",
                           "styles": {
                             "cursor": "pointer",
                             "marginTop": "5px",
@@ -149,6 +322,7 @@
                           "id": "13",
                           "role": "tab",
                           "tabKey": "Label 3",
+                          "controlled": "true",
                           "styles": {
                             "cursor": "pointer",
                             "marginTop": "5px",
