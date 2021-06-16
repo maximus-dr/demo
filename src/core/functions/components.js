@@ -51,10 +51,10 @@ function extractChildrenByRole(props, role) {
     function getChild(parent) {
         if (parent.children && parent.children.length > 0) {
             parent.children.forEach(child => {
-                if (child.props.componentData.role && child.props.componentData.role === role) {
+                if (child && child.props.componentData.role && child.props.componentData.role === role) {
                     result.push(child);
                 }
-                if (child.props.children && child.props.children.length > 0) {
+                if (child && child.props.children && child.props.children.length > 0) {
                     getChild(child.props);
                 }
             });

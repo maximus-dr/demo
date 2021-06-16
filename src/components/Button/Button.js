@@ -5,7 +5,6 @@ import { ButtonBody } from './ButtonStyled'
 
 
 export default function Button(props) {
-    console.log(props);
 
     const outlines = useContext(OutlinesContext);
 

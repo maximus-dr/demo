@@ -18,6 +18,7 @@ export const SectionWrapper = styled.div`
             right: ${styles && styles.right || ''};
             bottom: ${styles && styles.bottom || ''};
             left: ${styles && styles.left || ''};
+            z-index: ${styles && styles.zIndex || ''};
 
             align-self: ${styles && styles.alignSelf || ''};
 
@@ -29,6 +30,7 @@ export const SectionWrapper = styled.div`
             margin-bottom: ${styles && styles.marginBottom || '0'};
             margin-left: ${styles && styles.marginLeft || '0'};
 
+            outline: ${styles && styles.outline || ''};
             border: ${styles && styles.border || 'none'};
             border-top: ${styles && styles.borderTop || ''};
             border-right: ${styles && styles.borderRight || ''};

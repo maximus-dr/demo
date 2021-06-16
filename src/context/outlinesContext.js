@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-
-export const OutlinesContext = React.createContext();
-
 const OutlineButton = styled.button`
   position: fixed;
   top: 0px;
@@ -24,6 +21,9 @@ const OutlineButton = styled.button`
     background-color: rgba(0, 0, 0, 0.87);
   }
 `;
+
+
+export const OutlinesContext = React.createContext();
 
 
 export const Outlines = (props) => {

@@ -1,89 +1,51 @@
 import styled, {css} from 'styled-components';
+import { enableOutlines } from '../../core/functions/outlines';
+import { colors } from '../../core/variables';
 
 
 export const DropdownWrapper = styled.div`
-    position: relative;
+    ${props => enableOutlines(props.showOutlines, colors.outline_dropdown)}
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    outline: 1px dashed blue;
+    position: relative;
     overflow: visible;
 `;
 
-export const DropdownHead = styled.div`
-    position: relative;
-    padding: 5px 15px;
-    padding-right: 40px;
-    background-color: #ffffff;
-    border: 1px solid #eaeaea;
-    border-radius: 5px;
-    outline: 1px dashed yellow;
-    cursor: pointer;
-`;
-
-export const DropdownOption = styled.div`
-    outline: 1px dashed yellowgreen;
-    margin-bottom: 10px;
-    display: flex;
-`;
-
-export const HeadCaption = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-
-    width: 100%;
-`;
-
-export const HeadIcon = styled.div`
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 30px;
-    background: #cccccc;
-
-    & > img {
-
-    }
-`;
-
-export const HeadItem = styled.div`
+export const HeadTag = styled.div`
+    margin-right: 5px;
+    padding: 0 5px;
     border: 1px solid gray;
-`;
-
-export const DropdownMenu = styled.div`
-    z-index: 1;
-    position: absolute;
-    top: 45px;
-    left: 5px;
-    display: flex;
-    flex-direction: column;
-    min-width: 100px;
-
-    padding: 10px;
-    outline: 1px dashed red;
-
-    text-align: center;
-
-    display: none;
     ${props => {
-        return props.isOpen && css`
-            display: block
-        `; 
+        return props.multiple && css`
+            cursor: pointer;
+        `
     }}
 `;
 
-export const Clear = styled.button`
+export const DropdownMenuWrapper = styled.div`
+    z-index: 1;
+    position: absolute;
+    display: none;
 
+    ${props => {
+        return props.isOpen && css`
+            display: block;
+        `;
+    }}
 `;
 
-export const Item = styled.div`
-    border: '1px solid gray';
-    cursor: auto;
+export const DropdownWarning = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding: 25px 20px 50px 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+`;
+
+export const DropdownWarningCaption = styled.span`
+    color: red;
+    margin-bottom: 25px;
+    font-size: 16px;
+    text-align: center;
 `;

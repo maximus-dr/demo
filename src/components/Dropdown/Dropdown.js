@@ -1,45 +1,73 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { DropdownHead, DropdownMenu, DropdownOption, DropdownWrapper, HeadIcon, HeadCaption, Clear } from './DropdownStyled';
-import icon from '../../assets/arrow-down.svg';
-import { renderComponents } from '../../core/functions/render';
-import { extractChildrenByRole, getRole, isCheckbox, isLabel } from '../../core/functions/components';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { DropdownMenuWrapper, DropdownWarning, DropdownWarningCaption, DropdownWrapper, HeadTag } from './DropdownStyled';
+import { extractChildrenByRole } from '../../core/functions/components';
 import { Provider } from '..';
+import { OutlinesContext } from '../../context/outlinesContext';
 
+
+const createMessage = (message) => {
+    return <div>{message}</div>
+}
 
 const HeadItem = (props) => {
     return (
-        <div style={{border: '1px solid gray'}} onClick={props.onClick}>
+        <HeadTag onClick={props.onClick} multiple={props.multiple}>
             {props.value}
-        </div>
+        </HeadTag>
     );
 }
 const defaultItem = <HeadItem key="default-item" value="Выберите значение" />;
 
 
+
 export default function Dropdown(props) {
+
+    const dropdownWrapperData = extractChildrenByRole(props, 'dropdownWrapper');
+    const dropdownHeadItemData = extractChildrenByRole(props, 'dropdownHeadItem');
+    const dropdownHeadData = extractChildrenByRole(props, 'dropdownHead');
+    const dropdownHeadCaptionData = extractChildrenByRole(props, 'dropdownHeadCaption');
+    const dropdownMenuData = extractChildrenByRole(props, 'dropdownMenu');
+
+    const outlines = useContext(OutlinesContext);
+    const dropdownMenuRef = useRef(null);
 
     const [state, setState] = useState(() => new Set().add(defaultItem));
     const [isOpen, setIsOpen] = useState(true);
     const [resetSelect, setResetSelect] = useState(false);
+
+    const warnings = [];
+
+    if (!dropdownWrapperData) warnings.push(createMessage('Добавьте dropdownWrapper'));
+    if (!dropdownHeadItemData) warnings.push(createMessage('Добавьте dropdownHeadItem'));
+    if (!dropdownHeadData) warnings.push(createMessage('Добавьте dropdownHead'));
+    if (!dropdownHeadCaptionData) warnings.push(createMessage('Добавьте dropdownHeadCaption'));
+    if (!dropdownMenuData) warnings.push(createMessage('Добавьте dropdownMenu'));
+
+    const el = {
+        DropdownWrapper: Provider[dropdownWrapperData[0].props.componentData.typeName],
+        DropdownHead: Provider[dropdownHeadData[0].props.componentData.typeName],
+        DropdownHeadCaption: Provider[dropdownHeadCaptionData[0].props.componentData.typeName],
+        DropdownMenu: Provider[dropdownMenuData[0].props.componentData.typeName],
+        DropdownOptionGroup: null,
+        DropdownOption: null,
+        DropdownReset: null
+    };
     
-    const childrenList = props.componentData.dropdownMenu && props.componentData.dropdownMenu.childrenList || null;
-    const childrenComponents = childrenList && childrenList.map(component => renderComponents(component, {})) || null;
-
-    const dropdownMenuRef = useRef(null);
-
     // закрывает выпадающее меню при клике вне этого меню
-    // useEffect(() => {
-    //     const onClickOutside = (e) => {
-    //         if (!dropdownMenuRef.current.contains(e.target) && e.target.id !== 'outlines') {
-    //             setIsOpen(false);
-    //         }
-    //     }
-    //     if (isOpen) {
-    //         document.addEventListener('click', onClickOutside);
-    //     }
+    useEffect(() => {
+        const onClickOutside = (e) => {
+            if (dropdownMenuRef.current 
+                && !dropdownMenuRef.current.contains(e.target) 
+                && e.target.id !== 'outlines') {
+                setIsOpen(false);
+            }
+        }
+        if (isOpen) {
+            document.addEventListener('click', onClickOutside);
+        }
 
-    //     return () => document.removeEventListener('click', onClickOutside);
-    // }, [isOpen]);
+        return () => document.removeEventListener('click', onClickOutside);
+    }, [isOpen]);
     
     const addItem = item => {
         setState(prev => {
@@ -68,8 +96,9 @@ export default function Dropdown(props) {
     }
 
     const onSelect = (e, props) => {
-        const key = props.componentData.id;
-        const value = props.componentData.value;
+        const data = props.componentData;
+        const key = data.id;
+        const value = data.optionValue || data.value || `option id: ${key}`;
         const item = 
             <HeadItem key={key} value={value} />
         resetItems();
@@ -78,9 +107,10 @@ export default function Dropdown(props) {
     }
 
     const onMultipleSelect = (e, props) => {
+        const data = props.componentData
         const target = e.currentTarget;
-        const key = props.componentData.id;
-        const value = props.componentData.value;
+        const key = data.id;
+        const value = data.optionValue || `option id: ${key}`;
         
         const item = 
             <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
@@ -102,37 +132,41 @@ export default function Dropdown(props) {
         setResetSelect(false);
     };
 
+    
+    const dropdownHeadChildren = dropdownHeadData[0].props.children.map(child => {
+        if (child && child.props.componentData.role && child.props.componentData.role === 'dropdownHeadCaption') {
+            return (
+                <el.DropdownHeadCaption key={child.key} {...dropdownHeadCaptionData[0].props}>
+                    {state}
+                </el.DropdownHeadCaption>
+            );
+        }
+        return child;
+    });
 
-    const dropdownMenuData = extractChildrenByRole(props, 'dropdownMenu');
-    const dropdownHeadData = extractChildrenByRole(props, 'dropdownHead');
+    const menuChildren = dropdownMenuData[0].props.children;
 
-    const el = {
-        DropdownHead: Provider[dropdownHeadData[0].props.componentData.typeName],
-        DropdownMenu: Provider[dropdownMenuData[0].props.componentData.typeName],
-        DropdownOptionGroup: null,
-        DropdownOption: null,
-        DropdownReset: null
-    };
-
-    const dropdownMenuChildren = dropdownMenuData[0].props.children.map(child => {
-        if (child.props.componentData.role === 'dropdownOptionGroup') {
+    const dropdownMenuChildren = menuChildren && menuChildren.map(child => {
+        if (child && child.props.componentData.role === 'dropdownOptionGroup') {
 
             const options = child.props.children && child.props.children.map(option => {
-                if (option.props.componentData.role !== 'dropdownOption') return;
-                el.DropdownOption = Provider[option.props.componentData.typeName];
+                if (option.props.componentData.role === 'dropdownOption') {
+                    el.DropdownOption = Provider[option.props.componentData.typeName];
 
-                const handlers = {
-                    onClick: option.props.componentData.multiple ?  onMultipleSelect : onSelect
+                    const handlers = {
+                        onClick: option.props.componentData.multiple || option.props.componentData.typeName === 'checkbox' ?  onMultipleSelect : onSelect
+                    }
+                    // Option element
+                    return (
+                        <el.DropdownOption 
+                            key={option.key} 
+                            {...option.props} 
+                            reset={resetSelect} 
+                            handlers={handlers}         
+                        />
+                    );
                 }
-                // Option element
-                return (
-                    <el.DropdownOption 
-                        key={option.key} 
-                        {...option.props} 
-                        reset={resetSelect} 
-                        handlers={handlers}         
-                    />
-                );
+                return option;
             });
 
             
@@ -150,7 +184,7 @@ export default function Dropdown(props) {
             );
         }
 
-        if (child.props.componentData.role === 'dropdownReset') {
+        if (child && child.props.componentData.role === 'dropdownReset') {
             el.DropdownReset = Provider[child.props.componentData.typeName];
             // Reset button element
             return (
@@ -165,42 +199,28 @@ export default function Dropdown(props) {
         return child;
     });
 
-    const dropdownMenuProps = {
-        ...dropdownMenuData[0].props,
-        children: dropdownMenuChildren
+
+    if (warnings.length > 0) {
+        return (
+            <DropdownWarning>
+                <DropdownWarningCaption>Warning!</DropdownWarningCaption>
+                {warnings.map((item, i) => <div style={{}} key={i}>{item}</div>)}
+            </DropdownWarning>
+        );
     }
 
     
     return (
-        <DropdownWrapper>
-            <el.DropdownHead {...dropdownHeadData[0].props}>
-                {state}
+        <el.DropdownWrapper {...dropdownWrapperData[0].props} showOutlines={outlines}>
+            <el.DropdownHead {...dropdownHeadData[0].props} onClick={() => {setIsOpen(!isOpen)}}>
+                {dropdownHeadChildren}
             </el.DropdownHead>
-            <el.DropdownMenu {...dropdownMenuProps} />
-        </DropdownWrapper>
+
+            <DropdownMenuWrapper ref={dropdownMenuRef} isOpen={isOpen}>
+                <el.DropdownMenu {...dropdownMenuData[0].props}>
+                    {dropdownMenuChildren}
+                </el.DropdownMenu>
+            </DropdownMenuWrapper>
+        </el.DropdownWrapper>
     )
 }
-
-
-
-{/* <DropdownWrapper>
-<DropdownHead onClick={(e) => {
-    setIsOpen(!isOpen);
-}}>
-    <HeadCaption>
-        {state}
-    </HeadCaption>
-    
-    <HeadIcon>
-        <img src={icon} width="10" height="auto" />
-    </HeadIcon>
-</DropdownHead>
-
-<DropdownMenu isOpen={isOpen} ref={dropdownMenuRef}>
-    {optionsList}
-</DropdownMenu>
-{props.children}
-</DropdownWrapper> */}
-
-
-

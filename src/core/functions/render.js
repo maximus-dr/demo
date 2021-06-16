@@ -35,7 +35,7 @@ function getComponents(props) {
             }
 
             if (!component) {
-            console.log(`Компонент "${child.typeName}" не найден`);
+            console.log(`Компонент "${child.typeName}" не найден. Проверьте компонент id: ${props.componentData.id}`);
             }
         }));
     }

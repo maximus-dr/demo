@@ -1,27 +1,36 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
+import { OutlinesContext } from '../../context/outlinesContext';
 import { getHandler } from '../../core/functions/components'
+import { CheckboxInput, CheckboxLabel, CheckboxValue, CheckboxWrapper } from './CheckboxStyled';
 
 
 export default function Checkbox(props) {
 
-    const inputRef = useRef(null);
+    const outlines = useContext(OutlinesContext);
+    const ref = useRef(null);
 
     useEffect(() => {
         if (props.reset) {
-            inputRef.current.checked = false;
+            ref.current.checked = false;
         }
-    }, [inputRef, props.reset]);
+    }, [ref, props.reset]);
 
     
     return (
-        <div>
-            <input
-                ref={inputRef}
-                type="checkbox" 
-                id={props.componentData.id} 
-                onClick={getHandler(props, 'onClick')}
-            />
-            <label htmlFor={props.componentData.id}>{props.componentData.label && props.componentData.label || 'Checkbox'}</label>
-        </div>
+            <CheckboxLabel 
+                showOutlines={outlines}
+                htmlFor={props.componentData.id} 
+                {...props}
+            >
+                <CheckboxInput
+                    ref={ref}
+                    type="checkbox" 
+                    id={props.componentData.id} 
+                    onClick={getHandler(props, 'onClick')}
+                />
+                <CheckboxValue>
+                    {props.componentData.label && props.componentData.label || null}
+                </CheckboxValue>
+            </CheckboxLabel>
     )
 }

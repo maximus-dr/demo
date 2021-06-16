@@ -15,8 +15,8 @@ export const IconBody = styled.div`
 
         return css`
             position: ${styles && styles.position || 'absolute'};
-            top: ${styles && styles.top || '0'};
-            left: ${styles && styles.left || '0'};
+            top: ${styles && styles.top || ''};
+            left: ${styles && styles.left || ''};
             right: ${styles && styles.right || ''};
             bottom: ${styles && styles.bottom || ''};
 
@@ -29,6 +29,8 @@ export const IconBody = styled.div`
             background-position-x: ${styles && styles.backgroundPositionX || '50%'};
             background-position-y: ${styles && styles.backgroundPositionY || '50%'};
             background-image: ${styles && styles.backgroundImage || 'none'};
+
+            transform: ${styles && styles.transform || ''};
 
             cursor: ${styles && styles.cursor || ''};
             opacity: ${styles && styles.opacity || ''};

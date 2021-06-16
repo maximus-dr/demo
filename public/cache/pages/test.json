@@ -21,66 +21,10 @@
           "typeName": "section",
           "id": "2",
           "styles": {
-            "width": "640px",
-            "marginLeft": "auto",
-            "marginRight": "auto",
             "overflow": "visible",
-            "paddingBottom": "500px"
+            "marginBottom": "50px"
           },
           "childrenList": [
-
-            {
-              "typeName": "section",
-              "id": "s1",
-              "styles": {
-                "backgroundColor": "#ffffff",
-                "paddingTop": "15px",
-                "paddingRight": "15px",
-                "paddingBottom": "15px",
-                "paddingLeft": "15px",
-                "marginBottom": "50px",
-                "borderRadius": "4px",
-                "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
-                "overflow": "visible"
-              },
-              "childrenList": [
-
-                {
-                  "typeName": "checkbox",
-                  "id": "chb1"
-                },
-
-                {
-                  "typeName": "checkbox",
-                  "id": "chb2"
-                },
-
-                {
-                  "typeName": "radio",
-                  "id": "r1",
-                  "attrs": {
-                    "name": "group1"
-                  }
-                },
-
-                {
-                  "typeName": "radio",
-                  "id": "r2",
-                  "attrs": {
-                    "name": "group1"
-                  }
-                },
-
-                {
-                  "typeName": "radio",
-                  "id": "r3",
-                  "attrs": {
-                    "name": "group1"
-                  }
-                }
-
-              ]
-            },
 
             {
               "typeName": "dropdown",
@@ -91,11 +35,12 @@
                   "id": "head4",
                   "role": "dropdownHead",
                   "styles": {
-                    "paddingTop": "5px",
-                    "paddingRight": "35px",
+                    "paddingTop": "0",
+                    "paddingRight": "40px",
                     "paddingLeft": "5px",
-                    "paddingBottom": "5px",
-                    "minWidth": "150px"
+                    "paddingBottom": "0",
+                    "minWidth": "150px",
+                    "cursor": "pointer"
                   },
                   "childrenList": [
 
@@ -104,20 +49,25 @@
                       "id": "head5",
                       "role": "dropdownHeadCaption",
                       "styles": {
-                        "width": "100%"
+                        "width": "100%",
+                        "flexDirection": "row",
+                        "cursor": "default"
                       },
                       "childrenList": []
                     },
 
                     {
                       "typeName": "icon",
-                      "id": "head6",
-                      "role": "dropdownHeadIcon",
+                      "id": "53",
                       "styles": {
-                        "right": "0",
-                        "left": "auto"
-                      },
-                      "childrenList": []
+                        "width": "18px",
+                        "height": "18px",
+                        "top": "50%",
+                        "right": "10px",
+                        "opacity": "0.7",
+                        "transform": "translateY(-50%)",
+                        "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/down-arrow.svg?alt=media&token=690177b3-c142-4bce-8d0d-90150c288c28')"
+                      }
                     }
 
                   ]
@@ -128,11 +78,13 @@
                   "id": "menu1",
                   "role": "dropdownMenu",
                   "styles": {
-                    "top": "45px",
+                    "top": "50px",
                     "left": "0",
                     "backgroundColor": "#ffffff",
                     "position": "absolute",
-                    "width": "160px"
+                    "width": "160px",
+                    "zIndex": "1",
+                    "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
                   },
                   "childrenList": [
 
@@ -147,6 +99,12 @@
                       "id": "38",
                       "role": "dropdownOptionGroup",
                       "childrenList": [
+
+                        {
+                          "typeName": "label",
+                          "id": "48",
+                          "heading": "h3"
+                        },
 
                         {
                           "typeName": "label",
@@ -178,8 +136,109 @@
                           "styles": {
                             "cursor": "pointer"
                           }
+                        },
+
+                        {
+                          "typeName": "label",
+                          "id": "50",
+                          "heading": "h4",
+                          "value": "Sublabel",
+                          "styles": {
+                            "marginTop": "15px",
+                            "marginBottom": "5px"
+                          }
+                        },
+
+                        {
+                          "typeName": "label",
+                          "id": "51",
+                          "role": "dropdownOption",
+                          "value": "option4",
+                          "styles": {
+                            "cursor": "pointer",
+                            "marginBottom": "5px"
+                          }
+                        },
+
+                        {
+                          "typeName": "label",
+                          "id": "52",
+                          "role": "dropdownOption",
+                          "value": "option5",
+                          "styles": {
+                            "cursor": "pointer"
+                          }
                         }
                       ]
+                    },
+
+                    {
+                      "typeName": "label",
+                      "id": "47",
+                      "value": "Any label",
+                      "styles": {
+                        "marginBottom": "5px",
+                        "marginTop": "5px"
+                      }
+                    },
+
+                    {
+                      "typeName": "label",
+                      "id": "48",
+                      "value": "Any label 2",
+                      "styles": {
+                        "marginBottom": "5px",
+                        "marginTop": "5px"
+                      }
+                    },
+
+                    {
+                      "typeName": "section",
+                      "role": "dropdownOptionGroup",
+                      "id": "43",
+                      "childrenList": [
+
+                        {
+                          "typeName": "checkbox",
+                          "id": "44",
+                          "role": "dropdownOption",
+                          "label": "option a",
+                          "optionValue": "option a",
+                          "styles": {
+                            "cursor": "pointer"
+                          }
+                        },
+
+                        {
+                          "typeName": "checkbox",
+                          "id": "45",
+                          "role": "dropdownOption",
+                          "label": "option b",
+                          "optionValue": "option b",
+                          "styles": {
+                            "cursor": "pointer"
+                          }
+                        },
+
+                        {
+                          "typeName": "checkbox",
+                          "id": "46",
+                          "role": "dropdownOption",
+                          "label": "option c",
+                          "optionValue": "option c",
+                          "styles": {
+                            "cursor": "pointer"
+                          }
+                        }
+
+                      ]
+                    },
+
+                    {
+                      "typeName": "button",
+                      "id": "52",
+                      "role": "dropdownReset",
+                      "value": "Reset"
                     }
                   ]
                 }

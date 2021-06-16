@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Outlines } from './context/outlinesContext';
 import { renderComponents } from './core/functions/render';
