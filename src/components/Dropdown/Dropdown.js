@@ -31,10 +31,6 @@ export default function Dropdown(props) {
     const outlines = useContext(OutlinesContext);
     const dropdownMenuRef = useRef(null);
 
-    const [state, setState] = useState(() => new Set().add(defaultItem));
-    const [isOpen, setIsOpen] = useState(true);
-    const [resetSelect, setResetSelect] = useState(false);
-
     const warnings = [];
 
     if (!dropdownWrapperData) warnings.push(createMessage('Добавьте dropdownWrapper'));
@@ -44,14 +40,21 @@ export default function Dropdown(props) {
     if (!dropdownMenuData) warnings.push(createMessage('Добавьте dropdownMenu'));
 
     const el = {
-        DropdownWrapper: Provider[dropdownWrapperData[0].props.componentData.typeName],
-        DropdownHead: Provider[dropdownHeadData[0].props.componentData.typeName],
-        DropdownHeadCaption: Provider[dropdownHeadCaptionData[0].props.componentData.typeName],
-        DropdownMenu: Provider[dropdownMenuData[0].props.componentData.typeName],
+        DropdownWrapper: dropdownWrapperData && Provider[dropdownWrapperData[0].props.componentData.typeName],
+        DropdownHead: dropdownHeadData && Provider[dropdownHeadData[0].props.componentData.typeName],
+        DropdownHeadItem: dropdownHeadItemData && Provider[dropdownHeadItemData[0].props.componentData.typeName],
+        DropdownHeadCaption: dropdownHeadCaptionData && Provider[dropdownHeadCaptionData[0].props.componentData.typeName],
+        DropdownMenu: dropdownMenuData && Provider[dropdownMenuData[0].props.componentData.typeName],
         DropdownOptionGroup: null,
         DropdownOption: null,
         DropdownReset: null
     };
+
+    const dropdownHeadItem = el.DropdownHeadItem ? <el.DropdownHeadItem key={dropdownHeadItemData[0].key} {...dropdownHeadItemData[0].props} /> : defaultItem;
+
+    const [state, setState] = useState(() => new Set().add(defaultItem));
+    const [isOpen, setIsOpen] = useState(true);
+    const [resetSelect, setResetSelect] = useState(false);
     
     // закрывает выпадающее меню при клике вне этого меню
     useEffect(() => {
@@ -68,7 +71,7 @@ export default function Dropdown(props) {
 
         return () => document.removeEventListener('click', onClickOutside);
     }, [isOpen]);
-    
+
     const addItem = item => {
         setState(prev => {
             const next = new Set(prev);
@@ -99,8 +102,10 @@ export default function Dropdown(props) {
         const data = props.componentData;
         const key = data.id;
         const value = data.optionValue || data.value || `option id: ${key}`;
-        const item = 
-            <HeadItem key={key} value={value} />
+        const item =
+            el.DropdownHeadItem 
+            ? <el.DropdownHeadItem key={key} value={value} {...dropdownHeadItemData[0].props} />
+            : <HeadItem key={key} value={value} />
         resetItems();
         addItem(item);
         setIsOpen(false);
@@ -111,9 +116,19 @@ export default function Dropdown(props) {
         const target = e.currentTarget;
         const key = data.id;
         const value = data.optionValue || `option id: ${key}`;
+
+        const handlers = {
+            onClick: (e, props) => {
+                e.stopPropagation();
+                removeItem(item);
+                target.checked = false;
+            }
+        }
         
         const item = 
-            <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
+            el.DropdownHeadItem 
+            ? <el.DropdownHeadItem key={key} multiple={true} {...dropdownHeadItemData[0].props} {...handlers} />
+            : <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
                 e.stopPropagation();
                 removeItem(item);
                 target.checked = false;
@@ -131,6 +146,16 @@ export default function Dropdown(props) {
         addItem(item);
         setResetSelect(false);
     };
+
+    
+    if (warnings.length > 0) {
+        return (
+            <DropdownWarning>
+                <DropdownWarningCaption>Warning!</DropdownWarningCaption>
+                {warnings.map((item, i) => <div style={{}} key={i}>{item}</div>)}
+            </DropdownWarning>
+        );
+    }
 
     
     const dropdownHeadChildren = dropdownHeadData[0].props.children.map(child => {
@@ -200,14 +225,7 @@ export default function Dropdown(props) {
     });
 
 
-    if (warnings.length > 0) {
-        return (
-            <DropdownWarning>
-                <DropdownWarningCaption>Warning!</DropdownWarningCaption>
-                {warnings.map((item, i) => <div style={{}} key={i}>{item}</div>)}
-            </DropdownWarning>
-        );
-    }
+    
 
     
     return (

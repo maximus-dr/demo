@@ -46,7 +46,7 @@
                           {
                             "typeName": "label",
                             "id": "56",
-                            "value": "default item"
+                            "value": "Сделайте выбор"
                           }
                         ]
                       },
@@ -133,6 +133,19 @@
                   "overflow": "visible"
                 },
                 "childrenList": [
+
+                  {
+                    "typeName": "section",
+                    "id": "56",
+                    "role": "dropdownHeadItem",
+                    "childrenList": [
+                      {
+                        "typeName": "label",
+                        "id": "56",
+                        "value": "Header Option"
+                      }
+                    ]
+                  },
 
                   {
                     "typeName": "section",
