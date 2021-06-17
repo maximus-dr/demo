@@ -11,21 +11,20 @@ const createMessage = (message) => {
 
 const HeadItem = (props) => {
     return (
-        <HeadTag onClick={props.onClick} multiple={props.multiple}>
+        <HeadTag onClick={props.onClick} multiple={props.multiple} default={props.default}>
             {props.value}
         </HeadTag>
     );
 }
-const defaultItem = <HeadItem key="default-item" value="Выберите значение" />;
+const defaultItem = <HeadItem key="default-item" value="Выберите значение" default={true} />;
 
 
 
 export default function Dropdown(props) {
 
     const dropdownWrapperData = extractChildrenByRole(props, 'dropdownWrapper');
-    const dropdownHeadItemData = extractChildrenByRole(props, 'dropdownHeadItem');
     const dropdownHeadData = extractChildrenByRole(props, 'dropdownHead');
-    const dropdownHeadCaptionData = extractChildrenByRole(props, 'dropdownHeadCaption');
+    const dropdownSelectAreaData = extractChildrenByRole(props, 'dropdownSelectArea');
     const dropdownMenuData = extractChildrenByRole(props, 'dropdownMenu');
 
     const outlines = useContext(OutlinesContext);
@@ -34,23 +33,19 @@ export default function Dropdown(props) {
     const warnings = [];
 
     if (!dropdownWrapperData) warnings.push(createMessage('Добавьте dropdownWrapper'));
-    if (!dropdownHeadItemData) warnings.push(createMessage('Добавьте dropdownHeadItem'));
     if (!dropdownHeadData) warnings.push(createMessage('Добавьте dropdownHead'));
-    if (!dropdownHeadCaptionData) warnings.push(createMessage('Добавьте dropdownHeadCaption'));
+    if (!dropdownSelectAreaData) warnings.push(createMessage('Добавьте dropdownHeadCaption'));
     if (!dropdownMenuData) warnings.push(createMessage('Добавьте dropdownMenu'));
 
     const el = {
         DropdownWrapper: dropdownWrapperData && Provider[dropdownWrapperData[0].props.componentData.typeName],
         DropdownHead: dropdownHeadData && Provider[dropdownHeadData[0].props.componentData.typeName],
-        DropdownHeadItem: dropdownHeadItemData && Provider[dropdownHeadItemData[0].props.componentData.typeName],
-        DropdownHeadCaption: dropdownHeadCaptionData && Provider[dropdownHeadCaptionData[0].props.componentData.typeName],
+        DropdownSelectArea: dropdownSelectAreaData && Provider[dropdownSelectAreaData[0].props.componentData.typeName],
         DropdownMenu: dropdownMenuData && Provider[dropdownMenuData[0].props.componentData.typeName],
         DropdownOptionGroup: null,
         DropdownOption: null,
         DropdownReset: null
     };
-
-    const dropdownHeadItem = el.DropdownHeadItem ? <el.DropdownHeadItem key={dropdownHeadItemData[0].key} {...dropdownHeadItemData[0].props} /> : defaultItem;
 
     const [state, setState] = useState(() => new Set().add(defaultItem));
     const [isOpen, setIsOpen] = useState(true);
@@ -101,11 +96,9 @@ export default function Dropdown(props) {
     const onSelect = (e, props) => {
         const data = props.componentData;
         const key = data.id;
-        const value = data.optionValue || data.value || `option id: ${key}`;
+        const value = data.value || `option id: ${key}`;
         const item =
-            el.DropdownHeadItem 
-            ? <el.DropdownHeadItem key={key} value={value} {...dropdownHeadItemData[0].props} />
-            : <HeadItem key={key} value={value} />
+            <HeadItem key={key} value={value} />
         resetItems();
         addItem(item);
         setIsOpen(false);
@@ -116,19 +109,9 @@ export default function Dropdown(props) {
         const target = e.currentTarget;
         const key = data.id;
         const value = data.optionValue || `option id: ${key}`;
-
-        const handlers = {
-            onClick: (e, props) => {
-                e.stopPropagation();
-                removeItem(item);
-                target.checked = false;
-            }
-        }
         
         const item = 
-            el.DropdownHeadItem 
-            ? <el.DropdownHeadItem key={key} multiple={true} {...dropdownHeadItemData[0].props} {...handlers} />
-            : <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
+            <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
                 e.stopPropagation();
                 removeItem(item);
                 target.checked = false;
@@ -159,11 +142,11 @@ export default function Dropdown(props) {
 
     
     const dropdownHeadChildren = dropdownHeadData[0].props.children.map(child => {
-        if (child && child.props.componentData.role && child.props.componentData.role === 'dropdownHeadCaption') {
+        if (child && child.props.componentData.role && child.props.componentData.role === 'dropdownSelectArea') {
             return (
-                <el.DropdownHeadCaption key={child.key} {...dropdownHeadCaptionData[0].props}>
+                <el.DropdownSelectArea key={child.key} {...dropdownSelectAreaData[0].props}>
                     {state}
-                </el.DropdownHeadCaption>
+                </el.DropdownSelectArea>
             );
         }
         return child;
@@ -224,21 +207,30 @@ export default function Dropdown(props) {
         return child;
     });
 
-
-    
-
     
     return (
-        <el.DropdownWrapper {...dropdownWrapperData[0].props} showOutlines={outlines}>
-            <el.DropdownHead {...dropdownHeadData[0].props} onClick={() => {setIsOpen(!isOpen)}}>
+        <el.DropdownWrapper
+            showOutlines={outlines}
+            {...dropdownWrapperData[0].props}
+            {...dropdownWrapperData[0].props.componentData}
+        >
+            <el.DropdownHead 
+                {...dropdownHeadData[0].props} 
+                {...dropdownHeadData[0].props.componentData} 
+                onClick={() => {setIsOpen(!isOpen)}} 
+                isActive={isOpen}
+            >
                 {dropdownHeadChildren}
             </el.DropdownHead>
 
-            <DropdownMenuWrapper ref={dropdownMenuRef} isOpen={isOpen}>
-                <el.DropdownMenu {...dropdownMenuData[0].props}>
+            <div ref={dropdownMenuRef}>
+                <el.DropdownMenu isActive={isOpen}
+                    {...dropdownMenuData[0].props}
+                    {...dropdownMenuData[0].props.componentData}
+                >
                     {dropdownMenuChildren}
                 </el.DropdownMenu>
-            </DropdownMenuWrapper>
+            </div>
         </el.DropdownWrapper>
     )
 }

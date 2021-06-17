@@ -11,11 +11,28 @@ export const DropdownWrapper = styled.div`
 `;
 
 export const HeadTag = styled.div`
-    margin-right: 5px;
     padding: 0 5px;
-    border: 1px solid gray;
+    width: 100%;
+    text-align: center;
+
+    ${props => {
+        return props.default && css`
+            color: rgba(191,191,191, 0.87);
+        `;
+    }}
+
     ${props => {
         return props.multiple && css`
+            width: auto;
+            margin-right: 5px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+            padding: 5px 10px;
+            background-color: #e8e8e8;
+            border: 1px solid rgba(34,36,38,.15);
+            border-radius: 5px;
+            color: rgba(0,0,0,.6);
+            line-height: 1;
             cursor: pointer;
         `
     }}
@@ -23,8 +40,12 @@ export const HeadTag = styled.div`
 
 export const DropdownMenuWrapper = styled.div`
     z-index: 1;
+    left: 0;
+    right: 0;
+    height: 100%;
     position: absolute;
     display: none;
+    pointer-events: none;
 
     ${props => {
         return props.isOpen && css`

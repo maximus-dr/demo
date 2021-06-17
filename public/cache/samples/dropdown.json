@@ -19,109 +19,6 @@
 
           {
             "typeName": "dropdown",
-            "id": "1",
-            "childrenList": [
-
-              {
-                "typeName": "section",
-                "id": "5",
-                "role": "dropdown",
-                "childrenList": [
-                  {
-
-                    "typeName": "section",
-                    "id": "6",
-                    "role": "dropdownWrapper",
-                    "styles": {
-                      "backgroundColor": "#ffffff",
-                      "position": "relative",
-                      "overflow": "visible"
-                    },
-                    "childrenList": [
-                      {
-                        "typeName": "section",
-                        "id": "55",
-                        "role": "dropdownHeadItem",
-                        "childrenList": [
-                          {
-                            "typeName": "label",
-                            "id": "56",
-                            "value": "Сделайте выбор"
-                          }
-                        ]
-                      },
-                      {
-                        "typeName": "section",
-                        "id": "7",
-                        "role": "dropdownHead",
-                        "styles": {
- 
-                        },
-                        "childrenList": [
-
-                          {
-                            "typeName": "section",
-                            "id": "8",
-                            "role": "dropdownHeadCaption",
-                            "styles": {
-          
-                            },
-                            "childrenList": []
-                          }
-
-                        ]
-                      },
-
-                      {
-                        "typeName": "section",
-                        "id": "7",
-                        "role": "dropdownMenu",
-                        "styles": {
-                          "backgroundColor": "#ffffff"
-                        },
-                        "childrenList": [
-
-                          {
-                            "typeName": "section",
-                            "id": "8",
-                            "role": "dropdownOptionGroup",
-                            "childrenList": [
-
-                              {
-                                "typeName": "section",
-                                "id": "11"
-                              }
-
-                            ]
-                          },
-
-                          {
-                            "typeName": "label",
-                            "id": "10"
-                          },
-
-                          {
-                            "typeName": "section",
-                            "id": "9",
-                            "role": "dropdownOptionGroup"
-                          }
-
-                        ]
-                      }
-
-                      
-                    ]
-
-                  }
-                ]
-              }
-
-              
-            ]
-          },
-
-          {
-            "typeName": "dropdown",
             "id": "4",
             "childrenList": [
               
@@ -130,47 +27,63 @@
                 "id": "5",
                 "role": "dropdownWrapper",
                 "styles": {
-                  "overflow": "visible"
+                  "overflow": "visible",
+                  "paddingTop": "0",
+                  "paddingRight": "0",
+                  "paddingBottom": "0",
+                  "paddingLeft": "0",
+                  "marginBottom": "50px"
                 },
                 "childrenList": [
-
-                  {
-                    "typeName": "section",
-                    "id": "56",
-                    "role": "dropdownHeadItem",
-                    "childrenList": [
-                      {
-                        "typeName": "label",
-                        "id": "56",
-                        "value": "Header Option"
-                      }
-                    ]
-                  },
 
                   {
                     "typeName": "section",
                     "id": "head4",
                     "role": "dropdownHead",
                     "styles": {
+                      "width": "auto",
+                      "maxWidth": "300px",
                       "paddingTop": "0",
-                      "paddingRight": "40px",
-                      "paddingLeft": "5px",
+                      "paddingRight": "25px",
+                      "paddingLeft": "0",
                       "paddingBottom": "0",
-                      "minWidth": "150px",
                       "cursor": "pointer",
-                      "border": "2px solid rgba(0, 0, 0, 0.87)",
-                      "borderRadius": "5px"
+                      "border": "1px solid rgba(34,36,38,.15)",
+                      "borderRadius": "5px",
+                      "backgroundColor": "#ffffff",
+                      "transitions": ["border-color 100ms"],
+
+                      "hover": {
+                        "borderColor": "rgba(34,36,38,.35)"
+                      },
+
+                      "isActive": {
+                        "borderColor": "#96c8da",
+                        "hover": {
+                          "borderColor": "#96c8da"
+                        },
+                        "active": {
+                          "borderColor": "#96c8da"
+                        }
+                      }
                     },
                     "childrenList": [
     
                       {
                         "typeName": "section",
                         "id": "head5",
-                        "role": "dropdownHeadCaption",
+                        "role": "dropdownSelectArea",
                         "styles": {
+                          "alignItems": "center",
                           "width": "100%",
+                          "minHeight": "38px",
+                          "paddingTop": "4px",
+                          "paddingBottom": "4px",
+                          "paddingRight": "5px",
                           "flexDirection": "row",
-                          "cursor": "default"
+                          "cursor": "text",
+                          "userSelect": "none",
+                          "flexWrap": "wrap"
                         },
                         "childrenList": []
                       },
@@ -179,8 +92,8 @@
                         "typeName": "icon",
                         "id": "53",
                         "styles": {
-                          "width": "18px",
-                          "height": "18px",
+                          "width": "10px",
+                          "height": "10px",
                           "top": "50%",
                           "right": "10px",
                           "opacity": "0.7",
@@ -197,42 +110,59 @@
                     "id": "menu1",
                     "role": "dropdownMenu",
                     "styles": {
-                      "top": "52px",
-                      "left": "0",
+                      "display": "none",
+                      "bottom": "-5px",
+                      "left": "10px",
+                      "width": "auto",
                       "backgroundColor": "#ffffff",
                       "position": "absolute",
-                      "width": "160px",
+                      "paddingTop": "0",
+                      "paddingRight": "0",
+                      "paddingBottom": "0",
+                      "paddingLeft": "0",
                       "zIndex": "1",
-                      "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)"
+                      "transform": "translateY(100%)",
+                      "pointerEvents": "auto",
+                      "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
+
+                      "isActive": {
+                        "display": "block"
+                      }
                     },
                     "childrenList": [
-    
-                      {
-                        "typeName": "label",
-                        "id": "42",
-                        "value": "Optiongroup 1"
-                      },
     
                       {
                         "typeName": "section",
                         "id": "38",
                         "role": "dropdownOptionGroup",
+                        "styles": {
+                          "width": "100%",
+                          "paddingTop": "0",
+                          "paddingRight": "0",
+                          "paddingBottom": "0",
+                          "paddingLeft": "0"
+                        },
                         "childrenList": [
-    
-                          {
-                            "typeName": "label",
-                            "id": "48",
-                            "heading": "h3"
-                          },
     
                           {
                             "typeName": "label",
                             "id": "39",
                             "role": "dropdownOption",
-                            "value": "option1",
+                            "value": "Option 1",
                             "styles": {
-                              "marginBottom": "5px",
-                              "cursor": "pointer"
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
                             }
                           },
     
@@ -240,10 +170,21 @@
                             "typeName": "label",
                             "id": "40",
                             "role": "dropdownOption",
-                            "value": "option2",
+                            "value": "Option 2",
                             "styles": {
-                              "marginBottom": "5px",
-                              "cursor": "pointer"
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
                             }
                           },
     
@@ -251,20 +192,21 @@
                             "typeName": "label",
                             "id": "41",
                             "role": "dropdownOption",
-                            "value": "option3",
+                            "value": "Option 3",
                             "styles": {
-                              "cursor": "pointer"
-                            }
-                          },
-    
-                          {
-                            "typeName": "label",
-                            "id": "50",
-                            "heading": "h4",
-                            "value": "Sublabel",
-                            "styles": {
-                              "marginTop": "15px",
-                              "marginBottom": "5px"
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
                             }
                           },
     
@@ -272,10 +214,21 @@
                             "typeName": "label",
                             "id": "51",
                             "role": "dropdownOption",
-                            "value": "option4",
+                            "value": "Option 4",
                             "styles": {
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
                               "cursor": "pointer",
-                              "marginBottom": "5px"
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
                             }
                           },
     
@@ -283,54 +236,208 @@
                             "typeName": "label",
                             "id": "52",
                             "role": "dropdownOption",
-                            "value": "option5",
+                            "value": "Option 5",
                             "styles": {
-                              "cursor": "pointer"
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
                             }
                           }
                         ]
+                      }
+                    ]
+                  }
+
+                ]
+              }
+
+            ]
+          },
+
+
+          {
+            "typeName": "dropdown",
+            "id": "b1",
+            "childrenList": [
+              
+              {
+                "typeName": "section",
+                "id": "b2",
+                "role": "dropdownWrapper",
+                "styles": {
+                  "overflow": "visible",
+                  "paddingTop": "0",
+                  "paddingRight": "0",
+                  "paddingBottom": "0",
+                  "paddingLeft": "0",
+                  "marginBottom": "50px"
+                },
+                "childrenList": [
+
+                  {
+                    "typeName": "section",
+                    "id": "b3",
+                    "role": "dropdownHead",
+                    "styles": {
+                      "width": "auto",
+                      "maxWidth": "300px",
+                      "paddingTop": "0",
+                      "paddingRight": "25px",
+                      "paddingLeft": "0",
+                      "paddingBottom": "0",
+                      "cursor": "pointer",
+                      "border": "1px solid rgba(34,36,38,.15)",
+                      "borderRadius": "5px",
+                      "backgroundColor": "#ffffff",
+                      "transitions": ["border-color 100ms"],
+
+                      "hover": {
+                        "borderColor": "rgba(34,36,38,.35)"
+                      },
+
+                      "isActive": {
+                        "borderColor": "#96c8da",
+                        "hover": {
+                          "borderColor": "#96c8da"
+                        },
+                        "active": {
+                          "borderColor": "#96c8da"
+                        }
+                      }
+                    },
+                    "childrenList": [
+    
+                      {
+                        "typeName": "section",
+                        "id": "b4",
+                        "role": "dropdownSelectArea",
+                        "styles": {
+                          "alignItems": "center",
+                          "width": "100%",
+                          "minHeight": "38px",
+                          "paddingTop": "4px",
+                          "paddingBottom": "4px",
+                          "paddingRight": "5px",
+                          "flexDirection": "row",
+                          "cursor": "text",
+                          "userSelect": "none",
+                          "flexWrap": "wrap"
+                        },
+                        "childrenList": []
                       },
     
                       {
-                        "typeName": "label",
-                        "id": "47",
-                        "value": "Any label",
+                        "typeName": "icon",
+                        "id": "b6",
                         "styles": {
-                          "marginBottom": "5px",
-                          "marginTop": "5px"
+                          "width": "10px",
+                          "height": "10px",
+                          "top": "50%",
+                          "right": "10px",
+                          "opacity": "0.7",
+                          "transform": "translateY(-50%)",
+                          "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/down-arrow.svg?alt=media&token=690177b3-c142-4bce-8d0d-90150c288c28')"
                         }
-                      },
+                      }
     
-                      {
-                        "typeName": "label",
-                        "id": "48",
-                        "value": "Any label 2",
-                        "styles": {
-                          "marginBottom": "5px",
-                          "marginTop": "5px"
-                        }
-                      },
+                    ]
+                  },
+    
+                  {
+                    "typeName": "section",
+                    "id": "b7",
+                    "role": "dropdownMenu",
+                    "styles": {
+                      "display": "none",
+                      "bottom": "-5px",
+                      "width": "150px",
+                      "backgroundColor": "#ffffff",
+                      "position": "absolute",
+                      "paddingTop": "0",
+                      "paddingRight": "0",
+                      "paddingBottom": "0",
+                      "paddingLeft": "0",
+                      "zIndex": "1",
+                      "transform": "translateY(100%)",
+                      "pointerEvents": "auto",
+                      "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
+
+                      "isActive": {
+                        "display": "block"
+                      }
+                    },
+                    "childrenList": [
     
                       {
                         "typeName": "section",
                         "role": "dropdownOptionGroup",
-                        "id": "43",
+                        "id": "b14",
+                        "styles": {
+                          "width": "100%",
+                          "paddingTop": "25px",
+                          "paddingRight": "0",
+                          "paddingBottom": "0",
+                          "paddingLeft": "0"
+                        },
                         "childrenList": [
     
                           {
                             "typeName": "checkbox",
-                            "id": "44",
+                            "id": "b16",
                             "role": "dropdownOption",
                             "label": "option a",
                             "optionValue": "option a",
                             "styles": {
-                              "cursor": "pointer"
+                              "checkbox": {
+                                "marginRight": "15px",
+
+                                "isActive": {
+                                  "width": "30px",
+                                  "height": "30px"
+                                }
+                              },
+
+                              "label": {
+                                "width": "100%",
+                                "paddingTop": "5px",
+                                "paddingBottom": "5px",
+                                "paddingLeft": "5px",
+                                "paddingRight": "5px",
+                                "display": "flex",
+                                "alignItems": "center",
+
+                                "isActive": {
+                                  "backgroundColor": "yellow",
+
+                                  "hover": {
+                                    "backgroundColor": "blue"
+                                  }
+                                },
+
+                                "hover": {
+                                  "backgroundColor": "red"
+                                },
+
+                                "active": {
+                                  "backgroundColor": "blue"
+                                }
+                              }
                             }
                           },
     
                           {
                             "typeName": "checkbox",
-                            "id": "45",
+                            "id": "b17",
                             "role": "dropdownOption",
                             "label": "option b",
                             "optionValue": "option b",
@@ -341,7 +448,7 @@
     
                           {
                             "typeName": "checkbox",
-                            "id": "46",
+                            "id": "b18",
                             "role": "dropdownOption",
                             "label": "option c",
                             "optionValue": "option c",
@@ -349,20 +456,372 @@
                               "cursor": "pointer"
                             }
                           },
-    
+
                           {
                             "typeName": "checkbox",
-                            "id": "47"
+                            "id": "b19",
+                            "role": "dropdownOption",
+                            "label": "option d",
+                            "optionValue": "option d",
+                            "styles": {
+                              "cursor": "pointer"
+                            }
+                          },
+
+                          {
+                            "typeName": "checkbox",
+                            "id": "b20",
+                            "role": "dropdownOption",
+                            "label": "option e",
+                            "optionValue": "option e",
+                            "styles": {
+                              "cursor": "pointer"
+                            }
                           }
-    
                         ]
                       },
     
                       {
                         "typeName": "button",
-                        "id": "52",
+                        "id": "b21",
                         "role": "dropdownReset",
-                        "value": "Reset"
+                        "value": "Reset",
+                        "styles": {
+                          "marginLeft": "auto",
+                          "marginRight": "auto"
+                        }
+                      }
+                    ]
+                  }
+
+                ]
+              }
+
+            ]
+          },
+
+
+          {
+            "typeName": "dropdown",
+            "id": "c1",
+            "childrenList": [
+              
+              {
+                "typeName": "section",
+                "id": "c2",
+                "role": "dropdownWrapper",
+                "styles": {
+                  "overflow": "visible",
+                  "paddingTop": "0",
+                  "paddingRight": "0",
+                  "paddingBottom": "0",
+                  "paddingLeft": "0"
+                },
+                "childrenList": [
+
+                  {
+                    "typeName": "section",
+                    "id": "c3",
+                    "role": "dropdownHead",
+                    "styles": {
+                      "width": "auto",
+                      "maxWidth": "300px",
+                      "paddingTop": "0",
+                      "paddingRight": "25px",
+                      "paddingLeft": "0",
+                      "paddingBottom": "0",
+                      "cursor": "pointer",
+                      "border": "1px solid rgba(34,36,38,.15)",
+                      "borderRadius": "5px",
+                      "backgroundColor": "#ffffff",
+                      "transitions": ["border-color 100ms"],
+
+                      "hover": {
+                        "borderColor": "rgba(34,36,38,.35)"
+                      },
+
+                      "isActive": {
+                        "borderColor": "#96c8da",
+                        "hover": {
+                          "borderColor": "#96c8da"
+                        },
+                        "active": {
+                          "borderColor": "#96c8da"
+                        }
+                      }
+                    },
+                    "childrenList": [
+    
+                      {
+                        "typeName": "section",
+                        "id": "c4",
+                        "role": "dropdownSelectArea",
+                        "styles": {
+                          "alignItems": "center",
+                          "width": "100%",
+                          "minHeight": "38px",
+                          "paddingTop": "4px",
+                          "paddingBottom": "4px",
+                          "paddingRight": "5px",
+                          "flexDirection": "row",
+                          "cursor": "text",
+                          "userSelect": "none",
+                          "flexWrap": "wrap"
+                        },
+                        "childrenList": []
+                      },
+    
+                      {
+                        "typeName": "icon",
+                        "id": "c6",
+                        "styles": {
+                          "width": "10px",
+                          "height": "10px",
+                          "top": "50%",
+                          "right": "10px",
+                          "opacity": "0.7",
+                          "transform": "translateY(-50%)",
+                          "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/down-arrow.svg?alt=media&token=690177b3-c142-4bce-8d0d-90150c288c28')"
+                        }
+                      }
+    
+                    ]
+                  },
+    
+                  {
+                    "typeName": "section",
+                    "id": "c7",
+                    "role": "dropdownMenu",
+                    "styles": {
+                      "display": "none",
+                      "bottom": "-5px",
+                      "width": "150px",
+                      "backgroundColor": "#ffffff",
+                      "position": "absolute",
+                      "paddingTop": "0",
+                      "paddingRight": "0",
+                      "paddingBottom": "0",
+                      "paddingLeft": "0",
+                      "zIndex": "1",
+                      "transform": "translateY(100%)",
+                      "pointerEvents": "auto",
+                      "boxShadow": "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
+
+                      "isActive": {
+                        "display": "block"
+                      }
+                    },
+                    "childrenList": [
+    
+                      {
+                        "typeName": "section",
+                        "id": "c8",
+                        "role": "dropdownOptionGroup",
+                        "styles": {
+                          "width": "100%",
+                          "paddingTop": "0",
+                          "paddingRight": "0",
+                          "paddingBottom": "0",
+                          "paddingLeft": "0"
+                        },
+                        "childrenList": [
+    
+                          {
+                            "typeName": "label",
+                            "id": "c9",
+                            "role": "dropdownOption",
+                            "value": "Option 1",
+                            "styles": {
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
+                            }
+                          },
+    
+                          {
+                            "typeName": "label",
+                            "id": "c10",
+                            "role": "dropdownOption",
+                            "value": "Option 2",
+                            "styles": {
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
+                            }
+                          },
+    
+                          {
+                            "typeName": "label",
+                            "id": "c11",
+                            "role": "dropdownOption",
+                            "value": "Option 3",
+                            "styles": {
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
+                            }
+                          },
+    
+                          {
+                            "typeName": "label",
+                            "id": "c12",
+                            "role": "dropdownOption",
+                            "value": "Option 4",
+                            "styles": {
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
+                            }
+                          },
+    
+                          {
+                            "typeName": "label",
+                            "id": "c13",
+                            "role": "dropdownOption",
+                            "value": "Option 5",
+                            "styles": {
+                              "width": "100%",
+                              "paddingTop": "10px",
+                              "paddingRight": "15px",
+                              "paddingBottom": "10px",
+                              "paddingLeft": "15px",
+                              "color": "rgba(0,0,0,.95)",
+                              "cursor": "pointer",
+                              "transitions": ["background-color 200ms"],
+                              "fontSize": "14px",
+
+                              "hover": {
+                                "backgroundColor": "rgba(0,0,0,.03)"
+                              }
+                            }
+                          }
+                        ]
+                      },
+    
+                      {
+                        "typeName": "section",
+                        "role": "dropdownOptionGroup",
+                        "id": "c14",
+                        "styles": {
+                          "width": "100%",
+                          "paddingTop": "0",
+                          "paddingRight": "0",
+                          "paddingBottom": "0",
+                          "paddingLeft": "0"
+                        },
+                        "childrenList": [
+    
+                          {
+                            "typeName": "checkbox",
+                            "id": "c16",
+                            "role": "dropdownOption",
+                            "label": "option a",
+                            "optionValue": "option a",
+                            "styles": {
+                              "marginTop": "5px",
+                              "marginRight": "5px",
+                              "marginBottom": "5px",
+                              "marginLeft": "5px",
+                              "cursor": "pointer",
+                              "width": "100%"
+                            }
+                          },
+    
+                          {
+                            "typeName": "checkbox",
+                            "id": "c17",
+                            "role": "dropdownOption",
+                            "label": "option b",
+                            "optionValue": "option b",
+                            "styles": {
+                              "cursor": "pointer"
+                            }
+                          },
+    
+                          {
+                            "typeName": "checkbox",
+                            "id": "c18",
+                            "role": "dropdownOption",
+                            "label": "option c",
+                            "optionValue": "option c",
+                            "styles": {
+                              "cursor": "pointer"
+                            }
+                          },
+
+                          {
+                            "typeName": "checkbox",
+                            "id": "c19",
+                            "role": "dropdownOption",
+                            "label": "option d",
+                            "optionValue": "option d",
+                            "styles": {
+                              "cursor": "pointer"
+                            }
+                          },
+
+                          {
+                            "typeName": "checkbox",
+                            "id": "c20",
+                            "role": "dropdownOption",
+                            "label": "option e",
+                            "optionValue": "option e",
+                            "styles": {
+                              "cursor": "pointer"
+                            }
+                          }
+                        ]
+                      },
+    
+                      {
+                        "typeName": "button",
+                        "id": "c21",
+                        "role": "dropdownReset",
+                        "value": "Reset",
+                        "styles": {
+                          "marginLeft": "auto",
+                          "marginRight": "auto"
+                        }
                       }
                     ]
                   }

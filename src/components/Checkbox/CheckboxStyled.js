@@ -1,33 +1,33 @@
 import styled, {css} from 'styled-components';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/functions/outlines';
+import { StylesProvider } from '../styles';
 
-
-export const CheckboxWrapper = styled.div`
-`;
 
 export const CheckboxLabel = styled.label`
     ${props => enableOutlines(props.showOutlines, colors.outline_checkbox)}
-    cursor: pointer;
-    width: 100%;
-    padding: 0 5px;
 
-    ${props => {
-        if (!props.componentData.label) {
-            return css`
-                font-size: 0;
-                width: auto;
-                padding: 0;
-            `;
-        }
+    ${props =>  {
+        const data = props.componentData;
+        const styles = data.styles && data.styles.label || null;
+
+        return css`
+            ${styles && StylesProvider(styles)}
+            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+        `;
     }}
 `;
 
 export const CheckboxInput = styled.input`
-    margin: 0;
-    cursor: pointer;
-    width: 13px;
-    height: 13px;
+    ${props =>  {
+        const data = props.componentData;
+        const styles = data.styles && data.styles.checkbox || null;
+
+        return css`
+            ${styles && StylesProvider(styles)}
+            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+        `;
+    }}
 `;
 
 export const CheckboxValue = styled.span``;

@@ -20,10 +20,16 @@ export const SectionWrapper = styled.div`
             left: ${styles && styles.left || ''};
             z-index: ${styles && styles.zIndex || ''};
 
+            display: ${styles && styles.display || ''};
+
             align-self: ${styles && styles.alignSelf || ''};
 
             width: ${styles && styles.width || ''};
+            height: ${styles && styles.height || ''};
             min-width: ${styles && styles.minWidth || '100px'};
+            max-width: ${styles && styles.maxWidth || ''};
+            min-width: ${styles && styles.minHeight || ''};
+            max-width: ${styles && styles.maxHeight || ''};
 
             margin-top: ${styles && styles.marginTop || '0'};
             margin-right: ${styles && styles.marginRight || '0'};
@@ -41,11 +47,16 @@ export const SectionWrapper = styled.div`
             color: ${styles && styles.color || ''};
 
             opacity: ${styles && styles.opacity || ''};
+            transform: ${styles && styles.transform || ''};
             box-shadow: ${styles && styles.boxShadow || ''};
             overflow: ${styles && styles.overflow || 'hidden'};
 
             cursor: ${styles && styles.cursor || ''};
+            pointer-events: ${styles && styles.pointerEvents || ''};
+            user-select: ${styles && styles.userSelect || ''};
             transition: ${transitions && transitions.join(', ') || ''};
+
+
 
             &:hover {
                 ${props => {
@@ -79,15 +90,16 @@ export const SectionWrapper = styled.div`
             ${'' /* isActive */}
             ${props => {
                 const styles = props.componentData.styles && props.componentData.styles.isActive || null;
-
                 return props.isActive && css`
+                    display: ${styles && styles.display || ''};
                     color: ${styles && styles.color || ''};
                     background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
+                    border-color: ${styles && styles.borderColor || ''};
 
                     &:hover {
                         ${props => {
                             const styles = props.styles && props.styles.isActive && props.styles.isActive.hover || null;
-
+                            
                             return css`
                                 background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
                                 color: ${styles && styles.color || ''};
@@ -195,7 +207,7 @@ export const SectionBody = styled.div`
         const styles = getStyles(props.componentData);
 
         return css`
-            display: ${styles && styles.display || 'flex'};
+            display: flex;
 
             flex-direction: ${styles && styles.flexDirection || 'column'};
             justify-content: ${styles && styles.justifyContent || 'flex-start'};

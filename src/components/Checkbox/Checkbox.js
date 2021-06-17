@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react'
 import { OutlinesContext } from '../../context/outlinesContext';
 import { getHandler } from '../../core/functions/components'
-import { CheckboxInput, CheckboxLabel, CheckboxValue, CheckboxWrapper } from './CheckboxStyled';
+import { CheckboxInput, CheckboxLabel, CheckboxValue } from './CheckboxStyled';
 
 
 export default function Checkbox(props) {
@@ -21,8 +21,10 @@ export default function Checkbox(props) {
                 showOutlines={outlines}
                 htmlFor={props.componentData.id} 
                 {...props}
+                isActive={true}
             >
                 <CheckboxInput
+                    {...props}
                     ref={ref}
                     type="checkbox" 
                     id={props.componentData.id} 
