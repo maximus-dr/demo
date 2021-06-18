@@ -18,5 +18,6 @@ export const colors = {
     outline_input: 'red',
     outline_form: '#0277bd',
     outline_checkbox: '#ff6e40',
-    outline_dropdown: '#80cbc4'
+    outline_dropdown: '#80cbc4',
+    outline_radio: 'red'
 }

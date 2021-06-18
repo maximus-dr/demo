@@ -16,6 +16,175 @@
       "childrenList": [
 
         {
+          "typeName": "radio",
+          "id": "rd1",
+          "styles": {
+            "radio": {
+              "cursor": "pointer"
+            } 
+          }
+        },
+
+        {
+          "typeName": "radio",
+          "id": "rd2"
+        },
+
+        {
+          "typeName": "radio",
+          "id": "rd3"
+        },
+
+        {
+          "typeName": "section",
+          "styles": {
+            "width": "auto",
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px",
+            "marginBottom": "30px",
+            "borderRadius": "4px",
+            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+          },
+          "childrenList": [
+            {
+              "typeName": "label",
+              "heading": "h2",
+              "value": "Input"
+            },
+            {
+              "typeName": "section",
+              "styles": {
+                "flexDirection": "row"  
+              },
+              "childrenList": [
+                {
+                  "typeName": "section",
+                  "styles": {
+                    "marginRight": "30px"
+                  },
+                  "childrenList": [
+                    {
+                      "typeName": "input",
+                      "value": "Label",
+                      "attrs": {
+                        "type": "text"
+                      },
+                      "styles": {
+                        "marginBottom": "5px",
+                        "outline": "2px solid red",
+                        "focus": {
+                          "outline":"2px solid blue"
+                        }
+                      }
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "id": "auth-email",
+                        "type": "email",
+                        "placeholder": "email"
+                      },
+                      "value": "Email"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "password",
+                        "placeholder": "password"
+                      },
+                      "value": "Password"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "tel",
+                        "placeholder": "tel"
+                      },
+                      "value": "Tel"
+                    }
+                  ]
+                },
+
+                {
+                  "typeName": "section",
+                  "childrenList": [
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "checkbox"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Checkbox"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "radio",
+                        "name": "test"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Radio1"
+                    },
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "radio",
+                        "name": "test"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Radio1"
+                    },
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "radio",
+                        "name": "test"
+                      },
+                      "styles": {
+                        "cursor": "pointer"
+                      },
+                      "value": "Radio1"
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "range"
+                      },
+                      "value": "Range",
+                      "styles": {
+    
+                      }
+                    },
+    
+                    {
+                      "typeName": "input",
+                      "attrs": {
+                        "type": "submit",
+                        "value": "Submit"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
           "typeName": "form",
           "attrs": {
           },
@@ -272,7 +441,10 @@
             },
 
             {
-              "typeName": "description"
+              "typeName": "description",
+              "styles": {
+                "color": "red"
+              }
             }
           ]
         },
@@ -464,7 +636,11 @@
                         "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
                         "backgroundSize": "86% auto",
                         "top": "3px",
-                        "left": "7px"
+                        "left": "7px",
+                        "width": "30px",
+                        "height": "30px",
+                        "position": "absolute",
+                        "backgroundRepeat": "no-repeat"
                       }
                     }
                   ]
@@ -858,8 +1034,17 @@
                 {
                   "typeName": "button",
                   "value": "default",
-                  "action": {
-                    "onClick": "sayHello"
+                  "styles": {
+                    "marginTop": "5px",
+                    "marginRight": "5px",
+                    "marginBottom": "5px",
+                    "marginLeft": "5px",
+                    "paddingTop": "5px",
+                    "paddingBottom": "5px",
+                    "paddingLeft": "15px",
+                    "paddingRight": "15px",
+                    "borderRadius": "4px",
+                    "border": "none"
                   }
                 },
 
@@ -934,152 +1119,7 @@
           ]
         },
 
-        {
-          "typeName": "section",
-          "styles": {
-            "width": "auto",
-            "backgroundColor": "#ffffff",
-            "paddingTop": "15px",
-            "paddingRight": "15px",
-            "paddingBottom": "15px",
-            "paddingLeft": "15px",
-            "marginBottom": "30px",
-            "borderRadius": "4px",
-            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
-          },
-          "childrenList": [
-            {
-              "typeName": "label",
-              "heading": "h2",
-              "value": "Input"
-            },
-            {
-              "typeName": "section",
-              "styles": {
-                "flexDirection": "row"  
-              },
-              "childrenList": [
-                {
-                  "typeName": "section",
-                  "styles": {
-                    "marginRight": "30px"
-                  },
-                  "childrenList": [
-                    {
-                      "typeName": "input",
-                      "value": "Label",
-                      "attrs": {
-                        "type": "text"
-                      },
-                      "styles": {
-                        "marginBottom": "5px"
-                      }
-                    },
-    
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "id": "auth-email",
-                        "type": "email",
-                        "placeholder": "email"
-                      },
-                      "value": "Email"
-                    },
-    
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "password",
-                        "placeholder": "password"
-                      },
-                      "value": "Password"
-                    },
-    
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "tel",
-                        "placeholder": "tel"
-                      },
-                      "value": "Tel"
-                    }
-                  ]
-                },
-
-                {
-                  "typeName": "section",
-                  "childrenList": [
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "checkbox"
-                      },
-                      "styles": {
-                        "cursor": "pointer"
-                      },
-                      "value": "Checkbox"
-                    },
-    
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "radio",
-                        "name": "test"
-                      },
-                      "styles": {
-                        "cursor": "pointer"
-                      },
-                      "value": "Radio1"
-                    },
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "radio",
-                        "name": "test"
-                      },
-                      "styles": {
-                        "cursor": "pointer"
-                      },
-                      "value": "Radio1"
-                    },
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "radio",
-                        "name": "test"
-                      },
-                      "styles": {
-                        "cursor": "pointer"
-                      },
-                      "value": "Radio1"
-                    },
-    
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "range"
-                      },
-                      "value": "Range",
-                      "styles": {
-    
-                      }
-                    },
-    
-                    {
-                      "typeName": "input",
-                      "attrs": {
-                        "type": "submit",
-                        "value": "Submit"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-
-
+        
         {
           "typeName": "section",
           "styles": {
@@ -1102,7 +1142,10 @@
 
             {
               "typeName": "image",
-              "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg"
+              "link": "https://static.kinoafisha.info/k/movie_posters/1080x1920/upload/movie_posters/7/3/4/8354437/edbe7d25cdbc4adecd311d045ce68aab.jpg",
+              "styles": {
+
+              }
             }
           ]
         },

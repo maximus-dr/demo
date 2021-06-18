@@ -1,200 +1,58 @@
 import styled, {css} from 'styled-components';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/functions/outlines';
+import { StylesProvider } from '../styles';
 
 
-const commonStyles = (styles) => css`
-    font-weight: ${styles && styles.fotnWeight || '500'};
-    font-family: inherit;
+// const defaultStyles = (styles) => css`
+//     margin-top: ${styles && styles.marginTop || '5px'};
+//     margin-right: ${styles && styles.marginRight || '5px'};
+//     margin-bottom: ${styles && styles.marginBottom || '5px'};
+//     margin-left: ${styles && styles.marginLeft || '5px'};
 
-    outline: ${styles && styles.outline || 'none'};
-    border: ${styles && styles.border || 'none'};
-    border-top: ${styles && styles.borderTop || ''};
-    border-right: ${styles && styles.borderRight || ''};
-    border-bottom: ${styles && styles.borderBottom || ''};
-    border-left: ${styles && styles.borderLeft || ''};
-    border-color: ${styles && styles.borderColor || ''};
-    border-radius: ${styles && styles.borderRadius || '4px'};
+//     padding-top: ${styles && styles.paddingTop || '5px'};
+//     padding-right: ${styles && styles.paddingRight || '15px'};
+//     padding-bottom: ${styles && styles.paddingBottom || '5px'};
+//     padding-left: ${styles && styles.paddingLeft || '15px'};
+//     position: ${styles && styles.position || 'relative'};
+//     align-self: ${styles && styles.alignSelf || 'flex-start'};
+//     font-weight: ${styles && styles.fotnWeight || '500'};
+//     font-family: inherit;
+//     outline: ${styles && styles.outline || 'none'};
+//     border: ${styles && styles.border || 'none'};
+//     border-radius: ${styles && styles.borderRadius || '4px'};
+//     box-shadow: ${styles && styles.boxShadow || '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)'};
 
-    box-shadow: ${styles && styles.boxShadow || '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)'};
+//     color: ${styles && styles.color || 'rgba(0, 0, 0, 0.87)'};
+//     background-color: ${styles && styles.backgroundColor || '#e0e0e0'};
+//     font-size: ${styles && styles.fontSize || '13px'};
+//     text-align: ${styles && styles.textAlign || 'center'};
+//     text-transform: ${styles && styles.textTransform || 'uppercase'};
 
-    transform: ${styles && styles.transform || ''}; 
-`;
+//     font-style: ${styles && styles.fontStyle || ''};
+//     line-height: ${styles && styles.lineHeight || '1.8'};
+
+//     cursor: ${styles && styles.cursor || 'pointer'};
+//     font-size: ${styles && styles.fontSize || '13px'};
+//     text-align: ${styles && styles.textAlign || 'center'};
+//     text-transform: ${styles && styles.textTransform || 'uppercase'};
+//     cursor: ${styles && styles.cursor || 'pointer'};
+//     transition: ${'background-color 200ms, color 200ms, opacity 200ms, transform 200ms'};
+// `;
 
 
-// для :hover и :active задается свой styles, соответствующий содержимому props.styles.hover и props.styles.active
+
 export const ButtonBody = styled.button`
-
+    font-size: 13px;
+    line-height: 1.6;
+    cursor: pointer;
+    ${props => enableOutlines(props.showOutlines, colors.outline_checkbox)}
     ${props => {
         const styles = props.styles ? props.styles : null;
-        const transitions = styles && styles.transitions && styles.transitions.length ? styles.transitions : null;
 
         return css`
-            ${commonStyles(styles)}
-            ${props => enableOutlines(props.showOutlines, colors.outline_button)}
-
-            position: ${styles && styles.position || 'relative'};
-            top: ${styles && styles.position || ''};
-            right: ${styles && styles.right || ''};
-            bottom: ${styles && styles.bottom || ''};
-            left: ${styles && styles.left || ''};
-
-            align-self: ${styles && styles.alignSelf || 'flex-start'};
-
-            width: ${styles && styles.width || ''};
-            max-width: ${styles && styles.maxWidth || ''};
-
-            margin-top: ${styles && styles.marginTop || '5px'};
-            margin-right: ${styles && styles.marginRight || '5px'};
-            margin-bottom: ${styles && styles.marginBottom || '5px'};
-            margin-left: ${styles && styles.marginLeft || '5px'};
-
-            padding-top: ${styles && styles.paddingTop || '5px'};
-            padding-right: ${styles && styles.paddingRight || '15px'};
-            padding-bottom: ${styles && styles.paddingBottom || '5px'};
-            padding-left: ${styles && styles.paddingLeft || '15px'};
-
-            color: ${styles && styles.color || 'rgba(0, 0, 0, 0.87)'};
-            background-color: ${styles && styles.backgroundColor || '#e0e0e0'};
-            background-image: ${styles && styles.backgroundImage || ''};
-            background-size: ${styles && styles.backgroundSize || ''};
-            backgground-position: ${styles && styles.backgroundPosition || ''};
-            
-            font-size: ${styles && styles.fontSize || '13px'};
-            text-align: ${styles && styles.textAlign || 'center'};
-            text-transform: ${styles && styles.textTransform || 'uppercase'};
-
-            font-style: ${styles && styles.fontStyle || ''};
-            line-height: ${styles && styles.lineHeight || '1.8'};
-
-            cursor: ${styles && styles.cursor || 'pointer'};
-
-            transform: ${styles && styles.transform || ''};
-            opacity: ${styles && styles.opacity || ''};
-            transition: ${transitions && transitions.join(', ') || 'background-color 200ms, color 200ms, opacity 200ms, transform 200ms'};
-
-            &:hover {
-                ${props => {
-                    const styles = props.styles && props.styles.hover ? props.styles.hover : null;
-
-                    return css`
-                        ${commonStyles(styles)}
-
-                        background-color: ${styles && styles.backgroundColor || ''};
-                        color: ${styles && styles.color || ''};
-                        border-color: ${styles && styles.borderColor || ''};
-                        transform: ${styles && styles.transform || ''};
-                        opacity: ${styles && styles.opacity || ''};
-                        box-shadow: ${styles && styles.boxShadow || ''};
-                    `
-                }}
-            }
-
-            &:active {
-                ${props => {
-                    const styles = props.styles && props.styles.active ? props.styles.active : null;
-
-                    return css`
-                        ${commonStyles(styles)}
-                        background-color: ${styles && styles.backgroundColor || ''};
-                        color: ${styles && styles.color || ''};
-                        border-color: ${styles && styles.borderColor || ''};
-                        transform: ${styles && styles.transform || ''};
-                        opacity: ${styles && styles.opacity || ''};
-                    `;
-                }}
-            }
-
-            ${'' /* isActive */}
-            ${props => {
-                const styles = props.styles && props.styles.isActive || null;
-
-                return props.isActive && css`
-                    color: ${styles && styles.color || '#ffffff'};
-                    background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
-
-                    &:hover {
-                        ${props => {
-                            const styles = props.styles && props.styles.isActive && props.styles.isActive.hover || null;
-
-                            return css`
-                                background-color: ${styles && styles.backgroundColor || 'rgba(0, 0, 0, 0.2)'};
-                                color: ${styles && styles.color || '#ffffff'};
-                                border-color: ${styles && styles.borderColor || ''};
-                                transform: ${styles && styles.transform || ''};
-                                opacity: ${styles && styles.opacity || ''};
-                                box-shadow: ${styles && styles.boxShadow || ''};
-                                cursor: ${styles && styles.cursor || 'default'};
-                            `
-                        }}
-                    }
-
-                    &:active {
-                        ${props => {
-                            const styles = props.styles && props.styles.isActive && props.styles.isActive.active || null;
-
-                            return css`
-                                background-color: ${styles && styles.backgroundColor || ''};
-                                color: ${styles && styles.color || ''};
-                                border-color: ${styles && styles.borderColor || ''};
-                                transform: ${styles && styles.transform || ''};
-                                opacity: ${styles && styles.opacity || ''};
-                            `;
-                        }}
-                    }
-
-                    &:after {
-                        ${props => {
-                            const styles = props.styles && props.styles.isActive && props.styles.isActive.after || null;
-                            const transitions = props.styles && props.styles.isActive && props.styles.isActive.after && props.styles.isActive.after.transitions || null;
-
-                            return css`
-                                    z-index: ${styles && styles.zIndex || ''};
-                                    content: ${styles && styles.content || `''`};
-
-                                    position: ${styles && styles.position || 'absolute'};
-                                    top: ${styles && styles.top || ''};
-                                    right: ${styles && styles.right || ''};
-                                    bottom: ${styles && styles.bottom || ''};
-                                    left: ${styles && styles.left || ''};
-                                    width: ${styles && styles.width || ''};
-                                    height: ${styles && styles.height || ''};
-
-                                    background-color: ${styles && styles.backgroundColor || ''};
-                                    box-shadow: ${styles && styles.boxShadow || ''};
-
-                                    transition: ${transitions && transitions.join(', ') || ''};
-                            `;
-                        }}
-                    }
-
-                    &:before {
-                        ${props => {
-                            const styles = props.styles && props.styles.isActive && props.styles.isActive.before || null;
-                            const transitions = props.styles && props.styles.isActive && props.styles.isActive.before && props.styles.isActive.before.transitions || null;
-
-                            return css`
-                                z-index: ${styles && styles.zIndex || ''};
-                                content: ${styles && styles.content || `''`};
-
-                                position: ${styles && styles.position || 'absolute'};
-                                top: ${styles && styles.top || ''};
-                                right: ${styles && styles.right || ''};
-                                bottom: ${styles && styles.bottom || ''};
-                                left: ${styles && styles.left || ''};
-
-                                width: ${styles && styles.width || ''};
-                                height: ${styles && styles.height || ''};
-
-                                background-color: ${styles && styles.backgroundColor || ''};
-                                box-shadow: ${styles && styles.boxShadow || ''};
-
-                                transition: ${transitions && transitions.join(', ') || ''};
-                            `;
-                        }}
-                    }
-                `;
-            }}
+            ${styles && StylesProvider(styles)}
+            ${styles && styles.isActive && StylesProvider(styles.isActive)}
         `
     }}
 `;

@@ -8,7 +8,7 @@ export default function Page(props) {
   const outlines = useContext(OutlinesContext);
 
   return (
-      <PageBody {...props.componentData} showOutlines={outlines}>
+      <PageBody {...props} {...props.componentData} showOutlines={outlines}>
         {props.children}
       </PageBody>
   )

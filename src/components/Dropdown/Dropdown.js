@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { DropdownMenuWrapper, DropdownWarning, DropdownWarningCaption, DropdownWrapper, HeadTag } from './DropdownStyled';
+import { DropdownWarning, DropdownWarningCaption, HeadTag } from './DropdownStyled';
 import { extractChildrenByRole } from '../../core/functions/components';
 import { Provider } from '..';
 import { OutlinesContext } from '../../context/outlinesContext';

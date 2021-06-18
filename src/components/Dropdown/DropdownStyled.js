@@ -1,14 +1,5 @@
 import styled, {css} from 'styled-components';
-import { enableOutlines } from '../../core/functions/outlines';
-import { colors } from '../../core/variables';
 
-
-export const DropdownWrapper = styled.div`
-    ${props => enableOutlines(props.showOutlines, colors.outline_dropdown)}
-
-    position: relative;
-    overflow: visible;
-`;
 
 export const HeadTag = styled.div`
     padding: 0 5px;
@@ -35,22 +26,6 @@ export const HeadTag = styled.div`
             line-height: 1;
             cursor: pointer;
         `
-    }}
-`;
-
-export const DropdownMenuWrapper = styled.div`
-    z-index: 1;
-    left: 0;
-    right: 0;
-    height: 100%;
-    position: absolute;
-    display: none;
-    pointer-events: none;
-
-    ${props => {
-        return props.isOpen && css`
-            display: block;
-        `;
     }}
 `;
 

@@ -9,13 +9,13 @@ export default function LinkView(props) {
     const outlines = useContext(OutlinesContext);
 
     return (
-        <LinkWrapper {...props.componentData} showOutlines={outlines}>
-            <Link to='/link' style={{textDecoration: 'none'}}>
-                <LinkBody {...props.componentData}>
+        <LinkWrapper {...props} {...props.componentData} showOutlines={outlines}>
+            <Link to='/link'>
+                <LinkBody {...props} {...props.componentData}>
                     {props.componentData && props.componentData.value || 'Link'}
                 </LinkBody>
-                    {props.children}
             </Link>
+            {props.children}
         </LinkWrapper> 
     )
 }

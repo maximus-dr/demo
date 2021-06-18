@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import { colors } from '../../core/variables';
 import { enableOutlines } from '../../core/functions/outlines';
+import { StylesProvider } from '../styles';
 
 
 export const PageBody = styled.div`
@@ -12,22 +13,24 @@ export const PageBody = styled.div`
   min-height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+
+  background-color: #f5f5f5;
+  background-image: none;
+  background-size: cover;
 
   ${props => {
     const styles = props.styles ? props.styles : null;
 
     return css`
-      flex-direction: ${styles && styles.flexDirection || 'column'};
-      justify-content: ${styles && styles.justifyContent || 'flex-start'};
-
-      padding-top: ${styles && styles.paddingTop || '0'};
-      padding-right: ${styles && styles.paddingRight || '0'};
-      padding-bottom: ${styles && styles.paddingBottom || '0'};
-      padding-left: ${styles && styles.paddingLeft || '0'};
-
-      background-color: ${styles && styles.backgroundColor || '#f5f5f5'};
-      background-image: ${styles && styles.backgroundImage || 'none'};
-      background-size: ${styles && styles.backgroundSize || 'cover'};
+      ${styles && StylesProvider(styles)}
+      ${styles && styles.isActive && StylesProvider(styles.isActive)}
     `
   }}
 `;

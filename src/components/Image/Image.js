@@ -15,7 +15,10 @@ export default function Image(props) {
             showOutlines={outlines}
             onClick={getHandler(props, 'onClick')}
         >
-            <ImageBody {...props.componentData} />
+            <ImageBody 
+                {...props}
+                {...props.componentData}    
+            />
             {props.children}
         </ImageWrapper>
     )

@@ -14,7 +14,6 @@ export default function Icon(props) {
             showOutlines={outlines}
             onClick={getHandler(props, 'onClick')}
         >
-
             {props.children}
         </IconBody>
     )

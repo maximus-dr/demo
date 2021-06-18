@@ -10,15 +10,13 @@ export default function Form(props) {
     const attrs = getAttrs(props.componentData);
 
     return (
-        <div>
-            <FormBody 
-                componentData={props.componentData} 
-                showOutlines={outlines}
-                action={attrs && attrs.action || ''}
-                method={attrs && attrs.method || ''}    
-            >
-                {props.children}
-            </FormBody>
-        </div>
+        <FormBody 
+            componentData={props.componentData} 
+            showOutlines={outlines}
+            action={attrs && attrs.action || ''}
+            method={attrs && attrs.method || ''}    
+        >
+            {props.children}
+        </FormBody>
     )
 }

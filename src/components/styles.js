@@ -25,8 +25,8 @@ export const StylesProvider = (styles) => {
         height: ${styles && styles.height || ''};
         min-width: ${styles && styles.minWidth || ''};
         max-width: ${styles && styles.maxWidth || ''};
-        min-width: ${styles && styles.minHeight || ''};
-        max-width: ${styles && styles.maxHeight || ''};
+        min-height: ${styles && styles.minHeight || ''};
+        max-height: ${styles && styles.maxHeight || ''};
 
         margin-top: ${styles && styles.marginTop || ''};
         margin-right: ${styles && styles.marginRight || ''};
@@ -54,11 +54,13 @@ export const StylesProvider = (styles) => {
         font-weight: ${styles && styles.fontWeight || ''};
         font-style: ${styles && styles.fontStyle || ''};
         line-height: ${styles && styles.lineHeight || ''};
+        content: ${styles && styles.content || ''};
 
         background-color: ${styles && styles.backgroundColor || ''};
         background-image: ${styles && styles.backgroundImage || ''};
         background-size: ${styles && styles.backgroundSize || ''};
         background-position: ${styles && styles.backgroundPosition || ''};
+        background-repeat: ${styles && styles.backgroundRepeat || ''};
         filter: ${styles && styles.filter || ''};
 
         opacity: ${styles && styles.opacity || ''};
@@ -98,6 +100,30 @@ export const StylesProvider = (styles) => {
         ${props => {
             return props.isActive && css`
                 ${styles && styles.isActive && StylesProvider(styles.isActive)}
+
+                &:hover {
+                    ${styles && styles.isActive && styles.isActive.hover && StylesProvider(styles.isActive.hover)}
+                }
+
+                &:active {
+                    ${styles && styles.isActive && styles.isActive.active && StylesProvider(styles.isActive.active)}
+                }
+
+                &:focus {
+                    ${styles && styles.isActive && styles.isActive.focus && StylesProvider(styles.isActive.focus)}
+                }
+
+                &:checked {
+                    ${styles && styles.isActive && styles.isActive.checked && StylesProvider(styles.isActive.checked)}
+                }
+
+                &:before {
+                    ${styles && styles.isActive && styles.isActive.before && StylesProvider(styles.isActive.before)}
+                }
+
+                &:after {
+                    ${styles && styles.isActive && styles.isActive.after && StylesProvider(styles.isActive.after)}
+                }
             `;
         }}
     `;

@@ -415,6 +415,9 @@
                                 "paddingRight": "5px",
                                 "display": "flex",
                                 "alignItems": "center",
+                                "transitions": [
+                                  "background-color 200ms"
+                                ],
 
                                 "isActive": {
                                   "backgroundColor": "yellow",
